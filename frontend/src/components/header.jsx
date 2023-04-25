@@ -22,8 +22,9 @@ const Header = ({}) => {
                   data-height="1500"
                   alt="K"
                   data-no-retina=""
+                  width={200}
                 />
-                <img
+                {/* <img
                   className="logo-sticky scale-with-grid "
                   src="https://kvando.tech/wp-content/uploads/2021/08/K-1.png"
                   data-retina="https://kvando.tech/wp-content/uploads/2021/08/K-1.png"
@@ -46,7 +47,7 @@ const Header = ({}) => {
                   data-height="1500"
                   alt="K"
                   data-no-retina=""
-                />
+                /> */}
               </a>
             </div>
             <div className="menu_wrapper">
