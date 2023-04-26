@@ -1,5 +1,5 @@
 @tailwind base;
-@tailwind components;
+/* @tailwind components;
 @tailwind utilities;
 
 :root {
@@ -14,9 +14,9 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,7 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
 
 a {
   text-decoration: none;
@@ -34,7 +34,7 @@ h1 {
   font-family: Staatliches;
   font-size: 120px;
 }
-
+/* 
 #category {
   font-family: Staatliches;
   font-weight: 500;
@@ -61,14 +61,13 @@ h1 {
 .uk-navbar-container {
   background: #fff !important;
   font-family: Staatliches;
-}
+} */
 
 img:hover {
   opacity: 1;
   transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
-
-
-
-
+section {
+  height: 100vh;
+}

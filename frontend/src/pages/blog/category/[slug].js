@@ -1,8 +1,8 @@
-import Seo from "../../components/seo";
-import Layout from "../../components/layout";
-import Articles from "../../components/articles";
+import Seo from "@/components/seo";
+import Layout from "@/components/layout";
+import Articles from "@/components/articles";
 
-import { fetchAPI } from "../../lib/api";
+import { fetchAPI } from "@/lib/api";
 
 const Category = ({ category, categories }) => {
 	const seo = {

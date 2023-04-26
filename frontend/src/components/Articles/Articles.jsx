@@ -1,10 +1,22 @@
 import React from "react";
-import Card from "./card";
+import Card from "../card";
+import style from "./Articles.module.css";
 
 const Articles = ({ articles }) => {
   const leftArticlesCount = Math.ceil(articles.length / 5);
   const leftArticles = articles.slice(0, leftArticlesCount);
   const rightArticles = articles.slice(leftArticlesCount, articles.length);
+
+  return (
+    <div className={style.container}>
+      {articles.map((article) => (
+        <Card
+          article={article}
+          key={`article__left__${article.attributes.slug}`}
+        />
+      ))}
+    </div>
+  );
 
   return (
     <div>

@@ -1,0 +1,189 @@
+.container {
+  /* background: url("../../assets/images/header-1-bg.png"); */
+  /* background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom; */
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  padding: 0 20%;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+}
+.menu {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
+  font-weight: 500;
+  letter-spacing: 0;
+  z-index: 1;
+}
+.menu_item {
+  /* width: 100%; */
+  cursor: pointer;
+}
+
+.animation_circle_inverse {
+  opacity: 0.25;
+  position: absolute;
+  right: 100px;
+  top: 0;
+}
+
+.animation_circle_inverse i {
+  background: #eee;
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  opacity: 0.3;
+  animation: ripple1 3s linear infinite;
+}
+
+.animation_circle_inverse i:nth-child(2) {
+  animation: ripple2 3s linear infinite;
+}
+
+.animation_circle_inverse i:nth-child(3) {
+  animation: ripple3 3s linear infinite;
+}
+
+.col_auto {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.col {
+  flex: 1 0;
+}
+.squares .img {
+  background: url("../../assets/images/Ellipse.png");
+  height: 300px;
+  width: 300px;
+}
+
+.squares .img_1 {
+  animation: changedir 10s infinite;
+}
+
+.squares .img_2 {
+  animation: changedir-rev 10s infinite;
+}
+
+.set_abs {
+  position: absolute;
+}
+
+.img_fluid,
+.img_thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+.theme {
+  position: absolute;
+  right: 280px;
+  top: 160px;
+  /* width: 500px; */
+}
+
+.inline {
+  will-change: transform;
+  transition: all 3000ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s;
+  transform: perspective(20000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+}
+
+.radius {
+  border-end-end-radius: 70% 30%;
+  border-end-start-radius: 70% 30%;
+  background: -webkit-linear-gradient(90deg, #330099, #6666cc);
+  background: linear-gradient(-45deg, #330099, #6666cc);
+  /* background: -webkit-linear-gradient(150deg, #ffebc2, #ffcc66);
+  background: linear-gradient(150deg, #ffebc2, #ffcc66); */
+}
+
+/* img,
+svg {
+  vertical-align: middle;
+} */
+@keyframes ripple1 {
+  0% {
+    transform: scale(5.5);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(8.5);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple2 {
+  0% {
+    transform: scale(3.5);
+  }
+  100% {
+    transform: scale(5.5);
+  }
+}
+
+@keyframes ripple3 {
+  0% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(3.5);
+  }
+}
+
+@keyframes changedir {
+  0% {
+    top: 25%;
+    right: 18%;
+  }
+
+  25% {
+    top: 25%;
+    right: 28%;
+  }
+  50% {
+    top: 45%;
+    right: 28%;
+  }
+  75% {
+    top: 45%;
+    right: 18%;
+  }
+  100% {
+    top: 25%;
+    right: 18%;
+  }
+}
+
+@keyframes changedir-rev {
+  0% {
+    top: 45%;
+    right: 28%;
+  }
+  25% {
+    top: 45%;
+    right: 18%;
+  }
+  50% {
+    top: 25%;
+    right: 18%;
+  }
+  75% {
+    top: 25%;
+    right: 28%;
+  }
+  100% {
+    top: 45%;
+    right: 28%;
+  }
+}

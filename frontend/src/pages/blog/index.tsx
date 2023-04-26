@@ -1,25 +1,23 @@
 import React from "react";
-import Articles from "../components/Articles/Articles";
-import Layout from "../components/layout";
-import Header from "../components/Header/Header";
-import Seo from "../components/seo";
-import { fetchAPI } from "../lib/api";
+import Articles from "@/components/Articles/Articles";
+import Layout from "@/components/layout";
+// import Header from "../components/Header/Header";
+import Seo from "@/components/seo";
+import { fetchAPI } from "@/lib/api";
+import Nav from "@/components/Nav/Nav";
 
-const Home = ({ articles, categories, homepage }) => {
+const Home = ({ articles, categories, homepage }: any) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.attributes.seo} />
-      {/* <div className="uk-section">
+      <Nav categories={categories} />
+      <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>{homepage.attributes.hero.title}</h1>
           <Articles articles={articles} />
         </div>
-      </div> */}
-      <Header />
-      <section id="about">О нас</section>
-      <section id="services">Сервисы</section>
-      <section id="kvando_team">Команда Квандо</section>
-      <section id="contact">Контакты</section>
+      </div>
+      {/* <Header /> */}
     </Layout>
   );
 };
