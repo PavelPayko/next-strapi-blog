@@ -1,0 +1,17 @@
+.cards {
+  display: flex;
+  gap: 10px;
+}
+
+.container {
+  display: flex;
+  padding: 40px;
+
+  .download {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

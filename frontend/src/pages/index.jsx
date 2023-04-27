@@ -4,6 +4,9 @@ import Layout from "../components/layout";
 import Header from "../components/Header/Header";
 import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
+import About from "@/components/About/About";
+import Services from "@/components/Services/Services";
+import Team from "@/components/Team/Team";
 
 const Home = ({ articles, categories, homepage }) => {
   return (
@@ -16,9 +19,9 @@ const Home = ({ articles, categories, homepage }) => {
         </div>
       </div> */}
       <Header />
-      <section id="about">О нас</section>
-      <section id="services">Сервисы</section>
-      <section id="kvando_team">Команда Квандо</section>
+      <About />
+      <Services />
+      <Team />
       <section id="contact">Контакты</section>
     </Layout>
   );
