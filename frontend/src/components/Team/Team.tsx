@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 import Link from "next/link";
 import style from "./Team.module.scss";
 import Theme from "@/assets/images/theme.png";
@@ -11,11 +11,17 @@ import reactIcon from '@/assets/images/frameworks/react.svg'
 import vueIcon from '@/assets/images/frameworks/vue.svg'
 import laravelIcon from '@/assets/images/frameworks/laravel.svg'
 import goIcon from '@/assets/images/frameworks/golang.svg'
+import { Employee } from './Team.interface';
 
 const { Meta } = Card;
 const { Title } = Typography;
 
-const Team = ({ }) => {
+const Team: FC<{
+  frontenders?: Employee[]
+}> = ({ frontenders }) => {
+
+  console.log('frontenders', frontenders);
+
 
   const onChange = (currentSlide: number) => {
     console.log(currentSlide);
@@ -63,6 +69,7 @@ const Team = ({ }) => {
             slidesToShow={3}
             slidesToScroll={3}
           >
+            <Card></Card>
             <Image
               width={200}
               src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"

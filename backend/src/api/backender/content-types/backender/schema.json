@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "backenders",
+  "info": {
+    "singularName": "backender",
+    "pluralName": "backenders",
+    "displayName": "Backender"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "stack": {
+      "type": "string"
+    },
+    "Photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

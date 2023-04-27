@@ -8,7 +8,7 @@ import About from "@/components/About/About";
 import Services from "@/components/Services/Services";
 import Team from "@/components/Team/Team";
 
-const Home = ({ articles, categories, homepage }) => {
+const Home = ({ articles, categories, homepage, frontenders }) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.attributes.seo} />
@@ -21,7 +21,7 @@ const Home = ({ articles, categories, homepage }) => {
       <Header />
       <About />
       <Services />
-      <Team />
+      <Team frontenders={frontenders} />
       <section id="contact">Контакты</section>
     </Layout>
   );
@@ -29,22 +29,25 @@ const Home = ({ articles, categories, homepage }) => {
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [articlesRes, categoriesRes, homepageRes] = await Promise.all([
-    fetchAPI("/articles", { populate: ["image", "category"] }),
-    fetchAPI("/categories", { populate: "*" }),
-    fetchAPI("/homepage", {
-      populate: {
-        hero: "*",
-        seo: { populate: "*" },
-      },
-    }),
-  ]);
+  const [articlesRes, categoriesRes, homepageRes, frontendersRes] =
+    await Promise.all([
+      fetchAPI("/articles", { populate: ["image", "category"] }),
+      fetchAPI("/categories", { populate: "*" }),
+      fetchAPI("/homepage", {
+        populate: {
+          hero: "*",
+          seo: { populate: "*" },
+        },
+      }),
+      fetchAPI("/frontenders", { populate: "*" }),
+    ]);
 
   return {
     props: {
       articles: articlesRes.data,
       categories: categoriesRes.data,
       homepage: homepageRes.data,
+      frontenders: frontendersRes.data,
     },
     revalidate: 1,
   };

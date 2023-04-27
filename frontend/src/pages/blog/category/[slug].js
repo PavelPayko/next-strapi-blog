@@ -1,6 +1,6 @@
 import Seo from "@/components/seo";
 import Layout from "@/components/layout";
-import Articles from "@/components/articles";
+import Articles from "@/components/Articles/Articles";
 
 import { fetchAPI } from "@/lib/api";
 
