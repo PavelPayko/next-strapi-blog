@@ -12,13 +12,14 @@ import vueIcon from '@/assets/images/frameworks/vue.svg'
 import laravelIcon from '@/assets/images/frameworks/laravel.svg'
 import goIcon from '@/assets/images/frameworks/golang.svg'
 import { Employee } from './Team.interface';
+import { getStrapiMedia } from '@/lib/media';
 
 const { Meta } = Card;
 const { Title } = Typography;
 
 const Team: FC<{
   frontenders?: Employee[]
-}> = ({ frontenders }) => {
+}> = ({ frontenders = [] }) => {
 
   console.log('frontenders', frontenders);
 
@@ -69,8 +70,21 @@ const Team: FC<{
             slidesToShow={3}
             slidesToScroll={3}
           >
-            <Card></Card>
-            <Image
+            {frontenders.map(ent => {
+              const photo = {
+                data: ent.attributes.photo.data[0]
+              }
+              return <Card
+                hoverable
+                style={{ width: 240 }}
+                cover={<img alt="example" src={getStrapiMedia(photo)} />}
+              >
+                <Meta title={ent.attributes.Name} description={ent.attributes.stack} />
+              </Card>
+            })}
+
+
+            {/* <Image
               width={200}
               src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
             />
@@ -85,7 +99,7 @@ const Team: FC<{
             <Image
               width={200}
               src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-            />
+            /> */}
           </Carousel>
 
         </div>
