@@ -32,7 +32,7 @@ $slide-width: 30rem;
   width: 50%;
 }
 
-.slider {
+.grid {
   width: 1200px;
 }
 
@@ -55,7 +55,7 @@ $slide-width: 30rem;
 .bar {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
   padding: 10px 20px;
   margin-right: 10px;
@@ -69,9 +69,31 @@ $slide-width: 30rem;
 
 .controls {
   display: flex;
-  width: 100px;
-  justify-content: space-between;
 }
 
 .cardWrp {
+}
+
+.shareBtn {
+  position: absolute;
+  top: -16px;
+  right: 16px;
+  z-index: 2;
+}
+
+.shareContent {
+  position: absolute;
+  background-color: rgba($color: #000, $alpha: 0.3);
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0 20px 0;
+  visibility: hidden;
+  box-sizing: border-box;
+  &.open {
+    visibility: visible;
+  }
 }

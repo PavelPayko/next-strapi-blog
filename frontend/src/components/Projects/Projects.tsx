@@ -4,7 +4,7 @@ import style from "./Projects.module.scss";
 import Theme from "@/assets/images/theme.png";
 import Image from "next/image";
 import { Button, Card, Typography, Divider, List } from 'antd';
-import { LikeOutlined, DollarOutlined } from '@ant-design/icons';
+import { LikeOutlined, DollarOutlined, BankOutlined, BookOutlined, CommentOutlined, UsergroupAddOutlined, CompassOutlined, TrademarkOutlined } from '@ant-design/icons';
 import jsIcon from '@/assets/images/frameworks/javascript.svg'
 import tsIcon from '@/assets/images/frameworks/typescript.svg'
 import reactIcon from '@/assets/images/frameworks/react.svg'
@@ -27,7 +27,7 @@ const Projects = ({ }) => {
 
   const data = [
     {
-      title: 'Банки и финансы',
+      title: 'FinTech',
       desc: `Платежный сервис 
         Личный кабинет заемщика
         Сервис для управления задачами работников
@@ -38,10 +38,10 @@ const Projects = ({ }) => {
         системы авторизации
         Разработка банковского календаря для
         сотрудников`,
-      cover: <Image src={icon_4} alt='bg' width={440} />
+      cover: <BankOutlined />
     },
     {
-      title: 'Банки и финансы',
+      title: 'EdTech',
       desc: `Платежный сервис 
         Личный кабинет заемщика
         Сервис для управления задачами работников
@@ -52,10 +52,10 @@ const Projects = ({ }) => {
         системы авторизации
         Разработка банковского календаря для
         сотрудников`,
-      cover: <Image src={icon_1} alt='bg' width={440} />
+      cover: <BookOutlined />
     },
     {
-      title: 'Банки и финансы',
+      title: 'Телекоммуникации',
       desc: `Платежный сервис 
         Личный кабинет заемщика
         Сервис для управления задачами работников
@@ -66,10 +66,10 @@ const Projects = ({ }) => {
         системы авторизации
         Разработка банковского календаря для
         сотрудников`,
-      cover: <Image src={icon_2} alt='bg' width={440} />
+      cover: <CommentOutlined />
     },
     {
-      title: 'Банки и финансы',
+      title: 'HrTech',
       desc: `Платежный сервис 
         Личный кабинет заемщика
         Сервис для управления задачами работников
@@ -80,10 +80,10 @@ const Projects = ({ }) => {
         системы авторизации
         Разработка банковского календаря для
         сотрудников`,
-      cover: <Image src={icon_3} alt='bg' width={440} />
+      cover: <UsergroupAddOutlined />
     },
     {
-      title: 'Банки и финансы',
+      title: 'Туризм',
       desc: `Платежный сервис 
         Личный кабинет заемщика
         Сервис для управления задачами работников
@@ -94,10 +94,10 @@ const Projects = ({ }) => {
         системы авторизации
         Разработка банковского календаря для
         сотрудников`,
-      cover: <Image src={icon_6} alt='bg' width={440} />
+      cover: <CompassOutlined />
     },
     {
-      title: 'Банки и финансы',
+      title: 'Маркетплейсы',
       desc: `Платежный сервис 
         Личный кабинет заемщика
         Сервис для управления задачами работников
@@ -108,7 +108,7 @@ const Projects = ({ }) => {
         системы авторизации
         Разработка банковского календаря для
         сотрудников`,
-      cover: <Image src={icon_5} alt='bg' width={440} />
+      cover: <TrademarkOutlined />
     },
   ];
 
@@ -125,10 +125,11 @@ const Projects = ({ }) => {
         //   xl: 6,
         //   xxl: 3,
         // }}
-        grid={{ gutter: 32, column: 3 }}
+        grid={{ gutter: 8, column: 3 }}
+        className={style.list}
         dataSource={data}
         renderItem={(item) => (
-          <List.Item >
+          <List.Item className={style.card} >
             {/* <Card title={item.title}>Card content</Card> */}
             <StyledCard title={item.title} desc={item.desc} cover={item.cover} />
           </List.Item>

@@ -1,0 +1,22 @@
+.shareBtn {
+  position: absolute;
+  top: -16px;
+  right: 16px;
+  z-index: 2;
+}
+
+.shareContent {
+  position: absolute;
+  background-color: rgba($color: #000, $alpha: 0.7);
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0 20px 0;
+
+  svg {
+    cursor: pointer;
+  }
+}

@@ -7,8 +7,10 @@ import { fetchAPI } from "../lib/api";
 import About from "@/components/About/About";
 import Projects from "@/components/Projects/Projects";
 import Team from "@/components/Team/Team";
+import Contacts from "@/components/Contacts/Contacts";
+import ContactForm from "@/components/ContactForm/ContactForm";
 
-const Home = ({ articles, categories, homepage, frontenders }) => {
+const Home = ({ articles, categories, homepage, frontenders, contacts }) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.attributes.seo} />
@@ -22,7 +24,8 @@ const Home = ({ articles, categories, homepage, frontenders }) => {
       <About />
       <Projects />
       <Team frontenders={frontenders} />
-      <section id="contact">Контакты</section>
+      <Contacts contacts={contacts} />
+      <ContactForm />
     </Layout>
   );
 };
@@ -48,6 +51,7 @@ export async function getStaticProps() {
       categories: categoriesRes.data,
       homepage: homepageRes.data,
       frontenders: frontendersRes.data,
+      contacts: frontendersRes.data,
     },
     revalidate: 1,
   };

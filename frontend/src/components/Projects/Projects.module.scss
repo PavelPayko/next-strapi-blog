@@ -5,53 +5,15 @@
   background-color: #f9f9f9;
 }
 
+.list {
+  width: auto;
+  max-width: 1400px;
+  margin: auto;
+}
+
 .content {
   width: 50%;
 }
 
-.icons {
-}
-
-.grid {
-  width: 220px;
-  height: 220px;
-  // border: 1px solid black;
-  display: inline-flex;
-  box-sizing: content-box;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  padding: 10px;
-}
-
-.row1 {
-  height: 220px;
-  margin-bottom: 20px;
-  .grid {
-    &:nth-child(1) {
-      border-bottom: 2px solid black;
-      border-right: 2px solid black;
-    }
-    &:nth-child(2) {
-      border-bottom: 2px solid black;
-    }
-    &:nth-child(3) {
-      border-bottom: 2px solid black;
-      border-left: 2px solid black;
-    }
-  }
-}
-.row2 {
-  height: 220px;
-  .grid {
-    &:nth-child(1) {
-      border-right: 2px solid black;
-    }
-    &:nth-child(2) {
-      // border-bottom: 1px solid black;
-    }
-    &:nth-child(3) {
-      border-left: 2px solid black;
-    }
-  }
+.card {
 }
