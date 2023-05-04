@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "heads",
+  "info": {
+    "singularName": "head",
+    "pluralName": "heads",
+    "displayName": "head"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

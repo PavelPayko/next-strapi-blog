@@ -28,6 +28,9 @@
     },
     "stack": {
       "type": "string"
+    },
+    "desc": {
+      "type": "string"
     }
   }
 }
