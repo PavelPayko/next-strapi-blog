@@ -1,11 +1,13 @@
-@tailwind base;
-/* @tailwind components;
-@tailwind utilities;
+@import url(normalize.css);
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap");
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --main-yellow: #ffc500;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --hex-side: 100px;
+  --hex-rotate: 30deg;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,17 +16,7 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-} */
-
-/* body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
+}
 
 a {
   text-decoration: none;
@@ -34,6 +26,20 @@ h1 {
   font-family: Staatliches;
   font-size: 120px;
 }
+#nav {
+  transition: all 400ms ease;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.slick-track {
+  display: flex !important;
+  gap: 20px;
+}
+
 /* 
 #category {
   font-family: Staatliches;
@@ -62,12 +68,3 @@ h1 {
   background: #fff !important;
   font-family: Staatliches;
 } */
-
-img:hover {
-  opacity: 1;
-  transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
-}
-
-section {
-  height: 100vh;
-}

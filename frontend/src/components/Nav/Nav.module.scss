@@ -1,0 +1,25 @@
+.wrp {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+  background: #fff;
+}
+.menu {
+  flex: auto;
+  min-width: 0;
+  justify-content: center;
+  border-bottom: none;
+
+  li {
+    margin: 0 20px;
+  }
+}
+.locale {
+  cursor: pointer;
+}

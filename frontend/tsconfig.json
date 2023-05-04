@@ -23,7 +23,7 @@
     "**/*.ts",
     "**/*.tsx",
     "src/pages/index.jsx",
-    "src/components/Nav/Nav.jsx"
+    "src/components/Nav/Nav.tsx"
   ],
   "exclude": ["node_modules"]
 }

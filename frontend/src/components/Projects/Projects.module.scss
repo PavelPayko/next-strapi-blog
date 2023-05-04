@@ -1,9 +1,8 @@
 .container {
-  background: #ffeba5;
-  background: linear-gradient(135deg, #ffeba5, #efe85e);
-  display: flex;
-  align-items: center;
+  padding: 40px 120px;
   width: 100%;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
 }
 
 .content {

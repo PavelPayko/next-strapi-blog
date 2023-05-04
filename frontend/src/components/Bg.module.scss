@@ -1,0 +1,106 @@
+.g_1 {
+  animation: frame_1 6s linear infinite;
+}
+.g_2 {
+  animation: frame_2 8s ease-in-out infinite;
+}
+.g_3 {
+  animation: frame_3 6s ease-in infinite;
+}
+.g_4 {
+  animation: frame_4 4s ease-out infinite;
+}
+
+.g_5 {
+  animation: frame_5 5s ease-in-out infinite;
+}
+.g_6 {
+  animation: frame_6 4s ease-in infinite;
+}
+.g_7 {
+  animation: frame_7 5s ease-out infinite;
+}
+
+@keyframes frame_1 {
+  0% {
+    transform: translate(0px, 28px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, 28px);
+  }
+}
+
+@keyframes frame_2 {
+  0% {
+    transform: translate(0px, 25px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, 25px);
+  }
+}
+
+@keyframes frame_3 {
+  0% {
+    transform: translate(0px, -30px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, -30px);
+  }
+}
+
+@keyframes frame_4 {
+  0% {
+    transform: translate(0px, 11px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, 11px);
+  }
+}
+
+@keyframes frame_5 {
+  0% {
+    transform: translate(0px, -24px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, -24px);
+  }
+}
+
+@keyframes frame_6 {
+  0% {
+    transform: translate(0px, 21px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, 21px);
+  }
+}
+
+@keyframes frame_7 {
+  0% {
+    transform: translate(0px, 30px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, 30px);
+  }
+}

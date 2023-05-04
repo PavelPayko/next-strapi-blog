@@ -5,7 +5,7 @@ export interface Employee {
 }
 
 interface Attributes {
-	Name: string
+	name: string
 	stack: string
 	createdAt: string
 	updatedAt: string

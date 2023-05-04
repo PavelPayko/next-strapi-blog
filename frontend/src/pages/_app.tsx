@@ -5,6 +5,8 @@ import '@/styles/globals.css'
 import { createContext } from "react";
 import { fetchAPI } from "@/lib/api";
 import { getStrapiMedia } from "@/lib/media";
+import { ConfigProvider } from 'antd';
+import Nav from '@/components/Nav/Nav';
 
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
@@ -20,9 +22,29 @@ const MyApp = ({ Component, pageProps }: any) => {
           href={getStrapiMedia(global.attributes.favicon)}
         />
       </Head>
-      <GlobalContext.Provider value={global.attributes}>
-        <Component {...pageProps} />
-      </GlobalContext.Provider>
+      <ConfigProvider theme={{
+        "token": {
+          "colorPrimary": "#ffc500",
+          fontSize: 16,
+          fontFamily: 'Ubuntu'
+        },
+        components: {
+          Menu: {
+            paddingContentHorizontal: 40
+          },
+          Button: {
+            controlHeightLG: 56,
+            paddingContentHorizontal: 40,
+          }
+        }
+      }}>
+        <GlobalContext.Provider value={global.attributes}>
+          <nav id='nav'><Nav /></nav>
+          <main>
+            <Component {...pageProps} />
+          </main>
+        </GlobalContext.Provider>
+      </ConfigProvider>
     </>
   );
 };

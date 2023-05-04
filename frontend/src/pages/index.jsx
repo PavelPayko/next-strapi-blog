@@ -5,7 +5,7 @@ import Header from "../components/Header/Header";
 import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
 import About from "@/components/About/About";
-import Services from "@/components/Services/Services";
+import Projects from "@/components/Projects/Projects";
 import Team from "@/components/Team/Team";
 
 const Home = ({ articles, categories, homepage, frontenders }) => {
@@ -20,7 +20,7 @@ const Home = ({ articles, categories, homepage, frontenders }) => {
       </div> */}
       <Header />
       <About />
-      <Services />
+      <Projects />
       <Team frontenders={frontenders} />
       <section id="contact">Контакты</section>
     </Layout>
