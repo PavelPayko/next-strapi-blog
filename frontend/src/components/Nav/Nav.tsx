@@ -3,7 +3,9 @@ import Link from "next/link";
 import style from "./Nav.module.scss";
 import { Dropdown, Menu, MenuProps } from 'antd';
 
-const Nav = () => {
+const Nav: React.FC<{
+  categories?: any
+}> = ({ }) => {
 
   const navRef = useRef(null as HTMLDivElement | null)
   const [current, setCurrent] = useState('');
