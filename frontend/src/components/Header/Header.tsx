@@ -122,8 +122,12 @@ const Header = ({ }) => {
             и выполнить проект любой сложности под ключ.
           </p>
           <div className={style.controls}>
-            <Button type='primary' size='large'>Стать партнером</Button>
-            <Button type='default' size='large'>Оценить проект</Button>
+            <Button type='primary' size='large'>
+              <Link href='/#contact_us'>Стать партнером</Link>
+            </Button>
+            <Button type='default' size='large'>
+              <Link href='/#contact_us'>Оценить проект</Link>
+            </Button>
           </div>
         </div>
 

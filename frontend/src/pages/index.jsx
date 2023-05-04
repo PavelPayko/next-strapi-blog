@@ -9,6 +9,7 @@ import Projects from "@/components/Projects/Projects";
 import Team from "@/components/Team/Team";
 import Contacts from "@/components/Contacts/Contacts";
 import ContactForm from "@/components/ContactForm/ContactForm";
+import Footer from "@/components/Footer/Footer";
 
 const Home = ({ articles, categories, homepage, frontenders, contacts }) => {
   return (
@@ -26,6 +27,7 @@ const Home = ({ articles, categories, homepage, frontenders, contacts }) => {
       <Team frontenders={frontenders} />
       <Contacts contacts={contacts} />
       <ContactForm />
+      <Footer />
     </Layout>
   );
 };

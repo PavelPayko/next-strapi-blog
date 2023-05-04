@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import style from "./Nav.module.scss";
 import { Dropdown, Menu, MenuProps } from 'antd';
+import Logo from '@/assets/images/K-1.png'
 
 const Nav: React.FC<{
   categories?: any
@@ -37,7 +39,7 @@ const Nav: React.FC<{
 
       const posTop = aboutSection?.getBoundingClientRect().top || 0;
 
-      console.log(aboutSectionPos, window.scrollY);
+
       if (aboutSectionPos == window.scrollY) {
         console.log('about');
 
@@ -116,7 +118,7 @@ const Nav: React.FC<{
   return (
     <div className={style.wrp} ref={navRef}>
       <div className="logo" >
-        <a
+        {/* <a
           id="logo"
           href="https://kvando.tech/ru"
           title="Qualitative software development"
@@ -132,7 +134,10 @@ const Nav: React.FC<{
             data-no-retina=""
             width={250}
           />
-        </a>
+        </a> */}
+        <Link href={"/"} >
+          <Image src={Logo} alt='Kvando' width={200} />
+        </Link>
       </div>
       <Menu
         onClick={onClick}

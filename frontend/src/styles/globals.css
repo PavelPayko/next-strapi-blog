@@ -30,12 +30,13 @@ h1 {
   font-size: 120px;
 }
 #nav {
-  transition: all 400ms ease;
+  transition: all 400ms linear;
   overflow: hidden;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 3;
+  box-sizing: border-box;
 }
 
 .slick-track {
@@ -71,3 +72,11 @@ h1 {
   background: #fff !important;
   font-family: Staatliches;
 } */
+
+.topBar {
+  padding: 40px 120px;
+}
+
+.topBar img {
+  scale: 1.2;
+}
