@@ -31,10 +31,4 @@ const Home = () => (
   </PDFViewer>
 );
 
-const Pdf = (
-  <PDFViewer>
-    <MyDocument />
-  </PDFViewer>
-);
-
 export default Home;
