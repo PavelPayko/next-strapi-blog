@@ -69,3 +69,9 @@
 .item {
   margin: 15px 0;
 }
+
+.imageWrp {
+  img {
+    object-fit: contain;
+  }
+}

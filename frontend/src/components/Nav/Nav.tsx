@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import style from "./Nav.module.scss";
 import { Dropdown, Menu, MenuProps } from 'antd';
+import Logo from '@/assets/images/K-1.png'
 
 const Nav: React.FC<{
   categories?: any
@@ -37,7 +39,7 @@ const Nav: React.FC<{
 
       const posTop = aboutSection?.getBoundingClientRect().top || 0;
 
-      console.log(aboutSectionPos, window.scrollY);
+
       if (aboutSectionPos == window.scrollY) {
         console.log('about');
 
@@ -64,38 +66,38 @@ const Nav: React.FC<{
 
   const items: MenuProps['items'] = [
     {
-      label: <a href="#about" data-hash="#about">
+      label: <a href="/#about" data-hash="#about">
         <span>О НАС</span>
       </a>,
       key: 'about',
     },
     {
-      label: <a href="#projects" data-hash="#about">
+      label: <a href="/#projects" data-hash="#projects">
         <span>ПРОЕКТЫ</span>
       </a>,
       key: 'projects',
     },
     {
-      label: <a href="#team" data-hash="#about">
+      label: <a href="/#team" data-hash="#team">
         <span>КОМАНДА</span>
       </a>,
       key: 'team',
     },
     {
-      label: <a href="#contacts" data-hash="#about">
+      label: <a href="#contacts" data-hash="#contacts">
         <span>КОНТАКТЫ</span>
       </a>,
       key: 'contacts',
     },
     {
-      label: <a href="#vacancy" data-hash="#about">
+      label: <a href="/vacancy">
         <span>ВАКАНСИИ</span>
       </a>,
       key: 'vacancy',
     },
     {
-      label: (<Link href="/blog" legacyBehavior>
-        <span>Блог</span>
+      label: (<Link href="/blog">
+        <span>БЛОГ</span>
       </Link>),
       key: 'blog',
     },
@@ -116,7 +118,7 @@ const Nav: React.FC<{
   return (
     <div className={style.wrp} ref={navRef}>
       <div className="logo" >
-        <a
+        {/* <a
           id="logo"
           href="https://kvando.tech/ru"
           title="Qualitative software development"
@@ -132,7 +134,10 @@ const Nav: React.FC<{
             data-no-retina=""
             width={250}
           />
-        </a>
+        </a> */}
+        <Link href={"/"} >
+          <Image src={Logo} alt='Kvando' width={200} />
+        </Link>
       </div>
       <Menu
         onClick={onClick}

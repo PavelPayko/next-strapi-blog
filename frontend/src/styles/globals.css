@@ -4,10 +4,13 @@
 
 :root {
   --main-yellow: #ffc500;
+  --main-orange: #fe4c1c;
+  --whiteColor: #fff;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --hex-side: 100px;
   --hex-rotate: 30deg;
+  --transition: 0.5s;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,12 +30,13 @@ h1 {
   font-size: 120px;
 }
 #nav {
-  transition: all 400ms ease;
+  transition: all 400ms linear;
   overflow: hidden;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 3;
+  box-sizing: border-box;
 }
 
 .slick-track {
@@ -68,3 +72,19 @@ h1 {
   background: #fff !important;
   font-family: Staatliches;
 } */
+
+.topBar {
+  padding: 40px 120px;
+}
+
+.topBar img {
+  scale: 1.2;
+}
+
+.ant-collapse .ant-collapse-item {
+  border-radius: 12px;
+}
+.ant-collapse .ant-collapse-item .ant-collapse-header {
+  align-items: center;
+  padding: 12px 24px;
+}

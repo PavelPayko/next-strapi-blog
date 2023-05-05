@@ -35,6 +35,11 @@ const MyApp = ({ Component, pageProps }: any) => {
           Button: {
             controlHeightLG: 56,
             paddingContentHorizontal: 40,
+          },
+          Input: {
+            colorBgContainer: '#F9F9F9',
+            controlHeightLG: 56,
+            borderRadiusLG: 12
           }
         }
       }}>

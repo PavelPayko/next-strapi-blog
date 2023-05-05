@@ -1,29 +1,14 @@
 import React, { FC, useRef, useState } from "react";
-import Link from "next/link";
 import style from "./Team.module.scss";
-import Theme from "@/assets/images/theme.png";
-// import Image from "next/image";
-import { Typography, Carousel, Tabs, Switch, Card } from 'antd';
-import { LikeOutlined, DollarOutlined, ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
-import jsIcon from '@/assets/images/frameworks/javascript.svg'
-import tsIcon from '@/assets/images/frameworks/typescript.svg'
-import reactIcon from '@/assets/images/frameworks/react.svg'
-import vueIcon from '@/assets/images/frameworks/vue.svg'
-import laravelIcon from '@/assets/images/frameworks/laravel.svg'
-import goIcon from '@/assets/images/frameworks/golang.svg'
+import { Carousel, Card } from 'antd';
 import { Employee } from './Team.interface';
 import { getStrapiMedia } from '@/lib/media';
-import { AndroidOutlined, AppleOutlined } from '@ant-design/icons';
-import Photo from '@/assets/images/Andrew.jpeg'
 import Image from 'next/image';
-// const { Meta } = Card;
-const { Title } = Typography;
+import PageTitle from '../PageTitle/PageTitle';
 
 const Team: FC<{
   frontenders?: Employee[]
 }> = ({ frontenders = [] }) => {
-
-  console.log('frontenders', frontenders);
 
   const prevIcon = <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -60,93 +45,31 @@ const Team: FC<{
     frontenders.forEach(item => cards.push(item))
   }
 
-  const items = [
-    {
-      label: (
-        <span>
-          {/* <AndroidOutlined /> */}
-          Стать партнером
-        </span>
-      ),
-      key: '1',
-      children: `Стать партнером`,
-    },
-    {
-      label: (
-        <span>
-          {/* <Icon /> */}
-          Оставить заявку на проект
-        </span>
-      ),
-      key: '2',
-      children: `Оставить заявку на проект`,
-    }
-  ]
-
-  const onChange = (currentSlide: number) => {
-    console.log(currentSlide);
-  };
-
-  const contentStyle: React.CSSProperties = {
-    margin: 0,
-    height: '160px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-  };
-
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1
-
+    slidesToShow: 4,
+    // slidesToScroll: 1,
+    draggable: true,
+    autoplay: true
   };
 
   const ref = useRef(null)
 
-  function SampleNextArrow(props: any) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "red" }}
-        onClick={onClick}
-      />
-    );
-  }
-
-  function SamplePrevArrow(props: any) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "green" }}
-        onClick={onClick}
-      />
-    );
-  }
   return (
-    <section className={style.container} id="kvando_team">
+    <section className={style.container} id="team">
+      <PageTitle title='Team' />
       <div className={style.slider}>
         <div className={style.bar}>
-          <span className={style.title}>Develop team</span>
+          {/* <span className={style.title}>Develop team</span> */}
           <div className={style.controls}>
             <div onClick={prevHandler}>{prevIcon}</div>
             <div onClick={nextHandler}>{nextIcon}</div>
           </div>
         </div>
         <Carousel
-          // slidesToShow={3}
-          // slidesToScroll={3}
           {...settings}
-          // arrows={true}
-          // swipe={true}
-          // swipeToSlide
-          // prevArrow={<ArrowLeftOutlined />}
-          // nextArrow={<ArrowRightOutlined style={{ color: '#000' }} />}
           ref={ref}
           infinite
           className={style.sliderWrp}
@@ -155,36 +78,14 @@ const Team: FC<{
             const photo = {
               data: ent.attributes.photo.data[0]
             }
+            const url = getStrapiMedia(photo)
+
             return <div className={style.cardWrp}>
-              <Card cover={<Image src={Photo} alt='photo' width={340} style={{ objectFit: 'cover' }} />} >
+              <Card cover={<Image src={url} alt='photo' width={340} height={340} style={{ objectFit: 'cover' }} />} >
                 <Card.Meta title={ent.attributes.name} description={ent.attributes.stack} />
               </Card>
             </div>
           })}
-          <Card cover={<Image src={Photo} alt='photo' width={340} style={{ objectFit: 'cover' }} />} >
-            <Card.Meta title={"Name"} description={"Desc"} />
-          </Card>
-          <Card cover={<Image src={Photo} alt='photo' width={340} style={{ objectFit: 'cover' }} />} >
-            <Card.Meta title={"Name"} description={"Desc"} />
-          </Card>
-          <Card cover={<Image src={Photo} alt='photo' width={340} style={{ objectFit: 'cover' }} />} >
-            <Card.Meta title={"Name"} description={"Desc"} />
-          </Card>
-          <Card cover={<Image src={Photo} alt='photo' width={340} style={{ objectFit: 'cover' }} />} >
-            <Card.Meta title={"Name"} description={"Desc"} />
-          </Card>
-          <Card cover={<Image src={Photo} alt='photo' width={340} style={{ objectFit: 'cover' }} />} >
-            <Card.Meta title={"Name"} description={"Desc"} />
-          </Card>
-          <Card cover={<Image src={Photo} alt='photo' width={340} style={{ objectFit: 'cover' }} />} >
-            <Card.Meta title={"Name"} description={"Desc"} />
-          </Card>
-          <Card cover={<Image src={Photo} alt='photo' width={340} style={{ objectFit: 'cover' }} />} >
-            <Card.Meta title={"Name"} description={"Desc"} />
-          </Card>
-          <Card cover={<Image src={Photo} alt='photo' width={340} style={{ objectFit: 'cover' }} />} >
-            <Card.Meta title={"Name"} description={"Desc"} />
-          </Card>
         </Carousel>
       </div>
 
