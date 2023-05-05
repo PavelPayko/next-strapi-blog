@@ -1,5 +1,4 @@
 import qs from "qs";
-import axios from 'axios';
 
 /**
  * Get full Strapi URL from path
@@ -40,7 +39,6 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
 
 	// Trigger API call
 	const response = await fetch(requestUrl, mergedOptions);
-	// const response = await axios(requestUrl, mergedOptions);
 
 	// Handle response
 	if (!response.ok) {
