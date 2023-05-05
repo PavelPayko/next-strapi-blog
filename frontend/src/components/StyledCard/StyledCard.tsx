@@ -17,7 +17,7 @@ const StyledCard: React.FC<{
   cover?: JSX.Element
 }> = ({ title, desc, cover }) => {
 
-  const [isFlip, setIsFlip] = useState(false)
+  const [isFlip, setIsFlip] = useState(true)
   const cardRef = useRef(null as any)
 
   const overHandler = () => {
