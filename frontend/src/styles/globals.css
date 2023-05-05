@@ -80,3 +80,11 @@ h1 {
 .topBar img {
   scale: 1.2;
 }
+
+.ant-collapse .ant-collapse-item {
+  border-radius: 12px;
+}
+.ant-collapse .ant-collapse-item .ant-collapse-header {
+  align-items: center;
+  padding: 12px 24px;
+}

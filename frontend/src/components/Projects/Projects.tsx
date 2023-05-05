@@ -113,7 +113,7 @@ const Projects = ({ }) => {
   ];
 
   return (
-    <section className={style.container} id="services">
+    <section className={style.container} id="projects">
       <PageTitle title='Projects' />
       <List
         // grid={{

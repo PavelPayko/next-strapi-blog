@@ -66,38 +66,38 @@ const Nav: React.FC<{
 
   const items: MenuProps['items'] = [
     {
-      label: <a href="#about" data-hash="#about">
+      label: <a href="/#about" data-hash="#about">
         <span>О НАС</span>
       </a>,
       key: 'about',
     },
     {
-      label: <a href="#projects" data-hash="#about">
+      label: <a href="/#projects" data-hash="#projects">
         <span>ПРОЕКТЫ</span>
       </a>,
       key: 'projects',
     },
     {
-      label: <a href="#team" data-hash="#about">
+      label: <a href="/#team" data-hash="#team">
         <span>КОМАНДА</span>
       </a>,
       key: 'team',
     },
     {
-      label: <a href="#contacts" data-hash="#about">
+      label: <a href="#contacts" data-hash="#contacts">
         <span>КОНТАКТЫ</span>
       </a>,
       key: 'contacts',
     },
     {
-      label: <a href="#vacancy" data-hash="#about">
+      label: <a href="/vacancy">
         <span>ВАКАНСИИ</span>
       </a>,
       key: 'vacancy',
     },
     {
-      label: (<Link href="/blog" legacyBehavior>
-        <span>Блог</span>
+      label: (<Link href="/blog">
+        <span>БЛОГ</span>
       </Link>),
       key: 'blog',
     },

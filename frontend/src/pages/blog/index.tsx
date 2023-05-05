@@ -10,7 +10,6 @@ const Home = ({ articles, categories, homepage }: any) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.attributes.seo} />
-      <Nav categories={categories} />
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>{homepage.attributes.hero.title}</h1>

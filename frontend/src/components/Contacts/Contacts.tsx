@@ -17,7 +17,7 @@ const Contacts: FC<{
   }
 
   return (
-    <section className={style.container} id="kvando_team">
+    <section className={style.container} id="contacts">
       <PageTitle title='Contacts' />
       <div className={style.grid}>
         <List

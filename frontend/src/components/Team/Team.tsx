@@ -58,7 +58,7 @@ const Team: FC<{
   const ref = useRef(null)
 
   return (
-    <section className={style.container} id="kvando_team">
+    <section className={style.container} id="team">
       <PageTitle title='Team' />
       <div className={style.slider}>
         <div className={style.bar}>
