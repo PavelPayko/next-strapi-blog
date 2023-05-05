@@ -1,10 +1,17 @@
 import Seo from "@/components/seo";
 import Layout from "@/components/layout";
 import Articles from "@/components/Articles/Articles";
+import { HomeOutlined, UserOutlined } from '@ant-design/icons';
+import { Breadcrumb } from 'antd';
+import Link from 'next/link'
 
 import { fetchAPI } from "@/lib/api";
+import PageTitle from '@/components/PageTitle/PageTitle';
 
-const Category = ({ category, categories }) => {
+const Category: React.FC<{
+	category: any,
+	categories: any
+}> = ({ category, categories }) => {
 	const seo = {
 		metaTitle: category.attributes.name,
 		metaDescription: `All ${category.attributes.name} articles`,
@@ -13,10 +20,31 @@ const Category = ({ category, categories }) => {
 	return (
 		<Layout categories={categories.data}>
 			<Seo seo={seo} />
+			<div >
+				<PageTitle title={category.attributes.name} />
+				<Breadcrumb
+					style={{ padding: '0 40px' }}
+					items={[
+						{
+							key: 'home',
+							title: <Link href="/"><HomeOutlined /></Link>,
+						},
+						{
+							key: 'home',
+							title: <Link href="/blog">Blog</Link>,
+						},
+						{
+							title: category.attributes.name,
+						},
+					]}
+				/>
+
+				<Articles articles={category.attributes.articles.data} />
+			</div>
+
 			<div className="uk-section">
 				<div className="uk-container uk-container-large">
-					<h1>{category.attributes.name}</h1>
-					<Articles articles={category.attributes.articles.data} />
+
 				</div>
 			</div>
 		</Layout>

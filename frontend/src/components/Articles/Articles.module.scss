@@ -1,0 +1,30 @@
+/* .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+} */
+
+.grid {
+  padding: 20px 40px;
+}
+
+// .item {
+//   position: relative;
+//   &:hover {
+//     // background-color: rgba($color: #000, $alpha: 0.5);
+
+//     &::after {
+//       display: block;
+//       content: "";
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       bottom: 100px;
+//       right: 0;
+//       background-color: rgba($color: #000, $alpha: 0.8);
+//       z-index: 10;
+//       border-radius: 12px;
+//     }
+//   }
+// }

@@ -5,17 +5,17 @@ import Layout from "@/components/layout";
 import Seo from "@/components/seo";
 import { fetchAPI } from "@/lib/api";
 import Nav from "@/components/Nav/Nav";
+import PageTitle from '@/components/PageTitle/PageTitle';
+import BlogCategorySelect from '@/components/Blog/BlogCategorySelect/BlogCategorySelect';
 
 const Home = ({ articles, categories, homepage }: any) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.attributes.seo} />
-      <div className="uk-section">
-        <div className="uk-container uk-container-large">
-          <h1>{homepage.attributes.hero.title}</h1>
-          <Articles articles={articles} />
-        </div>
-      </div>
+      <PageTitle title='Блог' />
+      <BlogCategorySelect categories={categories} />
+      <Articles articles={articles} />
+
       {/* <Header /> */}
     </Layout>
   );

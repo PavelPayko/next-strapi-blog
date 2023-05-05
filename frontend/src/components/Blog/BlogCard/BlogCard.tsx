@@ -4,10 +4,14 @@ import Link from "next/link";
 import Image from 'next/image'
 import { Card as AntCard } from 'antd';
 import { getStrapiMedia } from '@/lib/media';
+import style from './BlogCard.module.scss'
+import { ReadOutlined } from '@ant-design/icons';
 
 const { Meta } = AntCard;
 
-const Card = ({ article }) => {
+const BlogCard: React.FC<{
+	article: any
+}> = ({ article }) => {
 
 	console.log('article', article);
 
@@ -17,17 +21,20 @@ const Card = ({ article }) => {
 		<Link href={`/blog/article/${article.attributes.slug}`}>
 			<AntCard
 				style={{ width: '100%' }}
+				className={style.card}
 				hoverable
 				cover={
-					<Image
-						layout="responsive"
-						width={width}
-						height={height}
-						src={getStrapiMedia(image)}
-						alt={alternativeText || ""}
-						style={{ maxHeight: '400px', objectFit: 'cover', aspectRatio: '16 / 9' }}
-						className={style.card}
-					/>
+					<div className={style.cover}>
+						<Image
+							layout="responsive"
+							width={width}
+							height={height}
+							src={getStrapiMedia(image)}
+							alt={alternativeText || ""}
+							style={{ maxHeight: '400px', objectFit: 'cover', aspectRatio: '16 / 9' }}
+						/>
+						<div className={style.hover}><ReadOutlined /> Читать дальше</div>
+					</div>
 				}
 			// actions={[
 			// 	<SettingOutlined key="setting" />,
@@ -39,6 +46,7 @@ const Card = ({ article }) => {
 					// avatar={<Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />}
 					title={article.attributes.title}
 					description={article.attributes.category.data.attributes.name}
+
 				/>
 			</AntCard>
 			{/* <a className="uk-link-reset">
@@ -67,4 +75,4 @@ const Card = ({ article }) => {
 	);
 };
 
-export default Card;
+export default BlogCard;

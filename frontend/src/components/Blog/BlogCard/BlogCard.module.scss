@@ -1,0 +1,36 @@
+// .card {
+//   &:hover {
+//     background-color: rgba($color: #000, $alpha: 0.5);
+//   }
+// }
+
+.cover {
+  width: 100%;
+  position: relative;
+
+  .hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 28px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 5px;
+    left: 0;
+    background-color: rgba($color: #000, $alpha: 0.5);
+    z-index: -1;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    color: #fff;
+  }
+}
+
+.card {
+  &:hover {
+    .hover {
+      z-index: 1;
+    }
+  }
+}
