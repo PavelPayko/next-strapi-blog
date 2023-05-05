@@ -1,4 +1,5 @@
 import qs from "qs";
+import axios from 'axios';
 
 /**
  * Get full Strapi URL from path
@@ -6,7 +7,7 @@ import qs from "qs";
  * @returns {string} Full Strapi URL
  */
 export function getStrapiURL(path = "") {
-	return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
+	return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://127.0.0.1:1337"
 		}${path}`;
 }
 
@@ -39,6 +40,7 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
 
 	// Trigger API call
 	const response = await fetch(requestUrl, mergedOptions);
+	// const response = await axios(requestUrl, mergedOptions);
 
 	// Handle response
 	if (!response.ok) {
