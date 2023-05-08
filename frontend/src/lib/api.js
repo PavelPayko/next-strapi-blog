@@ -18,8 +18,9 @@ export function getStrapiURL(path = "") {
  * @returns Parsed API call response
  */
 export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
+	const token = process.env.API_TOKEN
 
-	const token = "e3b8a1721dd6f6ffdb1caa6783d183a74dd479eb48f145612d74c75d309d60c9003a424e1608d8587d6939578889cdfa05a45f459c675753a269776e591ec1357fb44ee1008171295aa22e5a57be05439eb3c107c2c58cec600d3e6f85c7895f95c778bb254fe800e94e983c684d6549209830e4bfbcf94d236630dd2e5b0df5"
+	// const token = "e3b8a1721dd6f6ffdb1caa6783d183a74dd479eb48f145612d74c75d309d60c9003a424e1608d8587d6939578889cdfa05a45f459c675753a269776e591ec1357fb44ee1008171295aa22e5a57be05439eb3c107c2c58cec600d3e6f85c7895f95c778bb254fe800e94e983c684d6549209830e4bfbcf94d236630dd2e5b0df5"
 	// Merge default and user options
 	const mergedOptions = {
 		headers: {
