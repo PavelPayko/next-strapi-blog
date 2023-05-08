@@ -50,9 +50,32 @@ const Team: FC<{
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    // slidesToScroll: 1,
+    slidesToScroll: 1,
     draggable: true,
-    autoplay: true
+    // autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1240,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   const ref = useRef(null)
@@ -73,6 +96,7 @@ const Team: FC<{
           ref={ref}
           infinite
           className={style.sliderWrp}
+        // style={{ width: '800px' }}
         >
           {cards.map(ent => {
             const photo = {

@@ -3,7 +3,7 @@ import Link from "next/link";
 import style from "./About.module.scss";
 import Theme from "@/assets/images/theme.png";
 import Image from "next/image";
-import { Button, Card, Typography, Divider, Row, Col, List, Space } from 'antd';
+import { Button, Card, Typography, Divider, Row, Col, List, Space, Grid } from 'antd';
 import { LikeOutlined, DollarOutlined, PlusOutlined, CheckOutlined, AppstoreAddOutlined, TeamOutlined, DownloadOutlined } from '@ant-design/icons';
 // import YBG from '@/assets/images/YBG.png'
 import BG from '@/assets/images/about.png'
@@ -12,8 +12,13 @@ import PageTitle from '../PageTitle/PageTitle';
 
 const { Meta } = Card;
 const { Title, Text, Paragraph } = Typography;
+const { useBreakpoint } = Grid;
 
 const About = ({ }) => {
+
+  const { lg } = useBreakpoint();
+
+  console.log(lg)
 
   const data = [
     'Снижение затрат на обслуживание штатных сотрудников;',
@@ -30,7 +35,7 @@ const About = ({ }) => {
     <section className={style.container} id='about'>
       <PageTitle title='About' />
       <Row gutter={40} style={{ marginBottom: '40px' }}>
-        <Col span={10} className={style.titleWrp}>
+        <Col span={lg ? 10 : 24} className={style.titleWrp}>
           {/* <Image src={BG} alt='bg' style={{ width: '100%' }} /> */}
           <Title level={3} className={style.firstTitle}>Обеспечиваем
             полный цикл
@@ -42,7 +47,7 @@ const About = ({ }) => {
           <Title level={3}>разработки</Title>
           <Title level={3}>проекта</Title> */}
         </Col>
-        <Col span={14} className={style.cardsWrp}>
+        <Col span={lg ? 14 : 24} className={style.cardsWrp}>
           <Paragraph>
             Kvando Technologies, Inc. — специализируется на разработке, тестировании и поддержке продукта. Среди наших проектов — разработка ПО для международной мультивалютной платежной системы с количеством юзеров 5 миллиардов человек, разработка части функционала клиентской массовой многопользовательской онлайн-игры в реальном времени с числом юзеров около 80 миллионов, международные fintech и healthtech проекты.
           </Paragraph>
@@ -64,7 +69,7 @@ const About = ({ }) => {
       </Row>
 
       <Row gutter={40}>
-        <Col span={14} className={style.listWrp}>
+        <Col span={lg ? 14 : 24} className={style.listWrp}>
           <List
             header={<h3>Главные плюсы работы с Kvando:</h3>}
             // footer={<div>Footer</div>}
@@ -89,7 +94,7 @@ const About = ({ }) => {
             </Space>
           </Button>
         </Col>
-        <Col span={10} className={style.imageWrp}>
+        <Col span={lg ? 10 : 0} className={style.imageWrp}>
           <Image src={BG} alt='bg' style={{ width: '100%' }} />
         </Col>
       </Row>
