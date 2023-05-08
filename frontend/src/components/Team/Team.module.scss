@@ -75,3 +75,15 @@ $slide-width: 30rem;
 
 .cardWrp {
 }
+
+@media screen and (max-width: 1240px) {
+  .slider {
+    width: 760px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider {
+    width: 420px;
+  }
+}

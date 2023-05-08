@@ -11,6 +11,11 @@
   --hex-side: 100px;
   --hex-rotate: 30deg;
   --transition: 0.5s;
+  --sm: 576px;
+  --md: 768px;
+  --lg: 992px;
+  --xl: 1200px;
+  --xxl: 1600px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,35 +49,6 @@ h1 {
   gap: 20px;
 }
 
-/* 
-#category {
-  font-family: Staatliches;
-  font-weight: 500;
-}
-
-#title {
-  letter-spacing: 0.4px;
-  font-size: 22px;
-  font-size: 1.375rem;
-  line-height: 1.13636;
-}
-
-#banner {
-  margin: 20px;
-  height: 800px;
-}
-
-#editor {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.75;
-}
-
-.uk-navbar-container {
-  background: #fff !important;
-  font-family: Staatliches;
-} */
-
 .topBar {
   padding: 40px 120px;
 }
@@ -87,4 +63,11 @@ h1 {
 .ant-collapse .ant-collapse-item .ant-collapse-header {
   align-items: center;
   padding: 12px 24px;
+}
+
+.ant-upload-wrapper .ant-upload {
+  display: block;
+}
+.ant-upload-wrapper .ant-upload-list {
+  margin-bottom: 20px;
 }

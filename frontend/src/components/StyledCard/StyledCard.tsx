@@ -56,7 +56,7 @@ const StyledCard: React.FC<{
     >
       <AntCard
         hoverable
-        style={{ width: 440 }}
+        // style={{ maxWidth: 440 }}
         // cover={!isFlip && <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
         // className={style.card}
         ref={cardRef}

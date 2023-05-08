@@ -33,7 +33,7 @@ $slide-width: 30rem;
 }
 
 .grid {
-  width: 1200px;
+  width: 1168px;
 }
 
 .sliderWrp {
@@ -95,5 +95,23 @@ $slide-width: 30rem;
   box-sizing: border-box;
   &.open {
     visibility: visible;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .grid {
+    width: 1168px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .grid {
+    width: 760px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    width: 424px;
   }
 }

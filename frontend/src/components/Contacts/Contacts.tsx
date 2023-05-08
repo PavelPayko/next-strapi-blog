@@ -21,7 +21,15 @@ const Contacts: FC<{
       <PageTitle title='Contacts' />
       <div className={style.grid}>
         <List
-          grid={{ gutter: 16, column: 4 }}
+          grid={{
+            gutter: 16,
+            xs: 1,
+            sm: 1,
+            md: 2,
+            lg: 2,
+            xl: 3,
+            xxl: 4,
+          }}
           dataSource={data}
           renderItem={(item, i) => {
             const photo = {

@@ -105,7 +105,7 @@ coverage
 ############################
 # Strapi
 ############################
-
+frontend/.env
 .env
 license.txt
 exports
@@ -114,4 +114,5 @@ dist
 build
 .strapi-updater.json
 
-frontend/.env
+# local env files
+.env

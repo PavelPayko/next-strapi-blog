@@ -2,8 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import style from "./Nav.module.scss";
-import { Dropdown, Menu, MenuProps } from 'antd';
+import { Divider, Dropdown, Menu, MenuProps } from 'antd';
 import Logo from '@/assets/images/K-1.png'
+import { MenuOutlined } from '@ant-design/icons';
+import { log } from 'console';
 
 const Nav: React.FC<{
   categories?: any
@@ -12,8 +14,6 @@ const Nav: React.FC<{
   const navRef = useRef(null as HTMLDivElement | null)
   const [current, setCurrent] = useState('');
   const [locale, setLocale] = useState('ru')
-
-
 
   // const wHeihgt = window.screen.availHeight
 
@@ -56,7 +56,9 @@ const Nav: React.FC<{
 
   const onClick: MenuProps['onClick'] = (e) => {
     console.log('click ', e);
-    setCurrent(e.key);
+    if (e.key === 'blog' || e.key === 'vacancy') {
+      setCurrent(e.key);
+    }
   };
 
   const localeChangeHandler: MenuProps['onClick'] = (e) => {
@@ -64,11 +66,21 @@ const Nav: React.FC<{
     setLocale(e.key);
   };
 
+
+  const localeItems: MenuProps['items'] = [
+    {
+      key: 'ru',
+      label: 'RU',
+    },
+    {
+      key: 'eng',
+      label: 'ENG',
+    },
+  ];
+
   const items: MenuProps['items'] = [
     {
-      label: <a href="/#about" data-hash="#about">
-        <span>О НАС</span>
-      </a>,
+      label: <Link href="/#about">О НАС</Link>,
       key: 'about',
     },
     {
@@ -101,40 +113,30 @@ const Nav: React.FC<{
       </Link>),
       key: 'blog',
     },
+    {
+      label: (<Dropdown
+        menu={{
+          items: localeItems,
+          selectable: true,
+          defaultSelectedKeys: [locale],
+          onClick: localeChangeHandler,
+        }}
+        placement="bottom"
+        className={style.localeInner}
+      >
+        <span>{locale.toUpperCase()}</span>
+      </Dropdown>),
+      key: 'locale',
+    },
   ]
 
-  const localeItems: MenuProps['items'] = [
-    {
-      key: 'ru',
-      label: 'RU',
-    },
-    {
-      key: 'eng',
-      label: 'ENG',
-    },
-  ];
-
+  const onSelect = ({ item, key, keyPath, selectedKeys, domEvent }: any) => {
+    console.log('select', key, selectedKeys)
+  }
 
   return (
     <div className={style.wrp} ref={navRef}>
       <div className="logo" >
-        {/* <a
-          id="logo"
-          href="https://kvando.tech/ru"
-          title="Qualitative software development"
-          data-height="60"
-          data-padding="10"
-        >
-          <img
-            className="logo-main scale-with-grid "
-            src="https://kvando.tech/wp-content/uploads/2021/08/K-1.png"
-            data-retina="https://kvando.tech/wp-content/uploads/2021/08/K-1.png"
-            data-height="1500"
-            alt="K"
-            data-no-retina=""
-            width={250}
-          />
-        </a> */}
         <Link href={"/"} >
           <Image src={Logo} alt='Kvando' width={200} />
         </Link>
@@ -146,6 +148,8 @@ const Nav: React.FC<{
         items={items}
         style={{ flex: "auto", minWidth: 0 }}
         className={style.menu}
+        overflowedIndicator={<MenuOutlined />}
+        onSelect={onSelect}
       />
 
       <div className={style.locale}>
