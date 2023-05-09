@@ -117,7 +117,7 @@ const Header = ({ }) => {
 
         <div className={style.content}>
           <span className={style.pre}>аутстафф/аутсорс компания.</span>
-          <h1 className={style.title}>KVANDO Technologies</h1>
+          <h1 className={style.title}>KVAN<span className={style.color}>DO</span> Technologies</h1>
           <p className={style.desc}>Всегда готовы быстро усилить вашу IT команду
             и выполнить проект любой сложности под ключ.
           </p>

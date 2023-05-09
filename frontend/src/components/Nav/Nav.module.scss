@@ -43,3 +43,12 @@
     display: block;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .wrp {
+    padding: 0;
+  }
+  .logo {
+    width: 100%;
+  }
+}

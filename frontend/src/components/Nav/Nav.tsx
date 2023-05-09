@@ -5,7 +5,6 @@ import style from "./Nav.module.scss";
 import { Divider, Dropdown, Menu, MenuProps } from 'antd';
 import Logo from '@/assets/images/K-1.png'
 import { MenuOutlined } from '@ant-design/icons';
-import { log } from 'console';
 
 const Nav: React.FC<{
   categories?: any
@@ -136,7 +135,7 @@ const Nav: React.FC<{
 
   return (
     <div className={style.wrp} ref={navRef}>
-      <div className="logo" >
+      <div className={style.logo} >
         <Link href={"/"} >
           <Image src={Logo} alt='Kvando' width={200} />
         </Link>
@@ -146,7 +145,7 @@ const Nav: React.FC<{
         selectedKeys={[current]}
         mode="horizontal"
         items={items}
-        style={{ flex: "auto", minWidth: 0 }}
+        // style={{ flex: "auto", minWidth: 0 }}
         className={style.menu}
         overflowedIndicator={<MenuOutlined />}
         onSelect={onSelect}
