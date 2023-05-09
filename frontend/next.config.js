@@ -5,6 +5,10 @@ const nextConfig = {
     loader: "default",
     domains: ["localhost", "127.0.0.1"],
   },
+  i18n: {
+    locales: ['en-US', 'en', 'ru'],
+    defaultLocale: 'ru',
+  },
 }
 
 module.exports = nextConfig

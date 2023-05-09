@@ -5,6 +5,9 @@ import style from "./Nav.module.scss";
 import { Divider, Dropdown, Menu, MenuProps } from 'antd';
 import Logo from '@/assets/images/K-1.png'
 import { MenuOutlined } from '@ant-design/icons';
+import { useRouter } from 'next/router';
+import { ru } from '@/locales/ru'
+import { en } from '@/locales/en'
 
 const Nav: React.FC<{
   categories?: any
@@ -13,6 +16,14 @@ const Nav: React.FC<{
   const navRef = useRef(null as HTMLDivElement | null)
   const [current, setCurrent] = useState('');
   const [locale, setLocale] = useState('ru')
+
+  const router = useRouter();
+  const t = router.locale === 'ru' ? ru : en;
+
+
+
+  console.log('locale', router.locale);
+
 
   // const wHeihgt = window.screen.availHeight
 
@@ -79,36 +90,36 @@ const Nav: React.FC<{
 
   const items: MenuProps['items'] = [
     {
-      label: <Link href="/#about">О НАС</Link>,
+      label: <Link href="/#about">{t.nav.about}</Link>,
       key: 'about',
     },
     {
       label: <a href="/#projects" data-hash="#projects">
-        <span>ПРОЕКТЫ</span>
+        <span>{t.nav.projects}</span>
       </a>,
       key: 'projects',
     },
     {
       label: <a href="/#team" data-hash="#team">
-        <span>КОМАНДА</span>
+        <span>{t.nav.team}</span>
       </a>,
       key: 'team',
     },
     {
       label: <a href="#contacts" data-hash="#contacts">
-        <span>КОНТАКТЫ</span>
+        <span>{t.nav.contacts}</span>
       </a>,
       key: 'contacts',
     },
     {
       label: <a href="/vacancy">
-        <span>ВАКАНСИИ</span>
+        <span>{t.nav.vacancy}</span>
       </a>,
       key: 'vacancy',
     },
     {
       label: (<Link href="/blog">
-        <span>БЛОГ</span>
+        <span>{t.nav.blog}</span>
       </Link>),
       key: 'blog',
     },
