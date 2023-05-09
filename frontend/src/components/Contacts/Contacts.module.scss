@@ -112,6 +112,12 @@ $slide-width: 30rem;
 
 @media screen and (max-width: 768px) {
   .grid {
-    width: 424px;
+    width: 420px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .grid {
+    width: 350px;
   }
 }

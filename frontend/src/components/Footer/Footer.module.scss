@@ -111,4 +111,22 @@
   .locale {
     display: none;
   }
+  .privacyLink {
+    font-size: 14px;
+  }
+  .links {
+    gap: 16px;
+
+    .contactsRight,
+    .contactsLeft {
+      svg {
+        font-size: 24px;
+      }
+      justify-content: flex-start;
+    }
+
+    // svg {
+    //   width: 20px;
+    // }
+  }
 }

@@ -87,3 +87,9 @@ $slide-width: 30rem;
     width: 420px;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .slider {
+    width: 350px;
+  }
+}
