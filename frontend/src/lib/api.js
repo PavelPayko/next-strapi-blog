@@ -35,14 +35,11 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
 		`/api${path}${queryString ? `?${queryString}` : ""}`
 	)}`;
 
-	console.log('api', requestUrl, mergedOptions);
-
 	// Trigger API call
 	const response = await fetch(requestUrl, mergedOptions);
 
 	// Handle response
 	if (!response.ok) {
-		console.error(response.statusText);
 		throw new Error(`An error occured please try again`);
 	}
 	const data = await response.json();

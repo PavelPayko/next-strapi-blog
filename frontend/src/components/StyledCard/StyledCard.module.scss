@@ -34,14 +34,14 @@
   justify-content: center;
 
   .icon {
-    background-color: rgba($color: #fe4c1c, $alpha: 0.3);
+    background-color: rgba($color: var(--orangeColor), $alpha: 0.3);
     position: relative;
     border-radius: 50%;
     width: 90px;
     height: 90px;
     line-height: 90px;
     transition: var(--transition);
-    color: var(--main-orange);
+    color: var(--orangeColor);
     font-size: 40px;
     // margin-bottom: 30px;
     margin-left: auto;
@@ -72,7 +72,7 @@
       height: 12px;
       z-index: 1;
       border-radius: 50%;
-      background-color: var(--main-yellow);
+      background-color: var(--primaryColor);
     }
 
     .circle_two {

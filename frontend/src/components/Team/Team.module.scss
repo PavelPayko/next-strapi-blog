@@ -61,7 +61,7 @@ $slide-width: 30rem;
   margin-right: 10px;
   box-sizing: border-box;
   .title {
-    color: #fe4c1c;
+    color: var(--orangeColor);
     font-size: 18px;
     font-family: "Ubuntu mono";
   }
@@ -85,5 +85,11 @@ $slide-width: 30rem;
 @media screen and (max-width: 768px) {
   .slider {
     width: 420px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .slider {
+    width: 350px;
   }
 }

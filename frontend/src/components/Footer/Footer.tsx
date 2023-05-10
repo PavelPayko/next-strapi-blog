@@ -12,7 +12,7 @@ const { useBreakpoint } = Grid;
 const Footer: FC<{}> = ({ }) => {
 
   const [locale, setLocale] = useState('ru')
-  const { md, xl } = useBreakpoint();
+  const { sm, md, xl } = useBreakpoint();
 
   const [colSize, setColSize] = useState(6)
 
@@ -25,11 +25,16 @@ const Footer: FC<{}> = ({ }) => {
       console.log('size', 'lg');
 
       setColSize(8)
-    } else {
+    }
+    else if (sm) {
+      console.log('size', 'lg');
+
       setColSize(12)
+    } else {
+      setColSize(24)
     }
 
-  }, [xl, md])
+  }, [xl, md, sm])
 
   const localeItems: MenuProps['items'] = [
     {
@@ -111,12 +116,12 @@ const Footer: FC<{}> = ({ }) => {
       </Row>
 
       <Row className={style.privacy}>
-        <Col span={md ? 8 : 12} className={style.logo}>
+        <Col span={md ? 8 : 10} className={style.logo}>
           <Link href={"/"} >
-            <Image src={Logo} alt='Kvando' width={200} />
+            <Image src={Logo} alt='Kvando' width={md ? 200 : 150} />
           </Link>
         </Col>
-        <Col span={md ? 8 : 12} className={style.privacyLink}>
+        <Col span={md ? 8 : 14} className={style.privacyLink}>
           <Link href={"/privacy"} >
             ⓒ Конфиденциальность 2023
           </Link>

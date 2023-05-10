@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import style from "./Bg.module.scss";
+import { Grid } from "antd";
+
+const { useBreakpoint } = Grid;
 
 export default function Bg() {
+  const { lg } = useBreakpoint();
   const r1 = useRef(null);
   const p1 = useRef(null);
   const p2 = useRef(null);
@@ -38,7 +42,7 @@ export default function Bg() {
     <svg
       width="100%"
       height="100%"
-      viewBox="0 0 1440 451"
+      viewBox={lg ? "0 0 1440 451" : "0 0 500 768"}
       style={{ opacity: "1" }}
       className={style.svg}
     >
