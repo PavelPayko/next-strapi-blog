@@ -52,8 +52,6 @@ const Footer: FC<{}> = ({ }) => {
     setLocale(e.key);
   };
 
-  // const colSize = xl ? 6 : 8
-
   return (
     <footer className={style.container}>
 

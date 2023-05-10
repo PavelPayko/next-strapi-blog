@@ -1,4 +1,3 @@
-import Title from 'antd/es/typography/Title'
 import React from 'react'
 import style from './PageTitle.module.scss'
 

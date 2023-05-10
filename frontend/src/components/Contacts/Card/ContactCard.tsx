@@ -1,6 +1,6 @@
 import React, { FC, useRef, useState } from "react";
 import style from "./ContactCard.module.scss";
-import { Typography, Carousel, Tabs, Switch, Card, List, Button } from 'antd';
+import { Card, Button } from 'antd';
 import { ShareAltOutlined } from '@ant-design/icons';
 import Tg from '@/assets/svg/Tg'
 import Mail from '@/assets/svg/Mail'
@@ -16,7 +16,6 @@ const ContactCard: FC<{
   const cover = <Image src={url} alt='photo' width={340} height={340} style={{ objectFit: 'cover' }} />
 
   return (
-
     <Card
       bodyStyle={{ position: 'relative' }}
       cover={cover}

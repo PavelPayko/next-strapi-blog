@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import style from "./Contacts.module.scss";
-// import Image from "next/image";
 import { List } from 'antd';
 import { Employee } from './Contacts.interface';
 import { getStrapiMedia } from '@/lib/media';

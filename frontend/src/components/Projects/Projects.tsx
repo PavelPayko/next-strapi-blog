@@ -13,8 +13,6 @@ const Projects = ({ }) => {
   const router = useRouter();
   const t = router.locale === 'ru' ? ru : en;
 
-
-
   return (
     <section className={style.container} id="projects">
       <PageTitle title={t.projects.pageTitle} />

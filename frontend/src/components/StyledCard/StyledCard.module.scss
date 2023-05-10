@@ -1,10 +1,11 @@
 .card {
-  position: relative;
-  overflow: hidden;
+  // position: relative;
+  // overflow: hidden;
   // height: 280px;
 
   &:hover {
     .icon {
+      border: none;
       background-color: var(--whiteColor);
       box-shadow: 0 0 15px rgb(0 0 0 / 10%);
 
@@ -21,13 +22,13 @@
   align-items: center;
 }
 .desc {
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
   max-height: 200px;
   height: 200px;
 }
 
 .cover {
-  transition: all 0.8s linear;
+  transition: all 0.6s linear;
   max-height: 200px;
   height: 200px;
   align-items: center;
@@ -109,4 +110,10 @@
 .height {
   max-height: 0;
   overflow: hidden;
+}
+
+.rotate {
+  svg {
+    transform: rotateX(180deg);
+  }
 }

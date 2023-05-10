@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import style from "./About.module.scss";
 import Image from "next/image";
 import { Button, Typography, Row, Col, List, Space, Grid } from 'antd';
@@ -57,19 +57,13 @@ const About = ({ }) => {
         <Col span={lg ? 14 : 24} className={style.listWrp}>
           <List
             header={<h3>Главные плюсы работы с Kvando:</h3>}
-            // footer={<div>Footer</div>}
-            // bordered
             dataSource={data}
             renderItem={(item) => (
               <List.Item>
-                {/* <Typography.Text mark>[ITEM]</Typography.Text>  */}
-                {/* <p className={style.item}> */}
                 <Space size={16}>
                   <CheckOutlined />
                   {item}
                 </Space>
-                {/* </p> */}
-
               </List.Item>
             )}
           />
@@ -84,7 +78,6 @@ const About = ({ }) => {
         </Col>
       </Row>
       <div className={style.content}>
-
       </div>
     </section >
   );
