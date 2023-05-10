@@ -8,7 +8,6 @@ import PageTitle from '../PageTitle/PageTitle';
 import { ru } from '@/locales/ru'
 import { en } from '@/locales/en'
 import { useRouter } from 'next/router';
-import { data } from './mockdata';
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
@@ -18,36 +17,34 @@ const About = ({ }) => {
   const { lg } = useBreakpoint();
 
   const router = useRouter();
-  const t = router.locale === 'ru' ? ru : en;
+  const { about: t } = router.locale === 'ru' ? ru : en;
 
   return (
     <section className={style.container} id='about'>
-      <PageTitle title={t.about.pageTitle} />
+      <PageTitle title={t.pageTitle} />
       <Row gutter={40} style={{ marginBottom: '40px' }}>
         <Col span={lg ? 10 : 24} className={style.titleWrp}>
           {/* <Image src={BG} alt='bg' style={{ width: '100%' }} /> */}
-          <Title level={3} className={style.firstTitle}>Обеспечиваем
-            полный цикл
-            разработки
-            проекта
+          <Title level={3} className={style.firstTitle}>
+            {t.title}
           </Title>
         </Col>
         <Col span={lg ? 14 : 24} className={style.cardsWrp}>
           <Paragraph>
-            Kvando Technologies, Inc. — специализируется на разработке, тестировании и поддержке продукта. Среди наших проектов — разработка ПО для международной мультивалютной платежной системы с количеством юзеров 5 миллиардов человек, разработка части функционала клиентской массовой многопользовательской онлайн-игры в реальном времени с числом юзеров около 80 миллионов, международные fintech и healthtech проекты.
+            {t.desc}
           </Paragraph>
           <div className={style.cards}>
             <div className={style.card}>
-              <span className={style.num}>3+</span>
-              <span className={style.desc}>года на рынке</span>
+              <span className={style.num}>{t.cards.experience.num}</span>
+              <span className={style.desc}>{t.cards.experience.desc}</span>
             </div>
             <div className={style.card}>
-              <span className={style.num}>80+</span>
-              <span className={style.desc}>завершенных проектов</span>
+              <span className={style.num}>{t.cards.projects.num}</span>
+              <span className={style.desc}>{t.cards.projects.desc}</span>
             </div>
             <div className={style.card}>
-              <span className={style.num}>60+</span>
-              <span className={style.desc}>компаний партнеров</span>
+              <span className={style.num}>{t.cards.partners.num}</span>
+              <span className={style.desc}>{t.cards.partners.desc}</span>
             </div>
           </div>
         </Col>
@@ -56,8 +53,8 @@ const About = ({ }) => {
       <Row gutter={40}>
         <Col span={lg ? 14 : 24} className={style.listWrp}>
           <List
-            header={<h3>Главные плюсы работы с Kvando:</h3>}
-            dataSource={data}
+            header={<h3>{t.list.title}</h3>}
+            dataSource={t.list.data}
             renderItem={(item) => (
               <List.Item>
                 <Space size={16}>
@@ -69,7 +66,8 @@ const About = ({ }) => {
           />
           <Button size='large' type='primary' style={{ width: '300px' }} >
             <Space>
-              <DownloadOutlined />Скачать презентацию
+              <DownloadOutlined />
+              {t.downloadButton}
             </Space>
           </Button>
         </Col>

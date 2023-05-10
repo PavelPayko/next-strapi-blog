@@ -18,7 +18,7 @@ const Nav: React.FC<{
   const [locale, setLocale] = useState('ru')
 
   const router = useRouter();
-  const t = router.locale === 'ru' ? ru : en;
+  const { nav: t } = router.locale === 'ru' ? ru : en;
   const { pathname, asPath } = router
 
 
@@ -85,36 +85,36 @@ const Nav: React.FC<{
 
   const items: MenuProps['items'] = [
     {
-      label: <Link href="/#about">{t.nav.about}</Link>,
+      label: <Link href="/#about">{t.about}</Link>,
       key: 'about',
     },
     {
       label: <a href="/#projects" data-hash="#projects">
-        <span>{t.nav.projects}</span>
+        <span>{t.projects}</span>
       </a>,
       key: 'projects',
     },
     {
       label: <a href="/#team" data-hash="#team">
-        <span>{t.nav.team}</span>
+        <span>{t.team}</span>
       </a>,
       key: 'team',
     },
     {
       label: <a href="#contacts" data-hash="#contacts">
-        <span>{t.nav.contacts}</span>
+        <span>{t.contacts}</span>
       </a>,
       key: 'contacts',
     },
     {
       label: <a href="/vacancy">
-        <span>{t.nav.vacancy}</span>
+        <span>{t.vacancy}</span>
       </a>,
       key: 'vacancy',
     },
     {
       label: (<Link href="/blog">
-        <span>{t.nav.blog}</span>
+        <span>{t.blog}</span>
       </Link>),
       key: 'blog',
     },

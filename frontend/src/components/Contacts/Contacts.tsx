@@ -14,7 +14,7 @@ const Contacts: FC<{
 }> = ({ contacts = [] }) => {
 
   const router = useRouter();
-  const t = router.locale === 'ru' ? ru : en;
+  const { contacts: t } = router.locale === 'ru' ? ru : en;
 
   const data = [] as Employee[]
 
@@ -24,7 +24,7 @@ const Contacts: FC<{
 
   return (
     <section className={style.container} id="contacts">
-      <PageTitle title={t.contacts.pageTitle} />
+      <PageTitle title={t.pageTitle} />
       <div className={style.grid}>
         <List
           grid={{
