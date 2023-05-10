@@ -5,10 +5,16 @@ import { Employee } from './Team.interface';
 import { getStrapiMedia } from '@/lib/media';
 import Image from 'next/image';
 import PageTitle from '../PageTitle/PageTitle';
+import { ru } from '@/locales/ru'
+import { en } from '@/locales/en'
+import { useRouter } from 'next/router';
 
 const Team: FC<{
   frontenders?: Employee[]
 }> = ({ frontenders = [] }) => {
+
+  const router = useRouter();
+  const t = router.locale === 'ru' ? ru : en;
 
   const prevIcon = <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none" strokeLinecap="round" strokeLinejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -82,7 +88,7 @@ const Team: FC<{
 
   return (
     <section className={style.container} id="team">
-      <PageTitle title='Team' />
+      <PageTitle title={t.team.pageTitle} />
       <div className={style.slider}>
         <div className={style.bar}>
           {/* <span className={style.title}>Develop team</span> */}

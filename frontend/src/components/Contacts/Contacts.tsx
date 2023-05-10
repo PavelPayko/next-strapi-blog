@@ -6,10 +6,17 @@ import { Employee } from './Contacts.interface';
 import { getStrapiMedia } from '@/lib/media';
 import ContactCard from './Card/ContactCard';
 import PageTitle from '../PageTitle/PageTitle';
+import { useRouter } from 'next/router';
+import { ru } from '@/locales/ru'
+import { en } from '@/locales/en'
 
 const Contacts: FC<{
   contacts?: Employee[]
 }> = ({ contacts = [] }) => {
+
+  const router = useRouter();
+  const t = router.locale === 'ru' ? ru : en;
+
   const data = [] as Employee[]
 
   for (let i = 0; i <= 3; i++) {
@@ -18,7 +25,7 @@ const Contacts: FC<{
 
   return (
     <section className={style.container} id="contacts">
-      <PageTitle title='Contacts' />
+      <PageTitle title={t.contacts.pageTitle} />
       <div className={style.grid}>
         <List
           grid={{

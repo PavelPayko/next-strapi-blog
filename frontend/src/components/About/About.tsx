@@ -1,39 +1,28 @@
 import React, { useRef, useState } from "react";
-import Link from "next/link";
 import style from "./About.module.scss";
-import Theme from "@/assets/images/theme.png";
 import Image from "next/image";
-import { Button, Card, Typography, Divider, Row, Col, List, Space, Grid } from 'antd';
-import { LikeOutlined, DollarOutlined, PlusOutlined, CheckOutlined, AppstoreAddOutlined, TeamOutlined, DownloadOutlined } from '@ant-design/icons';
-// import YBG from '@/assets/images/YBG.png'
+import { Button, Typography, Row, Col, List, Space, Grid } from 'antd';
+import { CheckOutlined, DownloadOutlined } from '@ant-design/icons';
 import BG from '@/assets/images/about.png'
 import PageTitle from '../PageTitle/PageTitle';
-// import Paragraph from 'antd/es/typography/Paragraph';
+import { ru } from '@/locales/ru'
+import { en } from '@/locales/en'
+import { useRouter } from 'next/router';
+import { data } from './mockdata';
 
-const { Meta } = Card;
-const { Title, Text, Paragraph } = Typography;
+const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
 
 const About = ({ }) => {
 
   const { lg } = useBreakpoint();
 
-  console.log(lg)
-
-  const data = [
-    'Снижение затрат на обслуживание штатных сотрудников;',
-    'Предложим Вам специалистов разного уровня под ваши требования.',
-    'Гибкость в управлении персоналом;',
-    'Гарантии и стабильность',
-    'Увеличение расходов, отображаемых в бухгалтерском балансе, а значит снижение налогов на прибыль. ',
-    'Отсутствие административной и финансовой нагрузки на компанию при фактическом руководстве сотрудниками',
-    'Уменьшены риски возникновения страховых и прочих непредвиденных случаев с персоналом.',
-    'Снятие с компании обязательств по трудовым спорам с сотрудниками;',
-  ];
+  const router = useRouter();
+  const t = router.locale === 'ru' ? ru : en;
 
   return (
     <section className={style.container} id='about'>
-      <PageTitle title='About' />
+      <PageTitle title={t.about.pageTitle} />
       <Row gutter={40} style={{ marginBottom: '40px' }}>
         <Col span={lg ? 10 : 24} className={style.titleWrp}>
           {/* <Image src={BG} alt='bg' style={{ width: '100%' }} /> */}
@@ -42,10 +31,6 @@ const About = ({ }) => {
             разработки
             проекта
           </Title>
-          {/* <Title level={3}>полный цикл
-          </Title>
-          <Title level={3}>разработки</Title>
-          <Title level={3}>проекта</Title> */}
         </Col>
         <Col span={lg ? 14 : 24} className={style.cardsWrp}>
           <Paragraph>

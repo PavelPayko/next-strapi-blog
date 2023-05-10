@@ -19,13 +19,8 @@ const Nav: React.FC<{
 
   const router = useRouter();
   const t = router.locale === 'ru' ? ru : en;
+  const { pathname, asPath } = router
 
-
-
-  console.log('locale', router.locale);
-
-
-  // const wHeihgt = window.screen.availHeight
 
   useEffect(() => {
     const aboutSection = document?.getElementById('about')
@@ -71,9 +66,9 @@ const Nav: React.FC<{
     }
   };
 
-  const localeChangeHandler: MenuProps['onClick'] = (e) => {
-    console.log('click ', e);
-    setLocale(e.key);
+  const localeChangeHandler: MenuProps['onClick'] = ({ key }) => {
+    setLocale(key);
+    router.push(pathname, asPath, { locale: key })
   };
 
 
@@ -83,8 +78,8 @@ const Nav: React.FC<{
       label: 'RU',
     },
     {
-      key: 'eng',
-      label: 'ENG',
+      key: 'en',
+      label: 'EN',
     },
   ];
 

@@ -1,14 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import React from "react";
 import style from "./ContactForm.module.scss";
-import Theme from "@/assets/images/theme.png";
 import Image from "next/image";
-import { Button, Card, Col, Form, Grid, Input, Menu, MenuProps, Row, Tabs, Upload, UploadProps, message } from 'antd';
-import { ArrowDownOutlined, UploadOutlined } from '@ant-design/icons';
-import Bg from '@/components/Bg'
-import { AndroidOutlined, AppleOutlined } from '@ant-design/icons';
+import { Button, Col, Form, Grid, Input, Row, Upload, UploadProps, message } from 'antd';
+
 import Blot from '@/assets/images/blot.png'
 import PageTitle from '../PageTitle/PageTitle';
+import { ru } from '@/locales/ru'
+import { en } from '@/locales/en'
+import { useRouter } from 'next/router';
 
 const { useBreakpoint } = Grid;
 
@@ -17,6 +16,9 @@ const ContactForm = ({ }) => {
   const [form] = Form.useForm();
 
   const { xl, md } = useBreakpoint();
+
+  const router = useRouter();
+  const t = router.locale === 'ru' ? ru : en;
 
   const props: UploadProps = {
     name: 'file',
@@ -45,7 +47,7 @@ const ContactForm = ({ }) => {
         // style={{ maxWidth: 600 }}
         className={style.form}
       >
-        <PageTitle title={'Form'} />
+        <PageTitle title={t.contactForm.pageTitle} />
         <Row gutter={20}>
           <Col span={col}>
             <Form.Item >
