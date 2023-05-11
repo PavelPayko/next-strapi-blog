@@ -14,19 +14,15 @@
 .menu {
   flex: auto;
   min-width: 0;
-  justify-content: center;
+  justify-content: flex-end;
   border-bottom: none;
   text-transform: uppercase;
-
-  li {
-    margin: 0 20px;
-  }
 }
 .locale {
   cursor: pointer;
 }
 .localeInner {
-  display: none;
+  // display: none;
   position: relative;
   &::before {
     display: block;

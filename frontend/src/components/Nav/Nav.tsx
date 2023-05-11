@@ -13,14 +13,13 @@ const Nav: React.FC<{
   categories?: any
 }> = ({ }) => {
 
-  const navRef = useRef(null as HTMLDivElement | null)
-  const [current, setCurrent] = useState('');
-  const [locale, setLocale] = useState('ru')
-
   const router = useRouter();
   const { nav: t } = router.locale === 'ru' ? ru : en;
   const { pathname, asPath } = router
 
+  const navRef = useRef(null as HTMLDivElement | null)
+  const [current, setCurrent] = useState('');
+  const [locale, setLocale] = useState(router.locale || 'ru')
 
   useEffect(() => {
     const aboutSection = document?.getElementById('about')
@@ -85,54 +84,60 @@ const Nav: React.FC<{
 
   const items: MenuProps['items'] = [
     {
-      label: <Link href="/#about">{t.about}</Link>,
+      label: <Link href="/#about">{t.about.toUpperCase()}</Link>,
       key: 'about',
     },
     {
-      label: <a href="/#projects" data-hash="#projects">
-        <span>{t.projects}</span>
-      </a>,
+      label: <Link href="/#projects">{t.projects.toUpperCase()}</Link>,
       key: 'projects',
     },
     {
-      label: <a href="/#team" data-hash="#team">
-        <span>{t.team}</span>
-      </a>,
+      label: <Link href="/#team">{t.team.toUpperCase()}</Link>,
       key: 'team',
     },
     {
-      label: <a href="#contacts" data-hash="#contacts">
-        <span>{t.contacts}</span>
-      </a>,
+      label: <Link href="/#contacts">{t.contacts.toUpperCase()}</Link>,
       key: 'contacts',
     },
     {
-      label: <a href="/vacancy">
-        <span>{t.vacancy}</span>
-      </a>,
+      label: <Link href="/vacancy">{t.vacancy.toUpperCase()}</Link>,
       key: 'vacancy',
     },
     {
-      label: (<Link href="/blog">
-        <span>{t.blog}</span>
-      </Link>),
+      label: <Link href="/blog">{t.blog.toUpperCase()}</Link>,
       key: 'blog',
     },
+    { type: 'divider' },
     {
-      label: (<Dropdown
-        menu={{
-          items: localeItems,
-          selectable: true,
-          defaultSelectedKeys: [locale],
-          onClick: localeChangeHandler,
-        }}
-        placement="bottom"
-        className={style.localeInner}
-      >
-        <span>{locale.toUpperCase()}</span>
-      </Dropdown>),
+      label: <span>{router.locale?.toUpperCase()}</span>,
       key: 'locale',
+      children: [
+        {
+          label: <Link href={pathname} as={asPath} locale={'ru'}>RU</Link>,
+          key: 'ru'
+        },
+        {
+          label: <Link href={pathname} as={asPath} locale={'en'}>EN</Link>,
+          key: 'en'
+        },
+      ]
     },
+    // {
+    //   label: (<Dropdown
+    //     menu={{
+    //       items: localeItems,
+    //       selectable: true,
+    //       defaultSelectedKeys: [locale],
+    //       onClick: localeChangeHandler,
+    //     }}
+    //     placement="bottom"
+    //     className={style.localeInner}
+    //   >
+    //     <span>{locale?.toUpperCase()}</span>
+    //   </Dropdown>),
+    //   key: 'locale',
+    //   style: { marginLeft: '32px' }
+    // },
   ]
 
   const onSelect = ({ item, key, keyPath, selectedKeys, domEvent }: any) => {
@@ -157,7 +162,7 @@ const Nav: React.FC<{
         onSelect={onSelect}
       />
 
-      <div className={style.locale}>
+      {/* <div className={style.locale}>
         <Dropdown
           menu={{
             items: localeItems,
@@ -169,7 +174,7 @@ const Nav: React.FC<{
         >
           <span>{locale.toUpperCase()}</span>
         </Dropdown>
-      </div>
+      </div> */}
     </div>
   );
 };

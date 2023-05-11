@@ -33,6 +33,7 @@
   height: 200px;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
   .icon {
     background-color: rgba($color: var(--orangeColor), $alpha: 0.3);
