@@ -12,12 +12,18 @@ import style from './style.module.scss'
 import { ArrowsAltOutlined, CodeOutlined, ExpandAltOutlined, ShrinkOutlined } from '@ant-design/icons';
 import { Collapse } from 'antd';
 import Tg from '@/assets/svg/Tg'
+import { ru } from '@/locales/ru'
+import { en } from '@/locales/en'
+import { useRouter } from 'next/router';
 
 const { Panel } = Collapse;
 
 const Home = ({ articles, categories, homepage, vacancies }: any) => {
 
-  const { Text, Title } = Typography
+  const { Text, Title, Paragraph } = Typography
+
+  const router = useRouter();
+  const { vacancy: t } = router.locale === 'ru' ? ru : en;
 
   console.log('vacancies', vacancies);
   const [current, setCurrent] = useState('all');
@@ -43,79 +49,47 @@ const Home = ({ articles, categories, homepage, vacancies }: any) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.attributes.seo} />
-      <PageTitle title='Vacancy' />
+      <PageTitle title={t.pageTitle} />
 
       <Row gutter={16} className={style.container}>
-        <Col span={4}>
+        {/* <Col span={4}>
           <Menu onClick={onClick} selectedKeys={[current]} mode="vertical" items={items} style={{ width: 256 }} />
 
-        </Col>
-        {/* <Col >
-          <List
-            itemLayout="horizontal"
-            size='large'
-            dataSource={vacancies}
-            renderItem={(item: any, index) => (
-              <Link href={`vacancy/${item.id}`}>
-                <List.Item
-                  actions={[<Button >Откликнуться</Button>]}
-                >
-                  <List.Item.Meta
-                    avatar={<CodeOutlined style={{ fontSize: '30px' }} />}
-                  // title={item.attributes.name}
-                  // description={item.attributes.type}
-                  />
-                  <div className={style.content}>
-                    <Text>{item.attributes.name}</Text>
-                    <Text type="secondary">{item.attributes.type}</Text>
-                    <Text type="secondary">{item.attributes.category}</Text>
-                  </div>
-                </List.Item>
-              </Link>
-            )}
-          />
         </Col> */}
-        <Col span={20}>
+        <Col span={24}>
+          <Paragraph >
+            <div dangerouslySetInnerHTML={{ __html: t.introduction }} />
+          </Paragraph>
           <Collapse
             bordered={false}
+            // ghost
             expandIcon={({ isActive }) => isActive
               ? <ShrinkOutlined style={{ fontSize: '30px' }} />
               : <ArrowsAltOutlined style={{ fontSize: '30px' }} />
             }>
             {vacancies.map((item: any) => <Panel
               header={<div className={style.content}>
-                <Title level={4}>{item.attributes.name}</Title >
-                <Text type="secondary">{item.attributes.type}</Text>
-                <Text type="secondary">{item.attributes.category}</Text>
+                <Title level={4}>{item.attributes.title}</Title >
               </div>}
               key={item.id}
             >
-              <Descriptions title="Desc" layout='vertical' column={1}>
-                <Descriptions.Item label="Какие знания необходимы">
-                  - опыт работы с JS;
-                  - опыт работы с React или Vue желателен;
-                  -опыт работы с TypeScript желателен;
-                  -желателен опыт с Linux и облачными технологиями (Docker, CF/K8s, Git);
+              <Descriptions layout='vertical' column={1} className={style.desc}>
+                <Descriptions.Item label={t.responsibilities} >
+                  {item.attributes?.responsibilities}
                 </Descriptions.Item>
-                <Descriptions.Item label="Успешному кандидату мы предлагаем:">
-                  -своевременная выплата заработной платы
-                  -достойный уровень оплаты труда, выше рынка;
-                  -интересные задачи и проекты, перспективы карьерного роста и развития;
-                  -лояльное руководство;
-                  -комфортное, полностью укомплектованное рабочее место. Современная техника и КО.
-                  -чай/кофе, кухня, комната отдыха в офисе;
-                  -уютный, современный офис в бизнес-центре в 2 минутах от Кургана;
-                  -комфортный график работы: выбираете время начала работы с 9-00-10-00. Восьмичасовой рабочий день, 5/2, выходные - суббота и воскресенье;
-                  -молодой, дружный коллектив;
-                  -корпоративная жизнь компании;
+                <Descriptions.Item label={t.requirements}>
+                  {item.attributes?.requirements}
                 </Descriptions.Item>
-                <Descriptions.Item label="Что по проектам?">
-                  Kvando классическая аутстафф компания. Подберем проект и будем всегда на Вашей стороне.
+                <Descriptions.Item label={t.conditions}>
+                  {item.attributes?.conditions}
+                </Descriptions.Item>
+                <Descriptions.Item>
+                  <Title level={5}>{t.conclusion}</Title>
                 </Descriptions.Item>
                 <Descriptions.Item >
                   <Link href={'https://t.me/ValeriBondareva'}>
                     <Button type='primary' className={style.btn} style={{ color: '#000' }} size='large'>
-                      Откликнуться <Tg color='#000' />
+                      {t.respondButton} <Tg color='#000' />
                     </Button>
                   </Link>
                 </Descriptions.Item>
@@ -135,15 +109,6 @@ const Home = ({ articles, categories, homepage, vacancies }: any) => {
           </Collapse></Col>
       </Row>
 
-
-
-      {/* <div className="uk-section">
-        <div className="uk-container uk-container-large">
-          <h1>{homepage.attributes.hero.title}</h1>
-          <Articles articles={articles} />
-        </div>
-      </div> */}
-      {/* <Header /> */}
     </Layout >
   );
 };

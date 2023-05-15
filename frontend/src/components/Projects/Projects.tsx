@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Projects.module.scss";
 import { List } from 'antd';
-import StyledCard from '../StyledCard/StyledCard';
+import ProjectCard from './ProjectCard/ProjectCard';
 import PageTitle from '../PageTitle/PageTitle';
 import { useRouter } from 'next/router';
 import { data } from './mockdata';
@@ -32,7 +32,7 @@ const Projects = ({ }) => {
         renderItem={(item) => (
           <List.Item className={style.card} >
             {/* <Card title={item.title}>Card content</Card> */}
-            <StyledCard title={item.title} desc={item.desc} cover={item.cover} />
+            <ProjectCard title={item.title} desc={item.desc} cover={item.cover} />
           </List.Item>
         )}
       />

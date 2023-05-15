@@ -10,8 +10,11 @@ import { en } from '@/locales/en'
 import { useRouter } from 'next/router';
 
 const Team: FC<{
-  frontenders?: Employee[]
-}> = ({ frontenders = [] }) => {
+  developers?: Employee[]
+}> = ({ developers = [] }) => {
+
+  console.log('developers', developers);
+
 
   const router = useRouter();
   const t = router.locale === 'ru' ? ru : en;
@@ -48,7 +51,7 @@ const Team: FC<{
   const cards = [] as Employee[]
 
   for (let i = 0; i <= 3; i++) {
-    frontenders.forEach(item => cards.push(item))
+    developers.forEach(item => cards.push(item))
   }
 
   const settings = {
@@ -105,14 +108,12 @@ const Team: FC<{
         // style={{ width: '800px' }}
         >
           {cards.map(ent => {
-            const photo = {
-              data: ent.attributes.photo.data[0]
-            }
-            const url = getStrapiMedia(photo)
+
+            const url = getStrapiMedia(ent.attributes.photo.data)
 
             return <div className={style.cardWrp}>
-              <Card cover={<Image src={url} alt='photo' width={340} height={340} style={{ objectFit: 'cover' }} />} >
-                <Card.Meta title={ent.attributes.name} description={ent.attributes.stack} />
+              <Card cover={<Image src={url} alt='photo' width={340} height={340} style={{ objectFit: 'cover', objectPosition: 'top' }} />} >
+                <Card.Meta title={ent.attributes.name} description={ent.attributes.position} />
               </Card>
             </div>
           })}

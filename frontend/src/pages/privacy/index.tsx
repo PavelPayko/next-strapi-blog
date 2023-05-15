@@ -1,28 +1,33 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Articles from "@/components/Articles/Articles";
 import Layout from "@/components/layout";
 import Seo from "@/components/seo";
 import { fetchAPI } from "@/lib/api";
 import PageTitle from '@/components/PageTitle/PageTitle';
-import BlogCategorySelect from '@/components/Blog/BlogCategorySelect/BlogCategorySelect';
 import { ru } from '@/locales/ru'
 import { en } from '@/locales/en'
 import { useRouter } from 'next/router';
-import Loading from './loading';
+import { List } from 'antd';
 
-const Home = ({ articles, categories, homepage }: any) => {
+const Home = () => {
 
   const router = useRouter();
-  const { blog: t } = router.locale === 'ru' ? ru : en;
+  const { privacy: t } = router.locale === 'ru' ? ru : en;
 
   return (
-    <Layout categories={categories}>
-      <Seo seo={homepage.attributes.seo} />
-      <PageTitle title={t.pageTitle} />
-      <BlogCategorySelect title={t.category} categories={categories} />
-      <Suspense fallback={<Loading />}>
-        <Articles articles={articles} />
-      </Suspense>
+    <Layout>
+      {/* <Seo seo={homepage.attributes.seo} /> */}
+      <PageTitle title={t.title} />
+      <List
+        size="small"
+        // header={<div>Header</div>}
+        // footer={<div>Footer</div>}
+        // bordered
+        style={{ padding: '20px 40px' }}
+        dataSource={t.data}
+        renderItem={(item) => <List.Item>{item}</List.Item>}
+        split={false}
+      />
     </Layout>
   );
 };

@@ -11,7 +11,7 @@ import Contacts from "@/components/Contacts/Contacts";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import Footer from "@/components/Footer/Footer";
 
-const Home = ({ articles, categories, homepage, frontenders, contacts }) => {
+const Home = ({ articles, categories, homepage, developers, contacts }) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.attributes.seo} />
@@ -24,7 +24,7 @@ const Home = ({ articles, categories, homepage, frontenders, contacts }) => {
       <Header />
       <About />
       <Projects />
-      <Team frontenders={frontenders} />
+      <Team developers={developers} />
       <Contacts contacts={contacts} />
       <ContactForm />
       <Footer />
@@ -34,26 +34,32 @@ const Home = ({ articles, categories, homepage, frontenders, contacts }) => {
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [articlesRes, categoriesRes, homepageRes, frontendersRes] =
-    await Promise.all([
-      fetchAPI("/articles", { populate: ["image", "category"] }),
-      fetchAPI("/categories", { populate: "*" }),
-      fetchAPI("/homepage", {
-        populate: {
-          hero: "*",
-          seo: { populate: "*" },
-        },
-      }),
-      fetchAPI("/frontenders", { populate: "*" }),
-    ]);
+  const [
+    articlesRes,
+    categoriesRes,
+    homepageRes,
+    developersRes,
+    commercialsRes,
+  ] = await Promise.all([
+    fetchAPI("/articles", { populate: ["image", "category"] }),
+    fetchAPI("/categories", { populate: "*" }),
+    fetchAPI("/homepage", {
+      populate: {
+        hero: "*",
+        seo: { populate: "*" },
+      },
+    }),
+    fetchAPI("/developers", { populate: "*" }),
+    fetchAPI("/commercials", { populate: "*" }),
+  ]);
 
   return {
     props: {
       articles: articlesRes.data,
       categories: categoriesRes.data,
       homepage: homepageRes.data,
-      frontenders: frontendersRes.data,
-      contacts: frontendersRes.data,
+      developers: developersRes.data,
+      contacts: commercialsRes.data,
     },
     revalidate: 1,
   };

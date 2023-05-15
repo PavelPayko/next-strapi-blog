@@ -25,7 +25,7 @@ const Card = ({ article }) => {
 						height={height}
 						src={getStrapiMedia(image)}
 						alt={alternativeText || ""}
-						style={{ maxHeight: '400px', objectFit: 'cover', aspectRatio: '16 / 9' }}
+						style={{ maxHeight: '400px', objectFit: 'cover', aspectRatio: '16 / 9', objectPosition: 'top' }}
 						className={style.card}
 					/>
 				}

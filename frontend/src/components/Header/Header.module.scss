@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  margin-top: -65px;
 }
 
 .main {
@@ -51,7 +52,7 @@
   .title {
     font-size: 60px;
     margin: 12px 0 24px 0;
-    font-family: "Ubuntu Mono", monospace;
+    font-family: "Comfortaa", monospace;
     .color {
       color: var(--primaryColor);
     }
@@ -63,7 +64,6 @@
   }
   .desc {
     font-size: 24px;
-    font-family: "Ubuntu Mono", monospace;
   }
 
   .controls {

@@ -7,6 +7,9 @@ import Logo from '@/assets/images/K-1.png'
 import { EnvironmentOutlined, MailOutlined, PhoneOutlined, YoutubeOutlined } from '@ant-design/icons';
 import Vk from '@/assets/svg/Vk'
 import Tg from '@/assets/svg/Tg'
+import Habr from '@/assets/svg/Habr'
+import Hh from '@/assets/svg/Hh'
+import Arda from '@/assets/svg/Arda'
 const { useBreakpoint } = Grid;
 
 const Footer: FC<{}> = ({ }) => {
@@ -109,6 +112,12 @@ const Footer: FC<{}> = ({ }) => {
             <Link href={"https://www.youtube.com/@igorkhristenko5444"} >
               <YoutubeOutlined style={{ fontSize: '30px' }} />YouTube
             </Link>
+            <Link href={"https://www.youtube.com/@igorkhristenko5444"} >
+              <Habr />Habr
+            </Link>
+            <Link href={"https://www.youtube.com/@igorkhristenko5444"} >
+              <Hh />Hh
+            </Link>
           </div>
         </Col>
       </Row>
@@ -122,6 +131,7 @@ const Footer: FC<{}> = ({ }) => {
         <Col span={md ? 8 : 14} className={style.privacyLink}>
           <Link href={"/privacy"} >
             ⓒ Конфиденциальность 2023
+
           </Link>
         </Col>
         <Col span={8} className={style.locale}>
@@ -136,6 +146,9 @@ const Footer: FC<{}> = ({ }) => {
           >
             <span>{locale.toUpperCase()}</span>
           </Dropdown>
+        </Col>
+        <Col span={24} style={{ textAlign: 'center' }}>
+          <Link href={'https://arda.digital/'} target="_blank" > <Arda width={90} /></Link>
         </Col>
       </Row>
     </footer >

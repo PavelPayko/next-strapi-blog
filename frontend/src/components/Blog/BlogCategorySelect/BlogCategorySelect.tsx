@@ -1,16 +1,13 @@
 import React from "react";
-import { Dropdown, MenuProps, Select, Space, Tag } from 'antd';
-import type { CustomTagProps } from 'rc-select/lib/BaseSelect';
+import { Dropdown, Space } from 'antd';
 import Link from 'next/link';
-import { CaretDownOutlined, DownOutlined } from '@ant-design/icons';
-import style from './BlogCategorySelect.module.scss'
-
+import { CaretDownOutlined } from '@ant-design/icons';
+import style from './BlogCategorySelect.module.scss';
 
 const BlogCategorySelect: React.FC<{
-	categories: any
-}> = ({ categories }) => {
-
-	console.log('categories', categories);
+	categories: any,
+	title: string
+}> = ({ categories, title }) => {
 
 	const catItems = categories.map((cat: any) => ({
 		key: cat.id,
@@ -22,7 +19,7 @@ const BlogCategorySelect: React.FC<{
 			<Dropdown menu={{ items: catItems }} className={style.dropdown}>
 				<a onClick={(e) => e.preventDefault()}>
 					<Space>
-						Category
+						{title}
 						<CaretDownOutlined />
 					</Space>
 				</a>

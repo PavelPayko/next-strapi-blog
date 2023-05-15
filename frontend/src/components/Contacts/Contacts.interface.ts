@@ -4,9 +4,12 @@ export interface Employee {
 	attributes: Attributes
 }
 
-interface Attributes {
+export interface Attributes {
 	name: string
-	stack: string
+	position: string
+	telegram?: string
+	mail?: string
+	withContacts: boolean
 	createdAt: string
 	updatedAt: string
 	publishedAt: string
@@ -17,7 +20,7 @@ export interface Photo {
 	data: {
 		id: number
 		attributes: PhotoAttributes
-	}[]
+	}
 }
 
 export interface PhotoAttributes {

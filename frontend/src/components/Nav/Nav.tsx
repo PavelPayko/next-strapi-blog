@@ -62,6 +62,8 @@ const Nav: React.FC<{
     console.log('click ', e);
     if (e.key === 'blog' || e.key === 'vacancy') {
       setCurrent(e.key);
+    } else {
+      setCurrent('');
     }
   };
 

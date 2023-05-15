@@ -1,13 +1,12 @@
 .container {
-  padding: 0 120px;
-  margin: 0 auto;
+  padding: 0 80px;
 }
 
 .content {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 80%;
+  width: 100%;
 
   span {
     display: block;
@@ -23,8 +22,4 @@
   &:hover {
     color: #000;
   }
-}
-
-.desc {
-  white-space: break-spaces;
 }

@@ -29,7 +29,7 @@ const BlogCard: React.FC<{
 							height={height}
 							src={getStrapiMedia(image)}
 							alt={alternativeText || ""}
-							style={{ maxHeight: '400px', objectFit: 'cover', aspectRatio: '16 / 9' }}
+							style={{ maxHeight: '400px', objectFit: 'cover', aspectRatio: '16 / 9', objectPosition: 'top' }}
 						/>
 						<div className={style.hover}><ReadOutlined /> Читать дальше</div>
 					</div>

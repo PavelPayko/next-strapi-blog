@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "commercials",
+  "info": {
+    "singularName": "commercial",
+    "pluralName": "commercials",
+    "displayName": "commercial"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "telegram": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "string"
+    },
+    "withContacts": {
+      "type": "boolean"
+    }
+  }
+}
