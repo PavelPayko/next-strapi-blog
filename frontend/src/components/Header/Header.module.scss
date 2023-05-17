@@ -137,3 +137,11 @@
     }
   }
 }
+
+@media screen and (max-width: 576px) {
+  .content {
+    .title {
+      font-size: 42px;
+    }
+  }
+}
