@@ -12,6 +12,9 @@ const BlogCard: React.FC<{
 	article: any
 }> = ({ article }) => {
 
+	console.log('article', article);
+
+
 	const image = article.attributes.image
 	const { alternativeText, width, height } = image?.data?.attributes;
 
@@ -27,7 +30,7 @@ const BlogCard: React.FC<{
 							layout="responsive"
 							width={width}
 							height={height}
-							src={getStrapiMedia(image)}
+							src={getStrapiMedia(image?.data)}
 							alt={alternativeText || ""}
 							style={{ maxHeight: '400px', objectFit: 'cover', aspectRatio: '16 / 9', objectPosition: 'top' }}
 						/>
