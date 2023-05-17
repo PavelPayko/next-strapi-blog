@@ -6,7 +6,7 @@ const nextConfig = {
     domains: ["localhost", "127.0.0.1"],
   },
   i18n: {
-    locales: ['en-US', 'en', 'ru'],
+    locales: ['en', 'ru'],
     defaultLocale: 'ru',
   },
 }
