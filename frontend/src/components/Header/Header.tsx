@@ -18,30 +18,29 @@ const Header = ({ }) => {
       <div className={style.container}>
 
         <div className={style.content}>
-          <span className={style.pre}>{t.subtitle}</span>
-          <h1 className={style.title}>KVAN<span className={style.color}>DO</span> Technologies</h1>
-          <p className={style.desc}>{t.desc}
-          </p>
-          <div className={style.controls}>
-            <Button type='primary' size='large'>
-              <Link href='/#contact_us'>{t.buttonPrimary}</Link>
-            </Button>
-            <Button type='default' size='large'>
-              <Link href='/#contact_us'>{t.buttonSecondary}</Link>
-            </Button>
+          <div className={style.left}>
+            <span className={style.pre}>{t.subtitle}</span>
+            <h1 className={style.title}>KVAN<span className={style.color}>DO</span></h1>
+          </div>
+          <div className={style.right}>
+            <h1 className={style.titleSecondary}> Technologies</h1>
+            <p className={style.desc}>
+              {t.desc}
+            </p>
+            <div className={style.controls}>
+              <Button type='primary' size='large'>
+                <Link href='/#contact_us'>{t.buttonPrimary}</Link>
+              </Button>
+              <Button type='default' size='large'>
+                <Link href='/#contact_us'>{t.buttonSecondary}</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div >
 
       <div className={style.decor}>
-        <div className={`${style.animation_circle_inverse} ${style.col_auto}`}>
-          <i></i>
-          <i></i>
-          <i></i>
-        </div>
-        <div className={style.shapes}>
-          <Bg />
-        </div>
+        {/* <div className={style.bgYellow}></div> */}
       </div>
     </header >
   );

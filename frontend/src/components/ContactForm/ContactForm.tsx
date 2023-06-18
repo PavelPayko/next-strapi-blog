@@ -47,53 +47,58 @@ const ContactForm = ({ }) => {
         // style={{ maxWidth: 600 }}
         className={style.form}
       >
-        <PageTitle title={t.pageTitle} />
+        <span className={style.title}>{t.pageTitle}</span>
         <Row gutter={20}>
           <Col span={col}>
             <Form.Item >
               <Input placeholder={t.name} size='large' />
             </Form.Item>
-          </Col>
-          <Col span={col}>
+
             <Form.Item >
               <Input placeholder={t.company} size='large' />
             </Form.Item>
+
+            <Form.Item >
+              <Input placeholder={t.tel} size='large' />
+            </Form.Item>
+
+            <Form.Item >
+              <Input placeholder={t.mail} size='large' />
+            </Form.Item>
+
+            <Form.Item >
+              <Input.TextArea placeholder={t.message} size='large' autoSize={{ minRows: 4, maxRows: 4 }} />
+            </Form.Item>
+
+            <div className={style.buttons}>
+              <Button type='primary' htmlType='submit' size='large' style={{ width: md ? '240px' : '100%' }} >
+                {t.sendButton}
+              </Button>
+
+              <div className={'styled_upload'}>
+                <Upload {...props} >
+                  <Button size='large' style={{ width: md ? '240px' : '100%', marginBottom: '20px' }} >
+                    {t.uploadButton}
+                  </Button>
+                </Upload>
+              </div>
+            </div>
           </Col>
         </Row>
 
         <Row gutter={20}>
           <Col span={col}>
-            <Form.Item >
-              <Input placeholder={t.tel} size='large' />
-            </Form.Item>
-            <Form.Item >
-              <Input placeholder={t.mail} size='large' />
-            </Form.Item>
+
           </Col>
           <Col span={col}>
-            <Form.Item >
-              <Input.TextArea placeholder={t.message} size='large' autoSize={{ minRows: 4, maxRows: 4 }} />
-            </Form.Item>
           </Col>
         </Row>
 
         <Row gutter={20}>
           <Col span={md ? 12 : 24}>
-            <div className={'styled_upload'}>
-              <Upload {...props} >
-                <Button size='large' style={{ width: md ? '240px' : '100%', marginBottom: '20px' }} >
-                  {t.uploadButton}
-                </Button>
-              </Upload>
-            </div>
 
-            <Button type='primary' htmlType='submit' size='large' style={{ width: md ? '240px' : '100%' }} >
-              {t.sendButton}
-            </Button>
           </Col>
-          <Col span={12} className={style.end}>
-            <Image src={Blot} alt='' width={185} className={style.blot} />
-          </Col>
+
         </Row>
       </Form>
     </div >

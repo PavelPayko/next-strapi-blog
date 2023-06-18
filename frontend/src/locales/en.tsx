@@ -1,3 +1,9 @@
+import EdTechSvg from '@/assets/svg/EdTech';
+import FinTechSvg from '@/assets/svg/FinTech';
+import HrTechSvg from '@/assets/svg/HrTech';
+import MarketplaceSvg from '@/assets/svg/MarketPlace';
+import TelecommunicationsSvg from '@/assets/svg/Telecommunications';
+import TourismSvg from '@/assets/svg/Tourism';
 import { BankOutlined, BookOutlined, CommentOutlined, CompassOutlined, TrademarkOutlined, UsergroupAddOutlined } from '@ant-design/icons';
 
 export const en = {
@@ -18,8 +24,16 @@ export const en = {
 	},
 	about: {
 		pageTitle: 'About',
-		title: 'We provide a full cycle of project development',
-		desc: 'Kvando Technologies, Inc. — specializes in product development, testing and support. Among our projects are the development of software for an international multi—currency payment system with 5 billion users, the development of a part of the functionality of a client massively multiplayer online game in real time with about 80 million users, international fintech and healthtech projects.',
+		title: 'We provide|a full cycle|of project development',
+		desc: 'Kvando Technologies|, Inc. — specializes in product development, testing and support.',
+		descList: {
+			title: 'Среди наших проектов:',
+			data: [
+				'разработка ПО для международной мультивалютной платежной системы с количеством |юзеров 5 миллиардов человек;',
+				'разработка части функционала клиентской массовой многопользовательской онлайн-игры в реальном времени с числом |юзеров около 80 миллионов;',
+				'международные fintech и healthtech проекты.|'
+			]
+		},
 		cards: {
 			experience: {
 				num: '3+',
@@ -65,7 +79,7 @@ export const en = {
 					системы авторизации
 					Разработка банковского календаря для
 					сотрудников`,
-					cover: <BankOutlined />
+					cover: <FinTechSvg />
 				},
 				{
 					title: 'EdTech',
@@ -79,7 +93,7 @@ export const en = {
 					системы авторизации
 					Разработка банковского календаря для
 					сотрудников`,
-					cover: <BookOutlined />
+					cover: <EdTechSvg />
 				},
 				{
 					title: 'Telecom',
@@ -93,7 +107,7 @@ export const en = {
 					системы авторизации
 					Разработка банковского календаря для
 					сотрудников`,
-					cover: <CommentOutlined />
+					cover: <TelecommunicationsSvg />
 				},
 				{
 					title: 'HrTech',
@@ -107,7 +121,7 @@ export const en = {
 					системы авторизации
 					Разработка банковского календаря для
 					сотрудников`,
-					cover: <UsergroupAddOutlined />
+					cover: <HrTechSvg />
 				},
 				{
 					title: 'Tourism',
@@ -121,7 +135,7 @@ export const en = {
 					системы авторизации
 					Разработка банковского календаря для
 					сотрудников`,
-					cover: <CompassOutlined />
+					cover: <TourismSvg />
 				},
 				{
 					title: 'Marketplaces',
@@ -135,7 +149,7 @@ export const en = {
 					системы авторизации
 					Разработка банковского календаря для
 					сотрудников`,
-					cover: <TrademarkOutlined />
+					cover: <MarketplaceSvg />
 				},
 			]
 		}
@@ -167,8 +181,19 @@ export const en = {
 		conditions: 'conditions',
 		conclusion: 'If you see yourself in this description, feel free to send your resume, we will be happy to tell you about the details of the position!',
 		respondButton: 'Respond',
-		introduction: 'Kvando Technologies, Inc. IT компания, специализируется на разработке, тестировании и поддержке продукта. Приглашаем разработчиков. Гарантируем интересные и сложные проекты, профессиональный и финансовый рост. Каждый день обучение и поддержка. Ждём в команду амбициозных людей.'
-
+		introduction: 'Мы - международная компания |Kvando Technologies|, Inc. IT компания, специализируемся на разработке, тестировании и поддержке программного продукта. ',
+		invite: `Приглашаем в команду *vacancy*.`,
+		garants: `Обучение, карьерный и финансовый рост, получение опыта в самой актуальной на сегодняшней день сфере IT гарантируем.`,
+		form: {
+			pageTitle: 'ОТКЛИКНУТЬСЯ НА ВАКАНСИЮ',
+			name: 'Name',
+			tel: 'Phone',
+			mail: 'Mail',
+			portfolio: 'Ссылка на портфолио',
+			message: 'Message',
+			uploadButton: 'Attach a file',
+			sendButton: 'Send'
+		}
 	},
 	privacy: {
 		title: 'USER AGREEMENT',

@@ -10,8 +10,16 @@ import Team from "@/components/Team/Team";
 import Contacts from "@/components/Contacts/Contacts";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import Footer from "@/components/Footer/Footer";
+import Gallery from "@/components/Gallery/Gallery";
 
-const Home = ({ articles, categories, homepage, developers, contacts }) => {
+const Home = ({
+  articles,
+  categories,
+  homepage,
+  developers,
+  contacts,
+  gallery,
+}) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.attributes.seo} />
@@ -21,13 +29,12 @@ const Home = ({ articles, categories, homepage, developers, contacts }) => {
           <Articles articles={articles} />
         </div>
       </div> */}
-      <Header />
       <About />
       <Projects />
+      <Gallery gallery={gallery} />
       <Team developers={developers} />
       <Contacts contacts={contacts} />
       <ContactForm />
-      <Footer />
     </Layout>
   );
 };
@@ -40,6 +47,7 @@ export async function getStaticProps() {
     homepageRes,
     developersRes,
     commercialsRes,
+    galleryRes,
   ] = await Promise.all([
     fetchAPI("/articles", { populate: ["image", "category"] }),
     fetchAPI("/categories", { populate: "*" }),
@@ -51,6 +59,7 @@ export async function getStaticProps() {
     }),
     fetchAPI("/developers", { populate: "*" }),
     fetchAPI("/commercials", { populate: "*" }),
+    fetchAPI("/galleries", { populate: "*" }),
   ]);
 
   return {
@@ -60,6 +69,7 @@ export async function getStaticProps() {
       homepage: homepageRes.data,
       developers: developersRes.data,
       contacts: commercialsRes.data,
+      gallery: galleryRes.data[0],
     },
     revalidate: 1,
   };

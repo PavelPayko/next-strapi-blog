@@ -1,4 +1,9 @@
-import { BankOutlined, BookOutlined, CommentOutlined, CompassOutlined, TrademarkOutlined, UsergroupAddOutlined } from '@ant-design/icons';
+import EdTechSvg from '@/assets/svg/EdTech';
+import FinTechSvg from '@/assets/svg/FinTech';
+import TelecommunicationsSvg from '@/assets/svg/Telecommunications';
+import HrTechSvg from '@/assets/svg/HrTech';
+import TourismSvg from '@/assets/svg/Tourism';
+import MarketplaceSvg from '@/assets/svg/MarketPlace';
 export const ru = {
 	nav: {
 		about: 'О нас',
@@ -17,8 +22,16 @@ export const ru = {
 	},
 	about: {
 		pageTitle: 'О нас',
-		title: 'Обеспечиваем полный цикл разработки проекта',
-		desc: 'Kvando Technologies, Inc. — специализируется на разработке, тестировании и поддержке продукта. Среди наших проектов — разработка ПО для международной мультивалютной платежной системы с количеством юзеров 5 миллиардов человек, разработка части функционала клиентской массовой многопользовательской онлайн-игры в реальном времени с числом юзеров около 80 миллионов, международные fintech и healthtech проекты.',
+		title: 'Обеспечиваем|полный цикл|разработки проекта',
+		desc: 'Kvando Technologies|, Inc. — специализируется на разработке, тестировании и поддержке продукта.',
+		descList: {
+			title: 'Среди наших проектов:',
+			data: [
+				'разработка ПО для международной мультивалютной платежной системы с количеством |юзеров 5 миллиардов человек;',
+				'разработка части функционала клиентской массовой многопользовательской онлайн-игры в реальном времени с числом |юзеров около 80 миллионов;',
+				'международные fintech и healthtech проекты.|'
+			]
+		},
 		cards: {
 			experience: {
 				num: '3+',
@@ -34,7 +47,7 @@ export const ru = {
 			}
 		},
 		list: {
-			title: '',
+			title: 'ГЛАВНЫЕ ПЛЮСЫ РАБОТЫ С КВАНДО',
 			data: [
 				'Снижение затрат на обслуживание штатных сотрудников;',
 				'Предложим Вам специалистов разного уровня под ваши требования;',
@@ -64,7 +77,7 @@ export const ru = {
 					системы авторизации
 					Разработка банковского календаря для
 					сотрудников`,
-					cover: <BankOutlined />
+					cover: <FinTechSvg />
 				},
 				{
 					title: 'EdTech',
@@ -78,7 +91,7 @@ export const ru = {
 					системы авторизации
 					Разработка банковского календаря для
 					сотрудников`,
-					cover: <BookOutlined />
+					cover: <EdTechSvg />
 				},
 				{
 					title: 'Телекоммуникации',
@@ -92,7 +105,7 @@ export const ru = {
 					системы авторизации
 					Разработка банковского календаря для
 					сотрудников`,
-					cover: <CommentOutlined />,
+					cover: <TelecommunicationsSvg />,
 				},
 				{
 					title: 'HrTech',
@@ -106,7 +119,7 @@ export const ru = {
 					системы авторизации
 					Разработка банковского календаря для
 					сотрудников`,
-					cover: <UsergroupAddOutlined />
+					cover: <HrTechSvg />
 				},
 				{
 					title: 'Туризм',
@@ -120,7 +133,7 @@ export const ru = {
 					системы авторизации
 					Разработка банковского календаря для
 					сотрудников`,
-					cover: <CompassOutlined />
+					cover: <TourismSvg />
 				},
 				{
 					title: 'Маркетплейсы',
@@ -134,7 +147,7 @@ export const ru = {
 					системы авторизации
 					Разработка банковского календаря для
 					сотрудников`,
-					cover: <TrademarkOutlined />
+					cover: <MarketplaceSvg />
 				},
 			]
 		}
@@ -166,7 +179,19 @@ export const ru = {
 		conditions: 'Условия',
 		conclusion: 'Если в этом описании увидели себя, смелее направляйте резюме, с удовольствием расскажем о деталях позиции!',
 		respondButton: 'Откликнуться',
-		introduction: `<b>Kvando Technologies, Inc.</b> IT компания, специализируется на разработке, тестировании и поддержке продукта. Приглашаем разработчиков. Гарантируем интересные и сложные проекты, профессиональный и финансовый рост. Каждый день обучение и поддержка. Ждём в команду амбициозных людей.`
+		introduction: `Мы - международная компания |Kvando Technologies|, Inc. IT компания, специализируемся на разработке, тестировании и поддержке программного продукта. `,
+		invite: `Приглашаем в команду *vacancy*.`,
+		garants: `Обучение, карьерный и финансовый рост, получение опыта в самой актуальной на сегодняшней день сфере IT гарантируем.`,
+		form: {
+			pageTitle: 'ОТКЛИКНУТЬСЯ НА ВАКАНСИЮ',
+			name: 'Имя',
+			tel: 'Телефон',
+			mail: 'Почта',
+			portfolio: 'Ссылка на портфолио',
+			message: 'Сообщение',
+			uploadButton: 'Прикрепить файл',
+			sendButton: 'Отправить'
+		}
 	},
 	privacy: {
 		title: 'ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ',

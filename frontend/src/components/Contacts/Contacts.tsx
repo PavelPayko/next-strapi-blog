@@ -8,6 +8,7 @@ import PageTitle from '../PageTitle/PageTitle';
 import { useRouter } from 'next/router';
 import { ru } from '@/locales/ru'
 import { en } from '@/locales/en'
+import Card from '../Card/Card';
 
 const Contacts: FC<{
   contacts?: Employee[]
@@ -16,11 +17,11 @@ const Contacts: FC<{
   const router = useRouter();
   const { contacts: t } = router.locale === 'ru' ? ru : en;
 
-  // const data = [] as Employee[]
+  const data = [] as Employee[]
 
-  // for (let i = 0; i <= 3; i++) {
-  //   contacts.forEach(item => data.push(item))
-  // }
+  for (let i = 0; i <= 3; i++) {
+    contacts.forEach(item => data.push(item))
+  }
 
   return (
     <section className={style.container} id="contacts">
@@ -34,15 +35,16 @@ const Contacts: FC<{
             md: 2,
             lg: 2,
             xl: 3,
-            xxl: 4,
+            xxl: 3,
           }}
-          dataSource={contacts}
+          dataSource={data}
           renderItem={(contact, i) => {
 
             const url = getStrapiMedia(contact.attributes.photo.data) || ''
+            const { name, position, telegram } = contact.attributes
             return (
               <List.Item key={i}>
-                <ContactCard attributes={contact.attributes} key={contact.id} />
+                <Card name={name} position={position} imageUrl={url} size='big' link={telegram} key={contact.id} />
               </List.Item>
             )
           }}

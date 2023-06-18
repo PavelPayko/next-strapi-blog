@@ -11,11 +11,11 @@ import { en } from '@/locales/en'
 const Projects = ({ }) => {
 
   const router = useRouter();
-  const t = router.locale === 'ru' ? ru : en;
+  const { projects: t } = router.locale === 'ru' ? ru : en;
 
   return (
     <section className={style.container} id="projects">
-      <PageTitle title={t.projects.pageTitle} />
+      <PageTitle title={t.pageTitle} />
       <List
         grid={{
           gutter: 16,
@@ -23,12 +23,12 @@ const Projects = ({ }) => {
           sm: 1,
           md: 2,
           lg: 2,
-          xl: 3,
-          xxl: 3,
+          xl: 2,
+          xxl: 2,
         }}
         // grid={{ gutter: 8, column: 3 }}
         className={style.list}
-        dataSource={data}
+        dataSource={t.cards.data}
         renderItem={(item) => (
           <List.Item className={style.card} >
             {/* <Card title={item.title}>Card content</Card> */}

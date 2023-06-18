@@ -1,6 +1,8 @@
 // import Header from "./Header/Header";
 // import Nav from "./Nav/Nav";
 import { FC } from "react";
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
 
 const Layout: FC<{
   children?: any,
@@ -8,9 +10,8 @@ const Layout: FC<{
   seo?: any,
 }> = ({ children, categories, seo }) => (
   <>
-    {/* <Nav categories={categories} /> */}
-    {/* <Header /> */}
     {children}
+    <Footer />
   </>
 );
 

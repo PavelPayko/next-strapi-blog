@@ -27,7 +27,8 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
 			"Content-Type": "application/json",
 			"Authorization": `bearer ${token}`
 		},
-		...options,	};
+		...options,
+	};
 
 	// Build request URL
 	const queryString = qs.stringify(urlParamsObject);

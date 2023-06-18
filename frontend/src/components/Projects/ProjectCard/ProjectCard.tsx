@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import style from "./ProjectCard.module.scss";
 import { Button, Card as AntCard, Typography } from 'antd';
-import { CaretUpOutlined } from '@ant-design/icons';
+import { ArrowUpOutlined, CaretUpOutlined } from '@ant-design/icons';
 
 const { Meta } = AntCard;
 
@@ -19,34 +19,34 @@ const ProjectCard: React.FC<{
   >
     <div className={style.icon} >
       {cover}
-      <div className={style.circles}>
-        <div className={style.circle_one}></div>
-        <div className={style.circle_two}></div>
-      </div>
     </div>
   </div>
 
   return (
-    <div className={style.card}
+    <div
+    // className={style.card}
+    // onClick={() => setIsFlip(prev => !prev)}
     >
       <AntCard
         hoverable
         ref={cardRef}
         cover={coverEl}
         onClick={() => setIsFlip(prev => !prev)}
+        className={style.card}
       >
         <Meta
-          title={<span className={style.title}>
-            {title}
+          title={<span className={style.titleWrp}>
+            <span className={style.title}>{title}</span>
             <Button
               type="primary"
               shape="circle"
-              icon={<CaretUpOutlined />}
+              icon={<ArrowUpOutlined style={{ color: '#fff' }} />}
               // onClick={() => setIsFlip(prev => !prev)}
               className={isFlip ? style.rotate : ""}
             />
           </span>}
           description={<div className={`${style.desc} ${isFlip ? style.height : ''}`}>{desc}</div>}
+        // style={{ height: 0, padding: 0, position: 'absolute' }}
         />
       </AntCard>
     </div>

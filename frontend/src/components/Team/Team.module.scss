@@ -34,11 +34,15 @@ $slide-width: 30rem;
 
 .slider {
   width: 1200px;
+  position: relative;
 }
 
 .sliderWrp {
   display: flex;
   gap: 20px;
+}
+.sliderContainer {
+  display: inline-block;
 }
 .carousel__wrap {
   margin-top: 10%;
@@ -72,10 +76,49 @@ $slide-width: 30rem;
   width: 100px;
   justify-content: space-between;
 }
+%controlWrp {
+  display: inline-flex;
+  position: absolute;
 
-.cardWrp {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.controlPrev {
+  @extend %controlWrp;
+  left: -200px;
+}
+.controlNext {
+  @extend %controlWrp;
+  right: -200px;
+}
+.control {
+  //  display: inline-flex;
+  // position: absolute;
+  // left: 218px;
+  padding: 17px 36px;
+  background: var(--primaryColor);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.cardWrp {
+  position: relative;
+}
+.content {
+  position: absolute;
+  bottom: 0;
+  width: 346px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(15px);
+  padding: 15px 23px;
+  margin-right: 54px;
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 8px;
+}
 @media screen and (max-width: 1240px) {
   .slider {
     width: 760px;

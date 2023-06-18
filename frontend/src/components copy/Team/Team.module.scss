@@ -1,0 +1,95 @@
+$slide-count: 5;
+$slide-width: 30rem;
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 60px solid #555555;
+  border-right: 0;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+  }
+}
+
+.container {
+  // background: #ffeba5;
+  // background: linear-gradient(135deg, #ffeba5, #efe85e);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.content {
+  width: 50%;
+}
+
+.slider {
+  width: 1200px;
+}
+
+.sliderWrp {
+  display: flex;
+  gap: 20px;
+}
+.carousel__wrap {
+  margin-top: 10%;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 20px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  .title {
+    color: var(--orangeColor);
+    font-size: 18px;
+    font-family: "Ubuntu mono";
+  }
+}
+
+.controls {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.cardWrp {
+}
+
+@media screen and (max-width: 1240px) {
+  .slider {
+    width: 760px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider {
+    width: 420px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .slider {
+    width: 350px;
+  }
+}

@@ -1,30 +1,54 @@
 .card {
-  // position: relative;
-  // overflow: hidden;
-  // height: 280px;
-
+  background: #f7f7f7;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  // background-color: #fff;
+  // padding: 40px;
+  position: relative;
   &:hover {
-    .icon {
-      border: none;
-      background-color: var(--whiteColor);
-      box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    .cover {
+      // border: none;
+      // background: var(--primaryColor);
+      // box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+      // overflow: hidden;
+      &::after {
+        // transition: all 0.6s linear;
+        // transform-origin: 50% 50%;
+        animation-iteration-count: 2;
+        top: 50%;
+        left: 50%;
+        // animation: 0s;
+        transform: translate(-50%, -50%);
+        width: 0px;
+        height: 0px;
+      }
 
-      .circle_two {
-        opacity: 2;
-        visibility: visible;
+      &::before {
+        width: 108px;
+        height: 104px;
       }
     }
   }
 }
-.title {
+.titleWrp {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   align-items: center;
+  padding: 20px;
+}
+.title {
+  position: absolute;
+  top: 40px;
+  left: 40px;
 }
 .desc {
   transition: all 0.6s linear;
   max-height: 200px;
   height: 200px;
+  margin-top: 80px;
+  &.height {
+    margin-top: 0;
+  }
 }
 
 .cover {
@@ -34,27 +58,78 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-top: 80px;
+  position: relative;
+  overflow: visible;
+  &::after {
+    // transition: all 0.2s ease-in;
+    display: block;
+    content: "";
+    width: 95px;
+    height: 92px;
+    border-radius: 8px;
+    background-color: var(--primaryColor);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -25%);
+    // transform: translate(-50%, -50%);
+    transform-origin: 0 0;
+    animation-name: rotateAnim;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &::before {
+    transition: all 0.2s ease-in;
+    // transition-delay: 0.2s;
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-radius: 8px;
+    background-color: var(--primaryColor);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.height {
+    margin-top: 0;
+  }
 
   .icon {
-    background-color: rgba($color: var(--orangeColor), $alpha: 0.3);
-    position: relative;
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    line-height: 90px;
-    transition: var(--transition);
-    color: var(--orangeColor);
-    font-size: 40px;
-    // margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 90px;
+    background: rgba(255, 197, 0, 0.25);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
 
-    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
-      0 5px 12px 4px rgb(0 0 0 / 9%);
+    border-radius: 8px;
+    padding: 26px 34px;
+
+    position: relative;
+    transition: all 0.4s ease-in;
+    z-index: 1;
+
+    // &::after {
+    //   transition: all 0.2s ease-in;
+    //   display: block;
+    //   content: "";
+    //   width: 95px;
+    //   height: 92px;
+    //   border-radius: 8px;
+    //   background-color: var(--primaryColor);
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   z-index: -1;
+    //   transform-origin: 0 0;
+    //   animation-name: rotateAnim;
+    //   animation-duration: 30s;
+    //   animation-iteration-count: infinite;
+    //   animation-timing-function: linear;
+    // }
   }
 
   .circles {

@@ -1,5 +1,5 @@
 .container {
-  padding: 0 120px;
+  padding: 0 184px;
   margin: 0 auto;
 }
 
@@ -27,4 +27,103 @@
 
 .desc {
   white-space: break-spaces;
+}
+
+.list {
+  border-top: 1px solid rgba(5, 5, 5, 0.06);
+  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+}
+
+.item {
+  position: relative;
+  padding: 30px;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: var(--primaryColor);
+    cursor: pointer;
+  }
+
+  .type {
+    margin-right: 200px;
+  }
+  .arrow {
+    transform: rotate(45deg);
+    position: absolute;
+    right: 30px;
+  }
+}
+
+.vacancyContainer {
+  padding: 100px 60px;
+  ul {
+    padding: 0 0 0 18px;
+    margin-block-start: 10px;
+    margin-block-end: 0;
+    list-style-type: square;
+    li {
+      max-width: 1280px;
+    }
+  }
+  h2 {
+    margin: 20px 0 40px 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+  }
+  h4 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin: 30px 0 0 0;
+  }
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  .color {
+    color: var(--primaryColor);
+  }
+  .introduction {
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    max-width: 1280px;
+  }
+  .garants {
+    margin-bottom: 40px;
+  }
+  .responsibilities {
+    ul {
+      list-style-image: url(/list_rect_yellow.png);
+    }
+  }
+
+  .requirements {
+    ul {
+      list-style-image: url(/list_rect_black.png);
+    }
+  }
+  .arrow {
+    margin-right: 10px;
+  }
+  .bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form {
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    .send_button {
+      align-self: flex-start;
+    }
+  }
 }
