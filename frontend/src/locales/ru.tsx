@@ -3,7 +3,7 @@ import FinTechSvg from '@/assets/svg/FinTech';
 import TelecommunicationsSvg from '@/assets/svg/Telecommunications';
 import HrTechSvg from '@/assets/svg/HrTech';
 import TourismSvg from '@/assets/svg/Tourism';
-import MarketplaceSvg from '@/assets/svg/MarketPlace';
+import MarketplaceSvg from '@/assets/svg/Marketplace';
 export const ru = {
 	nav: {
 		about: 'О нас',

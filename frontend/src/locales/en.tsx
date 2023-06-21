@@ -1,7 +1,7 @@
 import EdTechSvg from '@/assets/svg/EdTech';
 import FinTechSvg from '@/assets/svg/FinTech';
 import HrTechSvg from '@/assets/svg/HrTech';
-import MarketplaceSvg from '@/assets/svg/MarketPlace';
+import MarketplaceSvg from '@/assets/svg/Marketplace';
 import TelecommunicationsSvg from '@/assets/svg/Telecommunications';
 import TourismSvg from '@/assets/svg/Tourism';
 import { BankOutlined, BookOutlined, CommentOutlined, CompassOutlined, TrademarkOutlined, UsergroupAddOutlined } from '@ant-design/icons';
