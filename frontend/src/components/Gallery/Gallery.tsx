@@ -11,9 +11,7 @@ import style from './Gallery.module.scss'
 const Gallery: FC<{
   gallery?: Gallery
 }> = ({ gallery }) => {
-
-  console.log('gallery', gallery);
-
+  
   const router = useRouter();
   const t = router.locale === 'ru' ? ru : en;
 

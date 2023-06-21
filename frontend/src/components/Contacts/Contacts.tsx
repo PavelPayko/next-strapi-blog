@@ -37,7 +37,7 @@ const Contacts: FC<{
             xl: 3,
             xxl: 3,
           }}
-          dataSource={data}
+          dataSource={contacts}
           renderItem={(contact, i) => {
 
             const url = getStrapiMedia(contact.attributes.photo.data) || ''
