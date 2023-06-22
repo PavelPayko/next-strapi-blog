@@ -26,7 +26,7 @@ const MyApp = ({ Component, pageProps }: any) => {
         "token": {
           "colorPrimary": "#ffc500",
           fontSize: 16,
-          fontFamily: 'Ubuntu'
+          fontFamily: 'Montserrat'
         },
         components: {
           Menu: {
