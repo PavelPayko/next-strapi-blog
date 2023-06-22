@@ -116,3 +116,5 @@ build
 
 # local env files
 .env
+*/package-lock.json
+*/yarn.lock
