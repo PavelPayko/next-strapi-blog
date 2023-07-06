@@ -1,6 +1,6 @@
 import React, { FC, useRef, useState } from "react";
 import style from "./Team.module.scss";
-import { Carousel, Card } from 'antd';
+import { Carousel, Card, Button } from 'antd';
 import { Employee } from './Team.interface';
 import { getStrapiMedia } from '@/lib/media';
 import Image from 'next/image';
@@ -91,7 +91,17 @@ const Team: FC<{
 
   return (
     <section className={style.container} id="team">
-      <PageTitle title={t.team.pageTitle} />
+      <div className={style.header}>
+        <PageTitle title={t.team.pageTitle} />
+        <div className={style.navMobile}>
+          <Button onClick={prevHandler} className={style.controlMobile}>{prevIcon}</Button>
+          <Button onClick={nextHandler} className={style.controlMobile}>{nextIcon}</Button>
+          {/* <div className={style.controlPrev}>
+        </div>
+        <div className={style.controlNext}>
+        </div> */}
+        </div>
+      </div>
       <div className={style.slider}>
         {/* <div className={style.bar}>
           <div className={style.controls}>
@@ -99,7 +109,7 @@ const Team: FC<{
           </div>
         </div> */}
         <div className={style.controlPrev}>
-          <div onClick={prevHandler} className={style.control}>{prevIcon}</div>
+          <Button onClick={prevHandler} className={style.control}>{prevIcon}</Button>
         </div>
         <Carousel
           {...settings}
@@ -125,7 +135,7 @@ const Team: FC<{
           })}
         </Carousel>
         <div className={style.controlNext}>
-          <div onClick={nextHandler} className={style.control}>{nextIcon}</div>
+          <Button onClick={nextHandler} className={style.control}>{nextIcon}</Button>
         </div>
       </div>
 

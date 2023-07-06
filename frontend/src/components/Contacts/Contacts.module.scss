@@ -34,9 +34,13 @@ $slide-width: 30rem;
 
 .grid {
   // width: 1168px;
-  width: 100%;
-  padding: 0 158px;
-  box-sizing: border-box;
+     width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .sliderWrp {
@@ -74,6 +78,7 @@ $slide-width: 30rem;
 }
 
 .cardWrp {
+
 }
 
 .shareBtn {
@@ -100,26 +105,26 @@ $slide-width: 30rem;
   }
 }
 
-@media screen and (max-width: 1600px) {
-  .grid {
-    width: 1168px;
-  }
-}
+// @media screen and (max-width: 1600px) {
+//   .grid {
+//     width: 1168px;
+//   }
+// }
 
-@media screen and (max-width: 1199px) {
-  .grid {
-    width: 760px;
-  }
-}
+// @media screen and (max-width: 1199px) {
+//   .grid {
+//     width: 760px;
+//   }
+// }
 
-@media screen and (max-width: 768px) {
-  .grid {
-    width: 420px;
-  }
-}
+// @media screen and (max-width: 768px) {
+//   .grid {
+//     width: 420px;
+//   }
+// }
 
-@media screen and (max-width: 576px) {
-  .grid {
-    width: 350px;
-  }
-}
+// @media screen and (max-width: 576px) {
+//   .grid {
+//     width: 350px;
+//   }
+// }

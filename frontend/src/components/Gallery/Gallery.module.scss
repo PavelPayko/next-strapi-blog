@@ -12,7 +12,7 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 336px 0 64px;
+  padding:  0 64px;
   gap: 32px;
 }
 
@@ -24,4 +24,9 @@
   display: flex;
   justify-content: center;
   margin-top: 140px;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
 }

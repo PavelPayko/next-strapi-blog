@@ -25,7 +25,7 @@ export const en = {
 	about: {
 		pageTitle: 'About',
 		title: 'We provide|a full cycle|of project development',
-		desc: 'Kvando Technologies|, Inc. — specializes in product development, testing and support.',
+		desc: 'Kvando Technologies| — specializes in product development, testing and support.',
 		descList: {
 			title: 'Среди наших проектов:',
 			data: [
@@ -36,7 +36,7 @@ export const en = {
 		},
 		cards: {
 			experience: {
-				num: '3+',
+				num: '4+',
 				desc: 'years on the marketplace'
 			},
 			projects: {
@@ -176,12 +176,13 @@ export const en = {
 	},
 	vacancy: {
 		pageTitle: 'Vacancy',
+		desc: `Our team is waiting for you`,
 		responsibilities: 'responsibilities',
 		requirements: 'requirements',
 		conditions: 'conditions',
 		conclusion: 'If you see yourself in this description, feel free to send your resume, we will be happy to tell you about the details of the position!',
 		respondButton: 'Respond',
-		introduction: 'Мы - международная компания |Kvando Technologies|, Inc. IT компания, специализируемся на разработке, тестировании и поддержке программного продукта. ',
+		introduction: 'Мы - международная компания |Kvando Technologies|. IT компания, специализируемся на разработке, тестировании и поддержке программного продукта. ',
 		invite: `Приглашаем в команду *vacancy*.`,
 		garants: `Обучение, карьерный и финансовый рост, получение опыта в самой актуальной на сегодняшней день сфере IT гарантируем.`,
 		form: {

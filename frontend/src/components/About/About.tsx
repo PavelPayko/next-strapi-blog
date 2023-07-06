@@ -15,16 +15,15 @@ const { useBreakpoint } = Grid;
 
 const About = ({ }) => {
 
-  const { lg } = useBreakpoint();
+  const { lg, xxl } = useBreakpoint();
 
   const router = useRouter();
   const { about: t } = router.locale === 'ru' ? ru : en;
 
   return (
     <section className={style.container} id='about'>
-      <Row gutter={55} style={{ marginBottom: '40px' }}>
-        <Col span={lg ? 10 : 24} className={style.titleWrp}>
-          {/* <Image src={BG} alt='bg' style={{ width: '100%' }} /> */}
+      <Row style={{ marginBottom: '40px' }}>
+        <Col span={xxl ? 10 : 24} className={style.titleWrp}>
           <h3 className={style.firstTitle}>
             {t.title.toUpperCase().split('|').map(str => <span>{str}</span>)}
           </h3>
@@ -38,14 +37,14 @@ const About = ({ }) => {
             </ul>
           </div>
         </Col>
-        <Col span={lg ? 14 : 24} className={style.cardsWrp}>
+        {xxl && <Col span={xxl ? 14 : 24} className={style.imageWrp}>
           <Image src={bg} width={1080} alt='bg' />
-        </Col>
+        </Col>}
       </Row>
 
       <Row className={style.cardsWrp}>
         <Col flex={1} >
-          <div className={style.card}>
+          <div className={`${style.card} ${style.first}`}>
             <span className={style.num}>{t.cards.experience.num}</span>
             <span className={style.desc}>{t.cards.experience.desc}</span>
           </div>
@@ -57,7 +56,7 @@ const About = ({ }) => {
           </div>
         </Col>
         <Col flex={1} >
-          <div className={style.card}>
+          <div className={`${style.card} ${style.last}`}>
             <span className={style.num}>{t.cards.partners.num}</span>
             <span className={style.desc}>{t.cards.partners.desc}</span>
           </div>

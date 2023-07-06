@@ -27,14 +27,14 @@ const Contacts: FC<{
     <section className={style.container} id="contacts">
       <PageTitle title={t.pageTitle} />
       <div className={style.grid}>
-        <List
+        {/* <List
           grid={{
             gutter: 16,
             xs: 1,
             sm: 1,
             md: 2,
             lg: 2,
-            xl: 3,
+            xl: 2,
             xxl: 3,
           }}
           dataSource={contacts}
@@ -48,7 +48,14 @@ const Contacts: FC<{
               </List.Item>
             )
           }}
-        />
+        /> */}
+        {contacts.map((contact, i) => {
+          const url = getStrapiMedia(contact.attributes.photo.data) || ''
+          const { name, position, telegram } = contact.attributes
+          return (
+            <Card name={name} position={position} imageUrl={url} size='big' link={telegram} key={contact.id} />
+          )
+        })}
       </div>
 
     </section >

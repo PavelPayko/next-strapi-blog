@@ -6,7 +6,7 @@ import Seo from "@/components/seo";
 import { fetchAPI } from "@/lib/api";
 import Nav from "@/components/Nav/Nav";
 import PageTitle from '@/components/PageTitle/PageTitle';
-import { Button, Col, Descriptions, List, Menu, MenuProps, Row, Space, Tabs, Typography } from 'antd';
+import { Button, Col, Descriptions, Grid, List, Menu, MenuProps, Row, Space, Tabs, Typography } from 'antd';
 import Link from 'next/link';
 import style from './style.module.scss'
 import { ArrowUpOutlined, ArrowsAltOutlined, CodeOutlined, ExpandAltOutlined, ShrinkOutlined } from '@ant-design/icons';
@@ -18,6 +18,7 @@ import { useRouter } from 'next/router';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const { Panel } = Collapse;
+const { useBreakpoint } = Grid;
 
 export interface Vacancy {
   id: number;
@@ -53,6 +54,7 @@ const Home: FC<{
 
   const router = useRouter();
   const { vacancy: t } = router.locale === 'ru' ? ru : en;
+  const { md } = useBreakpoint()
 
   console.log('vacancies', vacancies);
   const [current, setCurrent] = useState('all');
@@ -79,76 +81,22 @@ const Home: FC<{
     <Layout >
       <section className={style.container}>
         <PageTitle title={t.pageTitle} />
-        <div>desc</div>
-
+        <div className={style.desc}>{t.desc}</div>
         <List
           // pagination={{ position, align }}
           dataSource={vacancies}
           renderItem={(item, index) => (
-            <List.Item className={style.item} style={{ padding: '30px' }} >
-              <Link href={`vacancy/${item.attributes.slug}`}>
+            <Link href={`vacancy/${item.attributes.slug}`} >
+              <List.Item style={{ padding: '30px' }} className={style.item}>
                 <div>{item.attributes.title}</div>
-                <div className={style.type}>{item.attributes.workType}</div>
+                {md && <div className={style.type}>{item.attributes.workType}</div>}
                 <div className={style.arrow}><ArrowUpOutlined /></div>
-              </Link>
-            </List.Item>
+              </List.Item>
+            </Link>
           )}
           className={style.list}
-        // bordered
         />
       </section>
-
-      <Row gutter={16} className={style.container}>
-        {/* <Col span={4}>
-          <Menu onClick={onClick} selectedKeys={[current]} mode="vertical" items={items} style={{ width: 256 }} />
-
-        </Col> */}
-        <Col span={24}>
-          <Paragraph >
-            <div dangerouslySetInnerHTML={{ __html: t.introduction }} />
-          </Paragraph>
-          <div></div>
-          <Collapse
-            bordered={false}
-            // ghost
-            expandIcon={({ isActive }) => isActive
-              ? <ShrinkOutlined style={{ fontSize: '30px' }} />
-              : <ArrowsAltOutlined style={{ fontSize: '30px' }} />
-            }>
-            {vacancies.map((item: any) => <Panel
-              header={<div className={style.content}>
-                <Title level={4}>{item.attributes.title}</Title >
-              </div>}
-              key={item.id}
-            >
-              <Descriptions layout='vertical' column={1} className={style.desc}>
-                <Descriptions.Item label={t.responsibilities} >
-
-                  <ReactMarkdown>{item.attributes?.responsibilities}</ReactMarkdown>
-                </Descriptions.Item>
-                <Descriptions.Item label={t.requirements}>
-                  {item.attributes?.requirements}
-                </Descriptions.Item>
-                <Descriptions.Item label={t.conditions}>
-                  {item.attributes?.conditions}
-                </Descriptions.Item>
-                <Descriptions.Item>
-                  <Title level={5}>{t.conclusion}</Title>
-                </Descriptions.Item>
-                <Descriptions.Item >
-                  <Link href={'https://t.me/ValeriBondareva'}>
-                    <Button type='primary' className={style.btn} style={{ color: '#000' }} size='large'>
-                      {t.respondButton} <Tg color='#000' />
-                    </Button>
-                  </Link>
-                </Descriptions.Item>
-
-              </Descriptions>
-            </Panel>)
-            }
-          </Collapse></Col>
-      </Row>
-
     </Layout >
   );
 };

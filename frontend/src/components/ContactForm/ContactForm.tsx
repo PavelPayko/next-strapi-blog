@@ -49,22 +49,22 @@ const ContactForm = ({ }) => {
       >
         <span className={style.title}>{t.pageTitle}</span>
         <Row gutter={20}>
-          <Col span={col}>
+          <Col span={col} className={style.formRow}>
             <Form.Item >
               <Input placeholder={t.name} size='large' />
             </Form.Item>
 
-            <Form.Item >
+            {/* <Form.Item >
               <Input placeholder={t.company} size='large' />
-            </Form.Item>
+            </Form.Item> */}
 
             <Form.Item >
               <Input placeholder={t.tel} size='large' />
             </Form.Item>
 
-            <Form.Item >
+            {/* <Form.Item >
               <Input placeholder={t.mail} size='large' />
-            </Form.Item>
+            </Form.Item> */}
 
             <Form.Item >
               <Input.TextArea placeholder={t.message} size='large' autoSize={{ minRows: 4, maxRows: 4 }} />
@@ -75,13 +75,13 @@ const ContactForm = ({ }) => {
                 {t.sendButton}
               </Button>
 
-              <div className={'styled_upload'}>
+              {/* <div className={'styled_upload'}>
                 <Upload {...props} >
                   <Button size='large' style={{ width: md ? '240px' : '100%', marginBottom: '20px' }} >
                     {t.uploadButton}
                   </Button>
                 </Upload>
-              </div>
+              </div> */}
             </div>
           </Col>
         </Row>

@@ -1,7 +1,7 @@
 import React from "react";
 import Articles from "../components/Articles/Articles";
 import Layout from "../components/layout";
-import Header from "../components/Header/Header";
+import Header from "../_components/Header/Header";
 import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
 import About from "@/components/About/About";
@@ -29,6 +29,7 @@ const Home = ({
           <Articles articles={articles} />
         </div>
       </div> */}
+      <Header />
       <About />
       <Projects />
       <Gallery gallery={gallery} />
