@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 import style from "./ProjectCard.module.scss";
 import { Button, Card as AntCard, Typography } from 'antd';
-import { ArrowUpOutlined, CaretUpOutlined } from '@ant-design/icons';
+import { ArrowRightOutlined, ArrowUpOutlined, CaretUpOutlined } from '@ant-design/icons';
+import Link from 'next/link';
 
 const { Meta } = AntCard;
 
@@ -31,19 +32,25 @@ const ProjectCard: React.FC<{
         hoverable
         ref={cardRef}
         cover={coverEl}
-        onClick={() => setIsFlip(prev => !prev)}
+        // onClick={() => setIsFlip(prev => !prev)}
         className={style.card}
       >
         <Meta
           title={<span className={style.titleWrp}>
             <span className={style.title}>{title}</span>
-            <Button
-              type="primary"
-              shape="circle"
-              icon={<ArrowUpOutlined style={{ color: '#fff' }} />}
-              // onClick={() => setIsFlip(prev => !prev)}
-              className={isFlip ? style.rotate : ""}
-            />
+            <Link href={`projects/osint-razvedka`}>
+              <Button
+                type="primary"
+                // shape="circle"
+                // icon={<ArrowUpOutlined style={{ color: '#fff' }} />}
+                // onClick={() => setIsFlip(prev => !prev)}
+                // className={isFlip ? style.rotate : ""}
+                className={style.btn}
+                size='large'
+              >
+                Подробнее <ArrowRightOutlined className={style.arrow} />
+              </Button>
+            </Link>
           </span>}
           description={<div className={`${style.desc} ${isFlip ? style.height : ''}`}>{desc}</div>}
         // style={{ height: 0, padding: 0, position: 'absolute' }}
