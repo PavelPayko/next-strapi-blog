@@ -25,15 +25,15 @@ const About = ({ }) => {
       <Row style={{ marginBottom: '40px' }}>
         <Col span={xxl ? 10 : 24} className={style.titleWrp}>
           <h3 className={style.firstTitle}>
-            {t.title.toUpperCase().split('|').map(str => <span>{str}</span>)}
+            {t.title.toUpperCase().split('|').map((str, i) => <span key={`title-${i}`}>{str}</span>)}
           </h3>
           <p className={style.descWrp}>
-            {t.desc.split('|').map(str => <span>{str}</span>)}
+            {t.desc.split('|').map((str, i) => <span key={`desc-${i}`}>{str}</span>)}
           </p>
           <div className={style.descListWrp}>
             <span>{t.descList.title}</span>
             <ul>
-              {t.descList.data.map(str => <li>{str.split('|').map(str => <span>{str}</span>)}</li>)}
+              {t.descList.data.map(str => <li>{str.split('|').map((str, i) => <span key={`descList-${i}`}>{str}</span>)}</li>)}
             </ul>
           </div>
         </Col>
@@ -66,8 +66,8 @@ const About = ({ }) => {
       <div className={style.listWrp}>
         <span className={style.listTitle}>{t.list.title}</span>
         <ul className={style.list}>
-          {t.list.data.map(card => (
-            <li className={style.desc}>{card}</li>
+          {t.list.data.map((card, i) => (
+            <li className={style.desc} key={`list-${i}`}>{card}</li>
           ))}
           <li >
             <Button size='large' type='primary' style={{ height: '74px', fontSize: '26px' }} className={style.downloadButton} >

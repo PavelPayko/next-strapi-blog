@@ -34,14 +34,13 @@ const Article = ({ article, categories }: any) => {
         <div className="uk-container uk-container-small">
           -content-
           <ReactMarkdown
-            children={article.attributes.content}
             rehypePlugins={[rehypeRaw]}
-          />
+          >{article.attributes.content}</ReactMarkdown>
           <hr className="uk-divider-small" />
           <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
             <div>
               {article.attributes.author.data.attributes.picture && (
-                <img
+                <Image
                   src={getStrapiMedia(
                     article.attributes.author.data.attributes.picture
                   )}
