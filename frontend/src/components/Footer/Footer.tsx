@@ -106,18 +106,18 @@ const Footer: FC<{}> = ({ }) => {
             <Link href={"https://vk.com/kvandotech"} style={{ marginLeft: '-5px' }} >
               <Vk />Vk
             </Link>
-            <Link href={"https://t.me/do_with_kvando"} >
+            {/* <Link href={"https://t.me/do_with_kvando"} >
               <Tg color="#000" />Telegram
-            </Link>
+            </Link> */}
             <Link href={"https://www.youtube.com/@igorkhristenko5444"} >
               <YoutubeOutlined style={{ fontSize: '30px' }} />YouTube
             </Link>
             <Link href={"https://www.youtube.com/@igorkhristenko5444"} >
               <Habr />Habr
             </Link>
-            <Link href={"https://www.youtube.com/@igorkhristenko5444"} >
+            {/* <Link href={"https://www.youtube.com/@igorkhristenko5444"} >
               <Hh />Hh
-            </Link>
+            </Link> */}
           </div>
         </Col>
       </Row>

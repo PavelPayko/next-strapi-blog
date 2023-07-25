@@ -29,7 +29,7 @@ const ContactCard: FC<{
         description={attributes.position}
         avatar={attributes.withContacts && shareBtn}
       />
-      {isOpen && <div className={`${style.shareContent}`}>
+      {<div className={`${style.shareContent}`} style={{ width: '100%' }}>
         {attributes?.telegram && <Link href={attributes?.telegram}><Tg /></Link>}
         {attributes?.mail && <Link href={attributes?.mail}><Mail /></Link>}
 

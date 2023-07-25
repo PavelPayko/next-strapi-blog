@@ -11,7 +11,7 @@ import style from './Gallery.module.scss'
 const Gallery: FC<{
   gallery?: Gallery
 }> = ({ gallery }) => {
-  
+
   const router = useRouter();
   const t = router.locale === 'ru' ? ru : en;
 
@@ -27,7 +27,7 @@ const Gallery: FC<{
 
           const url = getStrapiMedia(image) || ''
           return (
-            <div className={style.cell}>
+            <div className={style.cell} key={image.data.id}>
               <Image src={url} width={456} height={304} alt='photo' style={{ objectFit: 'cover' }} />
             </div>
           )

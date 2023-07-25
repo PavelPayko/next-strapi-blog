@@ -10,7 +10,7 @@
   background-color: rgba($color: #000, $alpha: 0.7);
   position: absolute;
   bottom: 100px;
-  width: 100%;
+  width: 100% !important;
   left: 0;
   display: flex;
   justify-content: space-around;

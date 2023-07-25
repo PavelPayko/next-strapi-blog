@@ -27,11 +27,14 @@
 
 .desc {
   white-space: break-spaces;
+  padding-left: 64px;
+  text-transform: uppercase;
 }
 
 .list {
-  border-top: 1px solid rgba(5, 5, 5, 0.06);
-  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  margin: 34px 0 34px 64px;
 }
 
 .item {
@@ -114,16 +117,28 @@
     align-items: center;
   }
 
-  .form {
-  }
+  // .form {
+  // }
 
   .buttons {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: flex-end;
 
     .send_button {
       align-self: flex-start;
     }
+  }
+}
+
+.title {
+  display: inline-block;
+  margin: 20px 0 40px;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    padding: 20px 40px;
   }
 }

@@ -28,13 +28,31 @@
         height: 104px;
       }
     }
+
+    .btn {
+      color: rgba(0, 0, 0, 0.88);
+    background-color: #ffc500;
+    }
   }
 }
 .titleWrp {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   padding: 20px;
+}
+.more {
+  justify-self: center;
+}
+.btn {
+ font-size: 18px;
+color: #f7f7f7;
+background-color: #f7f7f7;
+transition: all 0.2s ease-in;
+}
+.arrow {
+  // transform: rotate(90deg);
+  color: '#fff'
 }
 .title {
   position: absolute;

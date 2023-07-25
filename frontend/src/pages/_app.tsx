@@ -14,6 +14,8 @@ export const GlobalContext = createContext({});
 const MyApp = ({ Component, pageProps }: any) => {
   const { global } = pageProps;
 
+  console.log('global', global)
+
   return (
     <>
       <Head>
@@ -26,7 +28,7 @@ const MyApp = ({ Component, pageProps }: any) => {
         "token": {
           "colorPrimary": "#ffc500",
           fontSize: 16,
-          fontFamily: 'Ubuntu'
+          fontFamily: 'Montserrat'
         },
         components: {
           Menu: {

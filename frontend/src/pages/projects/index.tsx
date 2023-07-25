@@ -44,58 +44,12 @@ interface Localizations {
 }
 
 const Home: FC<{
-  vacancies: Vacancy[]
-}> = ({ vacancies }) => {
-
-  console.log('vacancies', vacancies);
-
-
-  const { Text, Title, Paragraph } = Typography
-
-  const router = useRouter();
-  const { vacancy: t } = router.locale === 'ru' ? ru : en;
-  const { md } = useBreakpoint()
-
-  console.log('vacancies', vacancies);
-  const [current, setCurrent] = useState('all');
-
-  const items: MenuProps['items'] = [
-    {
-      label: 'Все',
-      key: 'all',
-      // icon: <MailOutlined />,
-    },
-    {
-      label: 'Разработка',
-      key: 'dev',
-      // icon: <AppstoreOutlined />,
-    },
-  ];
-
-  const onClick: MenuProps['onClick'] = (e) => {
-    console.log('click ', e);
-    setCurrent(e.key);
-  };
+}> = ({ }) => {
 
   return (
     <Layout >
       <section className={style.container}>
-        <PageTitle title={t.pageTitle} />
-        <div className={style.desc}>{t.desc}</div>
-        <List
-          // pagination={{ position, align }}
-          dataSource={vacancies}
-          renderItem={(item, index) => (
-            <Link href={`vacancy/${item.attributes.slug}`} >
-              <List.Item style={{ padding: '30px' }} className={style.item}>
-                <div>{item.attributes.title}</div>
-                {md && <div className={style.type}>{item.attributes.workType}</div>}
-                <div className={style.arrow}><ArrowUpOutlined /></div>
-              </List.Item>
-            </Link>
-          )}
-          className={style.list}
-        />
+        <PageTitle title='Projects page' />
       </section>
     </Layout >
   );

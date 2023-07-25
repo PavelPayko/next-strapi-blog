@@ -30,8 +30,6 @@
   }
 
   .firstTitle {
-    // font-family: "Ubuntu Mono", monospace;
-    // font-family: "Comfortaa", monospace;
     font-size: 45px;
     font-weight: 400;
     line-height: 70px;
@@ -96,18 +94,17 @@
   gap: 15px;
 
   .num {
-    font-family: "Monomaniac One";
     background: #ffc500;
     border-radius: 8px;
     padding: 15px 30px;
     font-weight: 400;
-    font-size: 64px;
+    font-size: 60px;
     color: #fff;
   }
 
   .desc {
     font-weight: 400;
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
     border: 2px solid rgba(0, 0, 0, 0.8);
     border-radius: 8px;
@@ -155,8 +152,18 @@
 }
 
 .imageWrp {
+  padding-left: 64px;
   img {
-    object-fit: contain;
+    width: 100%;
+    object-fit: cover
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .titleWrp {
+    .firstTitle {
+      font-size: 36px;
+    }
   }
 }
 
@@ -164,6 +171,26 @@
   .titleWrp {
     .firstTitle {
       font-size: 36px;
+    }
+  }
+
+  .cardsWrp {
+    .first {
+        justify-content: flex-start;
+      }
+    
+    .last{
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .titleWrp {
+    .firstTitle,
+    .descListWrp,
+    .descWrp {
+      padding: 0 64px;
     }
   }
 }

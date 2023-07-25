@@ -67,10 +67,18 @@ $slide-width: 30rem;
   .title {
     color: var(--orangeColor);
     font-size: 18px;
-    font-family: "Ubuntu mono";
   }
 }
 
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navMobile {
+    display: none;
+  }
 .controls {
   display: flex;
   width: 100px;
@@ -95,16 +103,30 @@ $slide-width: 30rem;
   //  display: inline-flex;
   // position: absolute;
   // left: 218px;
-  padding: 17px 36px;
+  // padding: 17px 36px;
   background: var(--primaryColor);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  height: 78px;
+}
+.controlMobile {
+  background: var(--primaryColor);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 40px;
 }
 
 .cardWrp {
   position: relative;
+  height: 362px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .content {
   position: absolute;
@@ -115,9 +137,20 @@ $slide-width: 30rem;
   backdrop-filter: blur(15px);
   padding: 15px 23px;
   margin-right: 54px;
-  /* Note: backdrop-filter has minimal browser support */
-
   border-radius: 8px;
+}
+
+@media screen and (max-width: 1620px) {
+  .controlNext,
+  .controlPrev {
+    display: none;
+  }
+
+  .navMobile {
+    display: flex;
+    padding-right: 60px;
+    gap: 30px;
+  }
 }
 @media screen and (max-width: 1240px) {
   .slider {
@@ -128,6 +161,9 @@ $slide-width: 30rem;
 @media screen and (max-width: 768px) {
   .slider {
     width: 420px;
+  }
+  .controlMobile {
+    display: none;
   }
 }
 

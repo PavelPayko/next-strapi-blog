@@ -15,37 +15,36 @@ const { useBreakpoint } = Grid;
 
 const About = ({ }) => {
 
-  const { lg } = useBreakpoint();
+  const { lg, xxl } = useBreakpoint();
 
   const router = useRouter();
   const { about: t } = router.locale === 'ru' ? ru : en;
 
   return (
     <section className={style.container} id='about'>
-      <Row gutter={55} style={{ marginBottom: '40px' }}>
-        <Col span={lg ? 10 : 24} className={style.titleWrp}>
-          {/* <Image src={BG} alt='bg' style={{ width: '100%' }} /> */}
+      <Row style={{ marginBottom: '40px' }}>
+        <Col span={xxl ? 10 : 24} className={style.titleWrp}>
           <h3 className={style.firstTitle}>
-            {t.title.toUpperCase().split('|').map(str => <span>{str}</span>)}
+            {t.title.toUpperCase().split('|').map((str, i) => <span key={`title-${i}`}>{str}</span>)}
           </h3>
           <p className={style.descWrp}>
-            {t.desc.split('|').map(str => <span>{str}</span>)}
+            {t.desc.split('|').map((str, i) => <span key={`desc-${i}`}>{str}</span>)}
           </p>
           <div className={style.descListWrp}>
             <span>{t.descList.title}</span>
             <ul>
-              {t.descList.data.map(str => <li>{str.split('|').map(str => <span>{str}</span>)}</li>)}
+              {t.descList.data.map(str => <li>{str.split('|').map((str, i) => <span key={`descList-${i}`}>{str}</span>)}</li>)}
             </ul>
           </div>
         </Col>
-        <Col span={lg ? 14 : 24} className={style.cardsWrp}>
+        {xxl && <Col span={xxl ? 14 : 24} className={style.imageWrp}>
           <Image src={bg} width={1080} alt='bg' />
-        </Col>
+        </Col>}
       </Row>
 
       <Row className={style.cardsWrp}>
         <Col flex={1} >
-          <div className={style.card}>
+          <div className={`${style.card} ${style.first}`}>
             <span className={style.num}>{t.cards.experience.num}</span>
             <span className={style.desc}>{t.cards.experience.desc}</span>
           </div>
@@ -57,7 +56,7 @@ const About = ({ }) => {
           </div>
         </Col>
         <Col flex={1} >
-          <div className={style.card}>
+          <div className={`${style.card} ${style.last}`}>
             <span className={style.num}>{t.cards.partners.num}</span>
             <span className={style.desc}>{t.cards.partners.desc}</span>
           </div>
@@ -67,8 +66,8 @@ const About = ({ }) => {
       <div className={style.listWrp}>
         <span className={style.listTitle}>{t.list.title}</span>
         <ul className={style.list}>
-          {t.list.data.map(card => (
-            <li className={style.desc}>{card}</li>
+          {t.list.data.map((card, i) => (
+            <li className={style.desc} key={`list-${i}`}>{card}</li>
           ))}
           <li >
             <Button size='large' type='primary' style={{ height: '74px', fontSize: '26px' }} className={style.downloadButton} >

@@ -1,6 +1,8 @@
 .container {
   background-image: url("/form_bg.png");
   background-size: cover;
+  text-align: center;
+  margin-top: 60px;
 }
 .title {
   font-size: 48px;
@@ -29,15 +31,19 @@
   justify-content: flex-end;
 }
 
+.formRow {
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 991px) {
-  .container {
-    padding: 20px 40px;
+  .form {
+    padding: 40px 80px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .container {
-    padding: 20px;
+  .form {
+    padding: 20px 40px;
   }
   .end {
     display: none;

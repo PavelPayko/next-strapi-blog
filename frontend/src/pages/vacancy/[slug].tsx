@@ -15,6 +15,7 @@ import { Button, Col, Form, Input, Row, Upload, UploadProps, message, Grid } fro
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import formBg from '@/assets/images/sapiens-16.png'
 import Image from 'next/image';
+import Link from 'next/link';
 
 const { useBreakpoint } = Grid;
 
@@ -58,9 +59,11 @@ const Page: React.FC<{
         <span>{vacancy.attributes.workType}</span>
         <div className={style.bar}>
           <h2>{vacancy.attributes.title}</h2>
-          <Button size='large' type='primary' style={{ height: '74px', fontSize: '26px' }} className={style.downloadButton} >
-            <ArrowLeftOutlined className={style.arrow} /> Вакансии
-          </Button>
+          <Link href={'/vacancy'}>
+            <Button size='large' type='primary' style={{ height: '74px', fontSize: '26px' }} className={style.downloadButton} >
+              <ArrowLeftOutlined className={style.arrow} /> Вакансии
+            </Button>
+          </Link>
         </div>
         <div className={style.introduction}>
           {t.introduction.split('|').map((str, i) => {
@@ -87,15 +90,15 @@ const Page: React.FC<{
           <ReactMarkdown>{vacancy.attributes.conditions}</ReactMarkdown>
         </div>
 
-        <div>
-          <Form
-            form={form}
-            // style={{ maxWidth: 600 }}
-            className={style.form}
-          >
-            <span className={style.title}>{t.form.pageTitle}</span>
-            <Row gutter={20}>
-              <Col span={col}>
+        <div className={style.form}>
+          <Row gutter={20}>
+            <Col span={col}>
+              <Form
+                form={form}
+                // style={{ maxWidth: 600 }}
+                className={style.form}
+              >
+                <span className={style.title}>{t.form.pageTitle}</span>
                 <Form.Item >
                   <Input placeholder={t.form.name} size='large' />
                 </Form.Item>
@@ -130,26 +133,26 @@ const Page: React.FC<{
                     {t.form.sendButton}
                   </Button>
                 </div>
-              </Col>
-            </Row>
+              </Form>
+            </Col>
+            {xl && <Col span={col}>
 
-            <Row gutter={20}>
-              <Col span={col}>
+              <Image src={formBg} width={752} height={755} alt='bg' />
+            </Col>}
+          </Row>
 
-              </Col>
-              <Col span={col}>
-              </Col>
-            </Row>
+          <Row gutter={20}>
+            <Col span={col}>
+            </Col>
+          </Row>
 
-            <Row gutter={20}>
-              <Col span={md ? 12 : 24}>
+          <Row gutter={20}>
+            <Col span={md ? 12 : 24}>
 
-              </Col>
+            </Col>
 
-            </Row>
-          </Form>
+          </Row>
 
-          <Image src={formBg} width={752} height={755} alt='bg' />
 
         </div>
 
