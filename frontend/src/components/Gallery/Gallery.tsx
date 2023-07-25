@@ -22,12 +22,12 @@ const Gallery: FC<{
   return (
     <div>
       <div className={style.grid}>
-        {gallery?.attributes.data.data.map(image => {
+        {gallery?.attributes.data.data.map((image, i) => {
 
 
           const url = getStrapiMedia(image) || ''
           return (
-            <div className={style.cell} key={image.data.id}>
+            <div className={style.cell} key={image?.data?.id || i}>
               <Image src={url} width={456} height={304} alt='photo' style={{ objectFit: 'cover' }} />
             </div>
           )
