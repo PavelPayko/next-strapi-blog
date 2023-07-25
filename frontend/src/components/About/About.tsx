@@ -33,7 +33,7 @@ const About = ({ }) => {
           <div className={style.descListWrp}>
             <span>{t.descList.title}</span>
             <ul>
-              {t.descList.data.map(str => <li>{str.split('|').map((str, i) => <span key={`descList-${i}`}>{str}</span>)}</li>)}
+              {t.descList.data.map((str, i) => <li key={`descList-${i}`}>{str.split('|').map((str, i) => <span key={`descList-item-${i}`}>{str}</span>)}</li>)}
             </ul>
           </div>
         </Col>

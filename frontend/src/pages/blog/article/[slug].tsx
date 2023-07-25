@@ -7,6 +7,7 @@ import Layout from "@/components/layout";
 import { fetchAPI } from "@/lib/api";
 import { getStrapiMedia } from "@/lib/media";
 import rehypeRaw from "rehype-raw";
+import Image from 'next/image';
 
 const Article = ({ article, categories }: any) => {
   const imageUrl = getStrapiMedia(article.attributes.image);

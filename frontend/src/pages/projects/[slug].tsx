@@ -58,9 +58,8 @@ const Page: React.FC<{
           <div className="uk-container uk-container-small">
             -content-
             <ReactMarkdown
-              children={project.attributes.description}
               rehypePlugins={[rehypeRaw]}
-            />
+            >project.attributes.description</ReactMarkdown>
             <hr className="uk-divider-small" />
             <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
               <div className="uk-width-expand">

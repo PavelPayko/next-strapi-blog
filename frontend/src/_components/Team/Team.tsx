@@ -111,7 +111,7 @@ const Team: FC<{
 
             const url = getStrapiMedia(ent.attributes.photo.data)
 
-            return <div className={style.cardWrp}>
+            return <div className={style.cardWrp} key={ent.id}>
               <Card cover={<Image src={url} alt='photo' width={340} height={340} style={{ objectFit: 'cover', objectPosition: 'top' }} />} >
                 <Card.Meta title={ent.attributes.name} description={ent.attributes.position} />
               </Card>
