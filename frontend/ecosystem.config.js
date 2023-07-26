@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'next',
       script: 'npm',
-      args: 'run dev',
+      args: 'run start',
     },
   ],
 };
