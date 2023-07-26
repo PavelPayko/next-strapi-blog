@@ -38,7 +38,7 @@ const ProjectCard: React.FC<{
         <Meta
           title={<span className={style.titleWrp}>
             <span className={style.title}>{title}</span>
-            <Link href={`projects/osint-razvedka`}>
+            {/* <Link href={`projects/osint-razvedka`}>
               <Button
                 type="primary"
                 // shape="circle"
@@ -50,7 +50,7 @@ const ProjectCard: React.FC<{
               >
                 Подробнее <ArrowRightOutlined className={style.arrow} />
               </Button>
-            </Link>
+            </Link> */}
           </span>}
           description={<div className={`${style.desc} ${isFlip ? style.height : ''}`}>{desc}</div>}
         // style={{ height: 0, padding: 0, position: 'absolute' }}

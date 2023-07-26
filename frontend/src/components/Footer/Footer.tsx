@@ -112,7 +112,7 @@ const Footer: FC<{}> = ({ }) => {
             <Link href={"https://www.youtube.com/@igorkhristenko5444"} >
               <YoutubeOutlined style={{ fontSize: '30px' }} />YouTube
             </Link>
-            <Link href={"https://www.youtube.com/@igorkhristenko5444"} >
+            <Link href={"https://career.habr.com/companies/kvando"} >
               <Habr />Habr
             </Link>
             {/* <Link href={"https://www.youtube.com/@igorkhristenko5444"} >
@@ -129,10 +129,10 @@ const Footer: FC<{}> = ({ }) => {
           </Link>
         </Col>
         <Col span={md ? 8 : 14} className={style.privacyLink}>
-          <Link href={"/privacy"} >
+          <Link href={'https://arda.digital/'} target="_blank" > <Arda width={90} /></Link>
+          {/* <Link href={"/privacy"} >
             ⓒ Конфиденциальность 2023
-
-          </Link>
+          </Link> */}
         </Col>
         <Col span={8} className={style.locale}>
           <Dropdown
@@ -147,10 +147,13 @@ const Footer: FC<{}> = ({ }) => {
             <span>{locale.toUpperCase()}</span>
           </Dropdown>
         </Col>
-        <Col span={24} style={{ textAlign: 'center' }}>
-          <Link href={'https://arda.digital/'} target="_blank" > <Arda width={90} /></Link>
-        </Col>
       </Row>
+      <Col span={24} style={{ textAlign: 'center', marginTop: '20px' }}>
+        {/* <Link href={'https://arda.digital/'} target="_blank" > <Arda width={90} /></Link> */}
+        <Link href={"/privacy"} >
+          ⓒ Конфиденциальность 2023
+        </Link>
+      </Col>
     </footer >
   );
 };

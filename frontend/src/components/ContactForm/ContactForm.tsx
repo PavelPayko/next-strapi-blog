@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./ContactForm.module.scss";
 import Image from "next/image";
-import { Button, Col, Form, Grid, Input, Row, Upload, UploadProps, message } from 'antd';
+import { Button, Checkbox, Col, Form, Grid, Input, Row, Upload, UploadProps, message } from 'antd';
 
 import Blot from '@/assets/images/blot.png'
 import PageTitle from '../PageTitle/PageTitle';
@@ -38,6 +38,10 @@ const ContactForm = ({ }) => {
     },
   };
 
+  const onFinish = (values: any) => {
+    console.log('Success:', values);
+  };
+
   const col = xl ? 12 : 24
 
   return (
@@ -46,11 +50,12 @@ const ContactForm = ({ }) => {
         form={form}
         // style={{ maxWidth: 600 }}
         className={style.form}
+        onFinish={onFinish}
       >
         <span className={style.title}>{t.pageTitle}</span>
         <Row gutter={20}>
           <Col span={col} className={style.formRow}>
-            <Form.Item >
+            <Form.Item name="name">
               <Input placeholder={t.name} size='large' />
             </Form.Item>
 
@@ -58,7 +63,7 @@ const ContactForm = ({ }) => {
               <Input placeholder={t.company} size='large' />
             </Form.Item> */}
 
-            <Form.Item >
+            <Form.Item name="phone">
               <Input placeholder={t.tel} size='large' />
             </Form.Item>
 
@@ -66,8 +71,20 @@ const ContactForm = ({ }) => {
               <Input placeholder={t.mail} size='large' />
             </Form.Item> */}
 
-            <Form.Item >
+            <Form.Item name="message">
               <Input.TextArea placeholder={t.message} size='large' autoSize={{ minRows: 4, maxRows: 4 }} />
+            </Form.Item>
+
+            <Form.Item
+              name="agreement"
+              valuePropName="checked"
+              rules={[
+                {
+                  validator: (_, value) =>
+                    value ? Promise.resolve() : Promise.reject(new Error(t.required)),
+                },
+              ]}>
+              <Checkbox>Я согласен(а) на <a href="#">обработку персональных данных</a></Checkbox>
             </Form.Item>
 
             <div className={style.buttons}>

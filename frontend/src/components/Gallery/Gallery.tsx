@@ -20,11 +20,9 @@ const Gallery: FC<{
   const url = getStrapiMedia(gallery?.attributes.main.data) || ''
 
   return (
-    <div>
+    <div className={style.container}>
       <div className={style.grid}>
         {gallery?.attributes.data.data.map((image, i) => {
-
-
           const url = getStrapiMedia(image) || ''
           return (
             <div className={style.cell} key={image?.data?.id || i}>
@@ -32,10 +30,10 @@ const Gallery: FC<{
             </div>
           )
         })}
+        <Image src={url} alt='photo' width={1248} height={832} style={{ objectFit: 'cover' }} className={style.cell} />
       </div>
-      <div className={style.main}>
-        <Image src={url} alt='photo' width={1248} height={832} style={{ objectFit: 'cover' }} />
-      </div>
+      {/* <div className={style.main}>
+      </div> */}
     </div>
 
   );

@@ -23,6 +23,7 @@ const MyApp = ({ Component, pageProps }: any) => {
           rel="shortcut icon"
           href={getStrapiMedia(global.attributes.favicon)}
         />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
       </Head>
       <ConfigProvider theme={{
         "token": {

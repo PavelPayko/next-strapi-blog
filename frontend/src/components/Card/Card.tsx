@@ -15,6 +15,19 @@ const Card: FC<{
   const width = size === 'small' ? '346' : '488'
   const height = size === 'small' ? '362' : '529'
 
+  const validateTg = (link: string) => {
+    if (link.includes('@')) {
+      return `https://t.me/${link.replace('@', '')}`
+    }
+    if (link.includes('https://t.me')) {
+      return link
+    }
+
+    return false
+  }
+
+  const tgLink = link && validateTg(link)
+
   return <div className={style.cardWrp}>
     <Image src={imageUrl} alt='photo' width={width} height={height} style={{ objectFit: 'cover', objectPosition: 'top' }} />
     <div className={style.content} style={{ width: `${width}px` }}>
@@ -22,7 +35,7 @@ const Card: FC<{
         <div>{name}</div>
         <div>{position}</div>
       </div>
-      {link && <Link href={link}><Tg /></Link>}
+      {tgLink && <Link href={tgLink}><Tg /></Link>}
     </div>
   </div >
 };

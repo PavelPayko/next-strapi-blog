@@ -168,7 +168,8 @@ export const en = {
 		mail: 'Mail',
 		message: 'Message',
 		uploadButton: 'Attach a file',
-		sendButton: 'Send'
+		sendButton: 'Send',
+		required: 'Confirmation required'
 	},
 	blog: {
 		pageTitle: 'Blog',

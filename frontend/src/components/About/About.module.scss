@@ -145,6 +145,7 @@
 .downloadButton {
   font-weight: 400;
   font-size: 26px;
+  height: 74px;
 }
 
 .item {
@@ -220,19 +221,52 @@
     .firstTitle {
       letter-spacing: 0;
       font-size: 26px;
+      padding: 0;
+    }
+
+    .descWrp, .descListWrp {
+      padding: 0;
+      font-size: 18px;
     }
   }
 
+  .downloadButton {
+    font-size: 16px;
+    width: 100%;
+    height: 48px;
+  }
+
+  .listWrp {
+    padding: 0;
+  }
+
+  .list {
+    .desc {
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+      }
+  }
+
   .cardsWrp {
+    padding: 0;
+    justify-content: flex-start;
     .card {
       .num {
-        font-size: 48px;
+        font-size: 36px;
+        padding: 8px 16px;
       }
 
       .desc {
-        font-size: 16px;
+        font-size: 18px;
         text-align: center;
+        width: 100%;
+        padding: 16px;
+
       }
+    }
+    div:nth-child(3) {
+      margin-top: 50px;
     }
   }
 }

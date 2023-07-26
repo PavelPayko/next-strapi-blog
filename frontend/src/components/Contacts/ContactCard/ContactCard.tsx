@@ -18,6 +18,22 @@ const ContactCard: FC<{
   const url = getStrapiMedia(attributes.photo.data) || ''
   const cover = <Image src={url} alt='photo' width={340} height={340} style={{ objectFit: 'cover', objectPosition: 'top' }} />
 
+  const validateTg = (link: string) => {
+    if (link.includes('@')) {
+      return `https://t.me/${link}`
+    }
+    if (link.includes('https://t.me')) {
+      return link
+    }
+
+    return false
+  }
+
+  const tg = attributes?.telegram && validateTg(attributes?.telegram)
+
+  console.log('tg', tg);
+
+
   const shareBtn = <Button type="primary" shape="circle" size='middle' className={style.shareBtn} icon={<ShareAltOutlined />} onClick={() => setIsOpen(prev => !prev)} />
   return (
     <Card
@@ -30,7 +46,7 @@ const ContactCard: FC<{
         avatar={attributes.withContacts && shareBtn}
       />
       {<div className={`${style.shareContent}`} style={{ width: '100%' }}>
-        {attributes?.telegram && <Link href={attributes?.telegram}><Tg /></Link>}
+        {tg && <Link href={tg}><Tg /></Link>}
         {attributes?.mail && <Link href={attributes?.mail}><Mail /></Link>}
 
       </div>

@@ -69,8 +69,8 @@ const About = ({ }) => {
           {t.list.data.map((card, i) => (
             <li className={style.desc} key={`list-${i}`}>{card}</li>
           ))}
-          <li >
-            <Button size='large' type='primary' style={{ height: '74px', fontSize: '26px' }} className={style.downloadButton} >
+          <li className={style.downloadButton}>
+            <Button size={lg ? 'large' : 'middle'} type='primary' className={style.downloadButton} >
               <Space>
                 <DownloadOutlined />
                 {t.downloadButton}

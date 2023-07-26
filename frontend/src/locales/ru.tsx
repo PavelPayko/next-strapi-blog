@@ -166,7 +166,8 @@ export const ru = {
 		mail: 'Почта',
 		message: 'Сообщение',
 		uploadButton: 'Прикрепить файл',
-		sendButton: 'Отправить'
+		sendButton: 'Отправить',
+		required: 'Необходимо подтверждение'
 	},
 	blog: {
 		pageTitle: 'Блог',
