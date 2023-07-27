@@ -21,22 +21,16 @@ const Footer: FC<{}> = ({ }) => {
 
   useEffect(() => {
     if (xl) {
-      console.log('size', 'xl');
       setColSize(6)
     }
     else if (md) {
-      console.log('size', 'lg');
-
       setColSize(8)
     }
     else if (sm) {
-      console.log('size', 'lg');
-
       setColSize(12)
     } else {
       setColSize(24)
     }
-
   }, [xl, md, sm])
 
   const localeItems: MenuProps['items'] = [

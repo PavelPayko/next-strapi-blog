@@ -24,9 +24,8 @@ const Page: React.FC<{
 }> = ({ vacancy }) => {
   // const imageUrl = getStrapiMedia(article.attributes.image);
 
-  console.log("vacancy", vacancy);
-
   const router = useRouter();
+
   const { vacancy: t } = router.locale === "ru" ? ru : en;
 
   const [form] = Form.useForm();
@@ -67,7 +66,7 @@ const Page: React.FC<{
         </div>
         <div className={style.introduction}>
           {t.introduction.split('|').map((str, i) => {
-            if (i === 1) return <span className={style.color}>{str}</span>
+            if (i === 1) return <span className={style.color} key={i}>{str}</span>
             return str
           })}
         </div>
@@ -161,15 +160,23 @@ const Page: React.FC<{
   );
 };
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }: any) {
   const vacanciesRes = await fetchAPI("/vacancies", { fields: ["slug"] });
 
   return {
-    paths: vacanciesRes.data.map((vacancy: Vacancy) => ({
-      params: {
-        slug: vacancy.attributes.slug,
-      },
-    })),
+    paths: vacanciesRes.data.flatMap((vacancy: Vacancy) => ([
+      {
+        params: {
+          slug: vacancy.attributes.slug,
+        },
+        locale: 'en',
+      }, {
+        params: {
+          slug: vacancy.attributes.slug,
+        },
+        locale: 'ru'
+      }
+    ])),
     fallback: false,
   };
 }

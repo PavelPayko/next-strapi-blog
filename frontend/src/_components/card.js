@@ -9,8 +9,6 @@ const { Meta } = AntCard;
 
 const Card = ({ article }) => {
 
-	console.log('article', article);
-
 	const image = article.attributes.image
 	const { alternativeText, width, height } = image?.data?.attributes;
 	return (

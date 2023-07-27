@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, useEffect } from "react";
 import Articles from "../components/Articles/Articles";
 import Layout from "../components/layout";
 import Header from "../_components/Header/Header";
@@ -11,8 +11,24 @@ import Contacts from "@/components/Contacts/Contacts";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import Footer from "@/components/Footer/Footer";
 import Gallery from "@/components/Gallery/Gallery";
+import { cookies } from 'next/headers'
+import { Button, notification } from 'antd';
 
-const Home = ({
+const setCookie = (name: string, value: string, days: number) => {
+  let expires = "";
+  if (days) {
+    let date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+export const getCookie = (name: string) => {
+  let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+const Home: FC<any> = ({
   articles,
   categories,
   homepage,
@@ -20,8 +36,11 @@ const Home = ({
   contacts,
   gallery,
 }) => {
+
+
   return (
     <Layout categories={categories}>
+
       <Seo seo={homepage.attributes.seo} />
       {/* <div className="uk-section">
         <div className="uk-container uk-container-large">

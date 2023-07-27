@@ -11,7 +11,6 @@ const Layout: FC<{
 }> = ({ children, categories, seo }) => (
   <>
     {children}
-    <Footer />
   </>
 );
 

@@ -12,9 +12,6 @@ const BlogCard: React.FC<{
 	article: any
 }> = ({ article }) => {
 
-	console.log('article', article);
-
-
 	const image = article.attributes.image
 	const { alternativeText, width, height } = image?.data?.attributes;
 

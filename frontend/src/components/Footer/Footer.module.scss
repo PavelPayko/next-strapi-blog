@@ -45,14 +45,14 @@
 .privacy {
   background-color: #fff;
   padding: 0 40px;
+  .logo,
+  .privacyLink,
+  .locale {
+    display: flex;
+    align-items: center;
+  }
 }
 
-.logo,
-.privacyLink,
-.locale {
-  display: flex;
-  align-items: center;
-}
 
 .privacyLink {
   justify-content: center;

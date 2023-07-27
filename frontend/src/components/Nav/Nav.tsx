@@ -21,42 +21,42 @@ const Nav: React.FC<{
   const [current, setCurrent] = useState('');
   const [locale, setLocale] = useState(router.locale || 'ru')
 
-  useEffect(() => {
-    const aboutSection = document?.getElementById('about')
-    const aboutClientHeight = aboutSection?.clientHeight || 0
-    const aboutSectionPos = (aboutSection?.getBoundingClientRect().top || 0) + window.scrollY
+  // useEffect(() => {
+  //   const aboutSection = document?.getElementById('about')
+  //   const aboutClientHeight = aboutSection?.clientHeight || 0
+  //   const aboutSectionPos = (aboutSection?.getBoundingClientRect().top || 0) + window.scrollY
 
-    const scrollHandler = (e: any) => {
-      if (window.scrollY > document?.documentElement?.clientHeight) {
-        // const nav = document.getElementById('nav')
-        if (navRef.current) {
-          // navRef.current.style.maxHeight = '80px'
-          // navRef.current.style.position = 'fixed'
-        }
-      } else {
-        // const nav = document.getElementById('nav')
-        if (navRef.current) {
-          // navRef.current.style.maxHeight = '0'
-          // navRef.current.style.position = 'relative'
-        }
-      }
+  //   const scrollHandler = (e: any) => {
+  //     if (window.scrollY > document?.documentElement?.clientHeight) {
+  //       // const nav = document.getElementById('nav')
+  //       if (navRef.current) {
+  //         // navRef.current.style.maxHeight = '80px'
+  //         // navRef.current.style.position = 'fixed'
+  //       }
+  //     } else {
+  //       // const nav = document.getElementById('nav')
+  //       if (navRef.current) {
+  //         // navRef.current.style.maxHeight = '0'
+  //         // navRef.current.style.position = 'relative'
+  //       }
+  //     }
 
-      const posTop = aboutSection?.getBoundingClientRect().top || 0;
+  //     const posTop = aboutSection?.getBoundingClientRect().top || 0;
 
 
-      if (aboutSectionPos == window.scrollY) {
-        console.log('about');
+  //     if (aboutSectionPos == window.scrollY) {
+  //       console.log('about');
 
-        setCurrent('about')
-        // elem.classList.add('visible');
-        // document.removeEventListener('scroll', onScroll);
-      }
-      // console.log('e', window.scrollY, document.documentElement.clientHeight);
-    }
+  //       setCurrent('about')
+  //       // elem.classList.add('visible');
+  //       // document.removeEventListener('scroll', onScroll);
+  //     }
+  //     // console.log('e', window.scrollY, document.documentElement.clientHeight);
+  //   }
 
-    window.addEventListener('scroll', scrollHandler)
+  //   window.addEventListener('scroll', scrollHandler)
 
-  }, [])
+  // }, [])
 
   const onClick: MenuProps['onClick'] = (e) => {
     console.log('click ', e);

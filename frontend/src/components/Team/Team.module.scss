@@ -26,6 +26,29 @@ $slide-width: 30rem;
   flex-direction: column;
   align-items: center;
   width: 100%;
+
+  .slider{
+    .controlPrev, .controlNext {
+      .control {
+        //  display: inline-flex;
+        // position: absolute;
+        // left: 218px;
+        // padding: 17px 36px;
+        background: var(--primaryColor);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        height: 78px;
+
+        svg {
+          height: 100%;
+        }
+      }
+    }
+  } 
+    
 }
 
 .content {
@@ -79,18 +102,18 @@ $slide-width: 30rem;
 .navMobile {
     display: none;
   }
-.controls {
-  display: flex;
-  width: 100px;
-  justify-content: space-between;
-}
-%controlWrp {
-  display: inline-flex;
-  position: absolute;
-
-  top: 50%;
-  transform: translateY(-50%);
-}
+  %controlWrp {
+    display: inline-flex;
+    position: absolute;
+    
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .controls {
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+  }
 .controlPrev {
   @extend %controlWrp;
   left: -200px;
@@ -99,19 +122,7 @@ $slide-width: 30rem;
   @extend %controlWrp;
   right: -200px;
 }
-.control {
-  //  display: inline-flex;
-  // position: absolute;
-  // left: 218px;
-  // padding: 17px 36px;
-  background: var(--primaryColor);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  height: 78px;
-}
+
 .controlMobile {
   background: var(--primaryColor);
   border-radius: 8px;
@@ -120,6 +131,13 @@ $slide-width: 30rem;
   justify-content: center;
   cursor: pointer;
   height: 40px;
+   svg {
+    height: 100%;
+  }
+}
+
+.image {
+  width: 100%;
 }
 
 .cardWrp {
@@ -131,7 +149,7 @@ $slide-width: 30rem;
 .content {
   position: absolute;
   bottom: 0;
-  width: 346px;
+ width: 100%;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(15px);
@@ -162,7 +180,7 @@ $slide-width: 30rem;
   .slider {
     width: 420px;
   }
-  .controlMobile {
+  .navMobile {
     display: none;
   }
 }

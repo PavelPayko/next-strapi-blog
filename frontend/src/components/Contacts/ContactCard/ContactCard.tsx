@@ -31,9 +31,6 @@ const ContactCard: FC<{
 
   const tg = attributes?.telegram && validateTg(attributes?.telegram)
 
-  console.log('tg', tg);
-
-
   const shareBtn = <Button type="primary" shape="circle" size='middle' className={style.shareBtn} icon={<ShareAltOutlined />} onClick={() => setIsOpen(prev => !prev)} />
   return (
     <Card

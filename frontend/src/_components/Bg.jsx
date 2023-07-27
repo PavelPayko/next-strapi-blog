@@ -49,9 +49,9 @@ export default function Bg() {
       <g
         transform={"translate(-30, 0)"}
         stroke="#ffc500"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g id="Group-9" opacity="0.3">
           <g
@@ -83,7 +83,7 @@ export default function Bg() {
               <polygon
                 id="Polygon"
                 stroke="#container"
-                stroke-width="2"
+                strokeWidth="2"
                 transform="translate(139.000000, 17.500000) rotate(45.000000) translate(-139.000000, -17.500000) "
                 points="139 77 152 100 126 100"
               ></polygon>
@@ -110,7 +110,7 @@ export default function Bg() {
               <circle
                 id="Oval"
                 stroke="#container"
-                stroke-width="3"
+                strokeWidth="3"
                 fill="#ffc500"
                 cx="256"
                 cy="357"
@@ -131,7 +131,7 @@ export default function Bg() {
             <g id="r-2" style={{ transform: "translateX(5.22067px)" }} ref={r2}>
               <rect
                 id="Rectangle-6"
-                stroke-width="2"
+                strokeWidth="2"
                 opacity="0.3"
                 transform="translate(47.000000, 343.000000) rotate(-45.000000) translate(-47.000000, -343.000000) "
                 x="15"
@@ -153,7 +153,7 @@ export default function Bg() {
             >
               <circle
                 id="Oval"
-                stroke-width="3"
+                strokeWidth="3"
                 fill="#ffc500"
                 opacity="0.4"
                 cx="155"
@@ -169,7 +169,7 @@ export default function Bg() {
             <g id="c-3" style={{ transform: "translateX(15.662px)" }} ref={c3}>
               <circle
                 id="Oval"
-                stroke-width="2"
+                strokeWidth="2"
                 opacity="0.4"
                 cx="211"
                 cy="225"

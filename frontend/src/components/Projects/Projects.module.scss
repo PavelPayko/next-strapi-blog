@@ -3,13 +3,13 @@
   width: 100%;
   box-sizing: border-box;
   // background-color: #f9f9f9;
+  .list {
+    width: auto;
+    max-width: 1400px;
+    margin: auto;
+  }
 }
 
-.list {
-  width: auto;
-  max-width: 1400px;
-  margin: auto;
-}
 
 .content {
   width: 50%;

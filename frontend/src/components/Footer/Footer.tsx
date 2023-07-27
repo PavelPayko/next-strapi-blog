@@ -21,17 +21,12 @@ const Footer: FC<{}> = ({ }) => {
 
   useEffect(() => {
     if (xl) {
-      console.log('size', 'xl');
       setColSize(6)
     }
     else if (md) {
-      console.log('size', 'lg');
-
       setColSize(8)
     }
     else if (sm) {
-      console.log('size', 'lg');
-
       setColSize(12)
     } else {
       setColSize(24)
@@ -61,13 +56,13 @@ const Footer: FC<{}> = ({ }) => {
       <Row className={style.links}>
         <Col span={colSize} className={style.contactsLeft}>
           <div className={style.contentWrp}>
-            <Link href={"/"} >
+            <Link href={"mailto:kvandotech@gmail.com"} >
               <MailOutlined /> kvandotech@gmail.com
             </Link>
-            <Link href={"/"} >
+            <Link href={"tel:+79006931895"} >
               <PhoneOutlined /> 89006931895
             </Link>
-            <Link href={"/"} >
+            <Link href={"https://yandex.ru/maps/-/CTWERds"} target='_blank'>
               <EnvironmentOutlined /> Брянск, Дуки 69 , оф 306
             </Link>
           </div>
@@ -150,7 +145,7 @@ const Footer: FC<{}> = ({ }) => {
       </Row>
       <Col span={24} style={{ textAlign: 'center', marginTop: '20px' }}>
         {/* <Link href={'https://arda.digital/'} target="_blank" > <Arda width={90} /></Link> */}
-        <Link href={"/privacy"} >
+        <Link href={"/legal/agreement"} target='_blank'>
           ⓒ Конфиденциальность 2023
         </Link>
       </Col>

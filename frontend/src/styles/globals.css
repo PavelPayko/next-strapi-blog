@@ -30,7 +30,22 @@
 }
 
 body {
- font-family: "Montserrat";
+  font-family: "Montserrat";
+}
+
+.app {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.container {
+  padding: 40px 60px;
 }
 
 .slick-track {
@@ -61,9 +76,20 @@ body {
   margin-bottom: 20px;
 }
 
+.ant-notification .ant-notification-notice .ant-notification-notice-message .notification-msg{
+  font-size: 16px
+}
+
 #nav {
   position: sticky;
   top: 0;
   background: #fff;
   z-index: 2;
 }
+
+
+  @media (max-width: 768px) {
+   .container {
+    padding: 20px 40px;
+   } 
+  }

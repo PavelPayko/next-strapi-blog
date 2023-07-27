@@ -47,16 +47,12 @@ const Home: FC<{
   vacancies: Vacancy[]
 }> = ({ vacancies }) => {
 
-  console.log('vacancies', vacancies);
-
-
   const { Text, Title, Paragraph } = Typography
 
   const router = useRouter();
   const { vacancy: t } = router.locale === 'ru' ? ru : en;
   const { md } = useBreakpoint()
 
-  console.log('vacancies', vacancies);
   const [current, setCurrent] = useState('all');
 
   const items: MenuProps['items'] = [

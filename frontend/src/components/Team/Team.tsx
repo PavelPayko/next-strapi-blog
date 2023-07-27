@@ -13,9 +13,6 @@ const Team: FC<{
   developers?: Employee[]
 }> = ({ developers = [] }) => {
 
-  console.log('developers', developers);
-
-
   const router = useRouter();
   const t = router.locale === 'ru' ? ru : en;
 
@@ -94,8 +91,8 @@ const Team: FC<{
       <div className={style.header}>
         <PageTitle title={t.team.pageTitle} />
         <div className={style.navMobile}>
-          <Button onClick={prevHandler} className={style.controlMobile}>{prevIcon}</Button>
-          <Button onClick={nextHandler} className={style.controlMobile}>{nextIcon}</Button>
+          <Button type='primary' onClick={prevHandler} className={style.controlMobile}>{prevIcon}</Button>
+          <Button type='primary' onClick={nextHandler} className={style.controlMobile}>{nextIcon}</Button>
           {/* <div className={style.controlPrev}>
         </div>
         <div className={style.controlNext}>
@@ -109,7 +106,7 @@ const Team: FC<{
           </div>
         </div> */}
         <div className={style.controlPrev}>
-          <Button onClick={prevHandler} className={style.control}>{prevIcon}</Button>
+          <Button type='primary' onClick={prevHandler} className={style.control}>{prevIcon}</Button>
         </div>
         <Carousel
           {...settings}
@@ -126,7 +123,7 @@ const Team: FC<{
               {/* <Card cover={<Image src={url} alt='photo' width={340} height={340} style={{ objectFit: 'cover', objectPosition: 'top' }} />} >
                 <Card.Meta title={ent.attributes.name} description={ent.attributes.position} />
               </Card> */}
-              <Image src={url} alt='photo' width={346} height={362} style={{ objectFit: 'cover', objectPosition: 'top' }} />
+              <Image src={url} alt='photo' width={346} height={362} style={{ objectFit: 'cover', objectPosition: 'top' }} className={style.image} />
               <div className={style.content}>
                 <div>{ent.attributes.name}</div>
                 <div>{ent.attributes.position}</div>
@@ -135,7 +132,7 @@ const Team: FC<{
           })}
         </Carousel>
         <div className={style.controlNext}>
-          <Button onClick={nextHandler} className={style.control}>{nextIcon}</Button>
+          <Button type='primary' onClick={nextHandler} className={style.control}>{nextIcon}</Button>
         </div>
       </div>
 

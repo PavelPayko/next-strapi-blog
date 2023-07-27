@@ -13,9 +13,6 @@ const Team: FC<{
   developers?: Employee[]
 }> = ({ developers = [] }) => {
 
-  console.log('developers', developers);
-
-
   const router = useRouter();
   const t = router.locale === 'ru' ? ru : en;
 

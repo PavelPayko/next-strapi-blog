@@ -15,7 +15,7 @@ const { useBreakpoint } = Grid;
 
 const About = ({ }) => {
 
-  const { lg, xxl } = useBreakpoint();
+  const { md, lg, xxl } = useBreakpoint();
 
   const router = useRouter();
   const { about: t } = router.locale === 'ru' ? ru : en;
@@ -70,7 +70,7 @@ const About = ({ }) => {
             <li className={style.desc} key={`list-${i}`}>{card}</li>
           ))}
           <li className={style.downloadButton}>
-            <Button size={lg ? 'large' : 'middle'} type='primary' className={style.downloadButton} >
+            <Button size={'large'} type='primary' className={style.downloadButton} style={{ height: '100%' }}>
               <Space>
                 <DownloadOutlined />
                 {t.downloadButton}
