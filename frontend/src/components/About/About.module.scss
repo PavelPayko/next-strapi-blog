@@ -140,16 +140,20 @@
     padding: 20px;
     text-transform: uppercase;
   }
+
+  .download {
+    .downloadButton {
+      font-weight: 400;
+      font-size: 26px;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    } 
+  }
 }
 
-.downloadButton {
-  font-weight: 400;
-  font-size: 26px;
-  height: 74px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 .item {
   margin: 15px 0;

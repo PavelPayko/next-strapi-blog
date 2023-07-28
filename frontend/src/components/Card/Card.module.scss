@@ -3,18 +3,29 @@
   border-radius: 8px;
   overflow: hidden;
   height: 529px;
+
+  .content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(15px);
+    padding: 15px 23px;
+    margin-right: 54px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .image {
+    width: 100%;
+  }
 }
-.content {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(15px);
-  padding: 15px 23px;
-  margin-right: 54px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+@media screen and (max-width: 576px) {
+  .cardWrp {
+    width: 100%;
+  }
 }

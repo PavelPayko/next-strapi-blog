@@ -60,19 +60,21 @@
 }
 
 @media screen and (max-width: 768px) {
-  .form {
-    padding: 20px 40px;
-  }
-  .end {
-    display: none;
+  .container {
+    .form {
+      padding: 20px 40px;
+    }
+    .end {
+      display: none;
+    }
   }
 }
 
 @media screen and (max-width: 576px) {
-
-  .form {
-    border-radius: 0;
-    box-shadow: none;
-
+  .container {
+    .form {
+      border-radius: 0;
+      box-shadow: none;
+    }
   }
 }

@@ -29,8 +29,8 @@ const Card: FC<{
   const tgLink = link && validateTg(link)
 
   return <div className={style.cardWrp}>
-    <Image src={imageUrl} alt='photo' width={width} height={height} style={{ objectFit: 'cover', objectPosition: 'top' }} />
-    <div className={style.content} style={{ width: `${width}px` }}>
+    <Image src={imageUrl} alt='photo' width={width} height={height} style={{ objectFit: 'cover', objectPosition: 'top' }} className={style.image} />
+    <div className={style.content} >
       <div>
         <div>{name}</div>
         <div>{position}</div>

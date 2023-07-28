@@ -97,14 +97,14 @@
 
   .privacy {
     padding: 0;
+    .locale {
+      display: none;
+    }
   }
 
   // .locale {
   //   justify-content: center;
   // }
-  .locale {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 576px) {
