@@ -118,13 +118,13 @@ const Footer: FC<{}> = ({ }) => {
       </Row>
 
       <Row className={style.privacy}>
-        <Col span={md ? 8 : 10} className={style.logo}>
+        <Col span={md ? 8 : 12} className={style.logo}>
           <Link href={"/"} >
             <Image src={Logo} alt='Kvando' width={md ? 200 : 150} />
           </Link>
         </Col>
-        <Col span={md ? 8 : 14} className={style.privacyLink}>
-          <Link href={'https://arda.digital/'} target="_blank" > <Arda width={90} /></Link>
+        <Col span={md ? 8 : 12} className={style.privacyLink}>
+          <Link href={'https://arda.digital/'} target="_blank" > <Arda width={80} /></Link>
           {/* <Link href={"/privacy"} >
             ⓒ Конфиденциальность 2023
           </Link> */}

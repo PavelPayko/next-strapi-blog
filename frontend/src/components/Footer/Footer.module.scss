@@ -111,8 +111,9 @@
   .locale {
     display: none;
   }
-  .privacyLink {
+  .privacyLink, .logo {
     font-size: 14px;
+    justify-content: center;
   }
   .links {
     gap: 16px;

@@ -238,6 +238,7 @@
 }
 
 @media screen and (max-width: 576px) {
+
   .titleWrp {
     .firstTitle {
       letter-spacing: 0;
@@ -259,15 +260,26 @@
 
   .listWrp {
     padding: 0;
-  }
-
-  .list {
-    .desc {
+      .listTitle {
+        font-size: 24px;
+        margin: 40px 0;
+      }
+    .list {
+      .desc {
         font-size: 18px;
         text-align: center;
         width: 100%;
       }
+    }
+    .download {
+      width: 100%;
+      .downloadButton {
+        width: 100%;
+        font-size: 18px;
+      }
+    }
   }
+
 
   .cardsWrp {
     padding: 0;
@@ -290,8 +302,4 @@
       margin-top: 50px;
     }
   }
-
-  .downloadButton {
-  width: 100%;
-}
 }

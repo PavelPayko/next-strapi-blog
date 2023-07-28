@@ -7,6 +7,9 @@ import TourismSvg from '@/assets/svg/Tourism';
 import { BankOutlined, BookOutlined, CommentOutlined, CompassOutlined, TrademarkOutlined, UsergroupAddOutlined } from '@ant-design/icons';
 
 export const en = {
+	common: {
+		homeBtn: 'Back Home'
+	},
 	nav: {
 		about: 'about',
 		projects: 'projects',
@@ -261,7 +264,7 @@ export const en = {
 			'5.4. The information posted on the Website should not be interpreted as a modification of this Agreement.',
 			'5.5. The Site Administration has the right at any time without notifying the User to make changes to the list of Goods and services offered on the Site and (or) their prices.',
 			'5.6. The document specified in clause 5.7.1 of this Agreement regulates in the relevant part and extends its effect to the User’s use Website:',
-			'5.7.1. Privacy Policy:https://kvando.tech/privacy-policy/',
+			'5.7.1. Privacy Policy :https://kvando.tech/privacy-policy/',
 			'5.8. Any of the documents listed in paragraph 5.7.1. this Agreement may be subject to updating. The changes take effect from the moment they are published on the Website.',
 			'6. LIABILITY',
 			'6.1. Any losses that the User may incur in the event of intentional or negligent violation of any provision of this Agreement, as well as due to unauthorized access to the communications of another User, the Site Administration is not reimbursed.',

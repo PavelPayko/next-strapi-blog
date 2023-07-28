@@ -8,6 +8,8 @@
     max-width: 1400px;
     margin: auto;
   }
+
+
 }
 
 
@@ -21,5 +23,9 @@
 @media screen and (max-width: 992px) {
   .container {
     padding: 20px 40px;
+
+    .title {
+      padding: 0;
+    }
   }
 }

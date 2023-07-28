@@ -15,7 +15,7 @@ const Projects = ({ }) => {
 
   return (
     <section className={style.container} id="projects">
-      <PageTitle title={t.pageTitle} />
+      <PageTitle title={t.pageTitle} className={style.title} />
       <List
         grid={{
           gutter: 16,

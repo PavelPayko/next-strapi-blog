@@ -75,6 +75,7 @@ const MyApp = ({ Component, pageProps }: any) => {
           href={getStrapiMedia(global.attributes.favicon)}
         />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="google-site-verification" content="P9PsjZZ4S2B67-vtP0If68NJFNsiWKehKk89cj_tkwU" />
       </Head>
       <ConfigProvider theme={theme} locale={locale}>
         {contextHolder}

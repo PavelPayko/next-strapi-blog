@@ -1,10 +1,12 @@
 import React from 'react'
 import style from './PageTitle.module.scss'
+import classNames from 'classnames'
 
 const PageTitle: React.FC<{
 	title: string
-}> = ({ title }) => {
-	return <h2 className={style.title}>{title}</h2>
+	className?: string
+}> = ({ title, className }) => {
+	return <h2 className={classNames(style.title, className)}>{title}</h2>
 }
 
 export default PageTitle
