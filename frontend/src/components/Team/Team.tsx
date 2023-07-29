@@ -91,8 +91,8 @@ const Team: FC<{
       <div className={style.header}>
         <PageTitle title={t.team.pageTitle} />
         <div className={style.navMobile}>
-          <Button type='primary' onClick={prevHandler} className={style.controlMobile}>{prevIcon}</Button>
-          <Button type='primary' onClick={nextHandler} className={style.controlMobile}>{nextIcon}</Button>
+          <Button type='primary' onClick={prevHandler} className={style.controlMobile} aria-label="slider-prev-control">{prevIcon}</Button>
+          <Button type='primary' onClick={nextHandler} className={style.controlMobile} aria-label="slider-next-control">{nextIcon}</Button>
           {/* <div className={style.controlPrev}>
         </div>
         <div className={style.controlNext}>

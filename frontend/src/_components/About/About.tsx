@@ -53,7 +53,7 @@ const About = ({ }) => {
       <Row gutter={40}>
         <Col span={lg ? 14 : 24} className={style.listWrp}>
           <List
-            header={<h3>{t.list.title}</h3>}
+            header={<h2>{t.list.title}</h2>}
             dataSource={t.list.data}
             renderItem={(item) => (
               <List.Item>

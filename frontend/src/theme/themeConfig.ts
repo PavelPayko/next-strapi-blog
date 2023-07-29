@@ -4,7 +4,8 @@ const theme: ThemeConfig = {
 	token: {
 		colorPrimary: "#ffc500",
 		fontSize: 16,
-		fontFamily: 'Montserrat'
+		fontFamily: 'Montserrat',
+		colorLink: '#0066ff'
 	},
 	components: {
 		Menu: {

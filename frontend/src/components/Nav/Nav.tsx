@@ -109,7 +109,7 @@ const Nav: React.FC<{
       label: <Link href="/blog">{t.blog.toUpperCase()}</Link>,
       key: 'blog',
     },
-    { type: 'divider' },
+    // { type: 'divider' },
     {
       label: <span>{router.locale?.toUpperCase()}</span>,
       key: 'locale',

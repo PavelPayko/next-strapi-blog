@@ -24,9 +24,9 @@ const About = ({ }) => {
     <section className={style.container} id='about'>
       <Row style={{ marginBottom: '40px' }}>
         <Col span={xxl ? 10 : 24} className={style.titleWrp}>
-          <h3 className={style.firstTitle}>
+          <h2 className={style.firstTitle}>
             {t.title.toUpperCase().split('|').map((str, i) => <span key={`title-${i}`}>{str}</span>)}
-          </h3>
+          </h2>
           <p className={style.descWrp}>
             {t.desc.split('|').map((str, i) => <span key={`desc-${i}`}>{str}</span>)}
           </p>
