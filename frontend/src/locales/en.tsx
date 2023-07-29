@@ -8,7 +8,9 @@ import { BankOutlined, BookOutlined, CommentOutlined, CompassOutlined, Trademark
 
 export const en = {
 	common: {
-		homeBtn: 'Back Home'
+		homeBtn: 'Back Home',
+		'404': 'Sorry, the page you visited does not exist.',
+		'500': 'Sorry, something went wrong.'
 	},
 	nav: {
 		about: 'about',

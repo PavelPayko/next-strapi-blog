@@ -6,7 +6,9 @@ import TourismSvg from '@/assets/svg/Tourism';
 import MarketplaceSvg from '@/assets/svg/Marketplace';
 export const ru = {
 	common: {
-		homeBtn: 'На главную'
+		homeBtn: 'На главную',
+		'404': 'Упс… Мы не можем найти то, что Вы ищете',
+		'500': 'Упс… Что-то пошло не так.'
 	},
 	nav: {
 		about: 'О нас',

@@ -8,9 +8,9 @@ export default function Custom404() {
 	const router = useRouter();
 	const { common: t } = router.locale === 'ru' ? ru : en;
 	return <Result
-		status="404"
-		title="404"
-		subTitle={t['404']}
+		status="500"
+		title="500"
+		subTitle={t['500']}
 		extra={<Button type="primary"><Link href={'/'}>{t.homeBtn}</Link></Button>}
 	/>
 }
