@@ -8,6 +8,7 @@ import PageTitle from '../PageTitle/PageTitle';
 import { ru } from '@/locales/ru'
 import { en } from '@/locales/en'
 import { useRouter } from 'next/router';
+import bg from '@/assets/images/form_bg.webp'
 
 const { useBreakpoint } = Grid;
 
@@ -26,6 +27,7 @@ const ContactForm = ({ }) => {
 
   return (
     <div className={style.container} id='contact_us'>
+      <Image src={bg} alt='background' className={style.bg} />
       <div className={style.filter}>
         <Form
           form={form}
@@ -68,7 +70,7 @@ const ContactForm = ({ }) => {
           </div>
 
         </Form>
-      </div>
+        I</div>
 
     </div >
   );

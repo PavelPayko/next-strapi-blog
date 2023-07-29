@@ -1,9 +1,19 @@
 .container {
-  background-image: url("/form_bg.webp");
+  // background-image: url("/form_bg.png");
   background-size: cover;
   // aspect-ratio: 16/9;
   text-align: center;
   margin-top: 60px;
+  position: relative;
+  overflow: hidden;
+  .bg {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
   .filter {
     padding: 40px 60px;
     background: rgba($color: #fff, $alpha: 0.5);

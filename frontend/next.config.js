@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     loader: "default",
     domains: ["localhost", "127.0.0.1", "45.84.225.246"],
+    formats: ['image/webp'],
   },
   i18n: {
     locales: ['en', 'ru'],
@@ -14,4 +15,9 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+// module.exports = nextConfig
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+module.exports = withBundleAnalyzer(nextConfig)
+
