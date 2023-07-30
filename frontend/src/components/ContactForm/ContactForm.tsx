@@ -60,7 +60,7 @@ const ContactForm = ({ }) => {
                   value ? Promise.resolve() : Promise.reject(new Error(t.required)),
               },
             ]}>
-            <Checkbox className={style.aggrement}>Я согласен(а) на <a href="/legal/consent" target='_blank'>обработку персональных данных</a></Checkbox>
+            <Checkbox className={style.aggrement}>{t.confirm.text} <a href="/legal/consent" target='_blank'>{t.confirm.link}</a></Checkbox>
           </Form.Item>
 
           <div className={style.buttons}>

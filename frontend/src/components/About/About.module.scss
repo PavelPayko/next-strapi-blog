@@ -5,11 +5,13 @@
 
 .container {
   .download {
-    width: 30%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    a {
+      text-decoration: none;
+    }
   }
 }
 
@@ -222,6 +224,7 @@
 
   .downloadButton {
     height: 100%;
+    font-size: 24px;
   }
 }
 
@@ -231,6 +234,14 @@
   }
 
   .cardsWrp {
+     div {
+      &:nth-child(3) {
+        margin-top: 50px;
+      }
+    }
+    .last{
+      justify-content: flex-start;
+    }
     .cards {
       justify-content: space-between;
     }

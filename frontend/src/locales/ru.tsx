@@ -172,7 +172,11 @@ export const ru = {
 		message: 'Сообщение',
 		uploadButton: 'Прикрепить файл',
 		sendButton: 'Отправить',
-		required: 'Необходимо подтверждение'
+		required: 'Необходимо подтверждение',
+		confirm: {
+			text: 'Я согласен(а) на',
+			link: 'обработку персональных данных'
+		}
 	},
 	blog: {
 		pageTitle: 'Блог',

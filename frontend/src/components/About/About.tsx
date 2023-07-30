@@ -70,12 +70,14 @@ const About = ({ }) => {
             <li className={style.desc} key={`list-${i}`}>{card}</li>
           ))}
           <li className={style.download}>
-            <Button size={'large'} type='primary' className={style.downloadButton} style={{ height: '100%' }}>
-              <Space>
-                <DownloadOutlined />
-                {t.downloadButton}
-              </Space>
-            </Button>
+            <a href="/pdf/kvando.pdf" download>
+              <Button size={'large'} type='primary' className={style.downloadButton} style={{ height: '100%' }}>
+                <Space>
+                  <DownloadOutlined />
+                  {t.downloadButton}
+                </Space>
+              </Button>
+            </a>
           </li>
         </ul>
       </div>

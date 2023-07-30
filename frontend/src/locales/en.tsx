@@ -66,7 +66,7 @@ export const en = {
 				'Removal of obligations from the company on labor disputes with employees.',
 			]
 		},
-		downloadButton: 'Скачать презентацию'
+		downloadButton: 'Download the presentation'
 	},
 	projects: {
 		pageTitle: 'Projects',
@@ -174,7 +174,11 @@ export const en = {
 		message: 'Message',
 		uploadButton: 'Attach a file',
 		sendButton: 'Send',
-		required: 'Confirmation required'
+		required: 'Confirmation required',
+		confirm: {
+			text: 'I agree to',
+			link: 'processing of personal data'
+		}
 	},
 	blog: {
 		pageTitle: 'Blog',
