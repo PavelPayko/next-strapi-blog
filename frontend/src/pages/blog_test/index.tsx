@@ -16,7 +16,7 @@ const Home = ({ articles, categories, homepage }: any) => {
   const router = useRouter();
   const { blog: t } = router.locale === 'ru' ? ru : en;
 
-  return <Empty style={{ marginTop: '40px' }} />;
+  // return <Empty style={{ marginTop: '40px' }} />;
 
   return (
     <Layout categories={categories}>
