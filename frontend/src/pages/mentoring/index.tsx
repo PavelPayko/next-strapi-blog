@@ -20,7 +20,7 @@ const Home: FC = () => {
         <PageTitle title={t.pageTitle} />
         <p>{t.desc}</p>
         <p>{t.test}</p>
-        <Link href={'http://form-timer.com/start/58995d65'}>
+        <Link href={'http://form-timer.com/start/58995d65'} target="_blank">
           <Button type="primary">
             {t.button}
           </Button>
