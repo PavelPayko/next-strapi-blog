@@ -292,5 +292,11 @@ export const en = {
 			'9.1. The Site Administration does not accept counter-offers from the User regarding changes to this User Agreement.',
 			'9.2. User reviews posted on the Site are not confidential information and can be used by the Site Administration without restrictions.`',
 		]
+	},
+	mentoring: {
+		pageTitle: "Mentoring",
+		desc: "Do you want to become a successful developer and find your dream job? Join our mentoring program and become the best specialist in your field! We offer experienced mentors, access to online courses, trainings and participation in real projects. Our goal is to help you achieve success in the IT industry. Join us and become a part of our team!",
+		test: "To apply for participation, you need to fill out a questionnaire and take a test",
+		button: "Start"
 	}
 };

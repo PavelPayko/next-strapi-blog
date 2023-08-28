@@ -70,7 +70,7 @@ const ContactForm = ({ }) => {
           </div>
 
         </Form>
-        I</div>
+        </div>
 
     </div >
   );
