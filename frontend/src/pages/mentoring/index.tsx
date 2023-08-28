@@ -1,11 +1,9 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import Layout from "@/components/layout";
-import { fetchAPI } from "@/lib/api";
 import PageTitle from '@/components/PageTitle/PageTitle';
-import { Button, Grid } from 'antd';
+import { Button } from 'antd';
 import Link from 'next/link';
 import style from './style.module.scss'
-import { Collapse } from 'antd';
 import { ru } from '@/locales/ru'
 import { en } from '@/locales/en'
 import { useRouter } from 'next/router';
@@ -29,5 +27,12 @@ const Home: FC = () => {
     </Layout >
   );
 };
+
+export async function getStaticProps() {
+
+  return {
+    props: {},
+  };
+}
 
 export default Home;

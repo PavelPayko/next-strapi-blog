@@ -18,7 +18,8 @@ export const en = {
 		team: 'team',
 		contacts: 'contacts',
 		vacancy: 'vacancy',
-		blog: 'blog'
+		blog: 'blog',
+		mentoring: 'mentoring'
 	},
 	header: {
 		subtitle: 'outstaff/outsourcing company',

@@ -16,7 +16,8 @@ export const ru = {
 		team: 'Команда',
 		contacts: 'Контакты',
 		vacancy: 'Вакансии',
-		blog: 'Блог'
+		blog: 'Блог',
+		mentoring: 'Наставничество'
 	},
 	header: {
 		subtitle: 'аутстафф/аутсорс компания',
