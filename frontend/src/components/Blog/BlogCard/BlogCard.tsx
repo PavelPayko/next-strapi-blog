@@ -12,7 +12,12 @@ const BlogCard: React.FC<{
 	article: any
 }> = ({ article }) => {
 
-	const image = article.attributes.image
+	console.log('article', article);
+
+	if(!article) return null
+	
+
+	const image = article?.attributes?.image
 	const { alternativeText, width, height } = image?.data?.attributes;
 
 	return (
@@ -37,8 +42,7 @@ const BlogCard: React.FC<{
 			>
 				<Meta
 					title={article.attributes.title}
-					description={article.attributes.category.data.attributes.name}
-
+					description={article?.attributes?.category.data?.attributes.name || 'tech'}
 				/>
 			</AntCard>
 		</Link>

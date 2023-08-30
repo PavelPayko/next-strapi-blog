@@ -87,6 +87,13 @@ module.exports = ({ env }) => {
       client,
       ...connections[client],
       acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
+      charset: "utf8mb4",
+      options: {
+        charset: "utf8mb4"
+      }
     },
+    options: {
+      charset: "utf8mb4"
+    }
   };
 };
