@@ -41,7 +41,7 @@ const Article: React.FC<{
             rehypePlugins={[rehypeRaw]}
           >{article.attributes.content}</ReactMarkdown>
           <hr className="uk-divider-small" />
-          <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
+          {/* <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
             <div>
               {author?.picture && (
                 <Image
@@ -71,7 +71,7 @@ const Article: React.FC<{
                 </Moment>
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
