@@ -20,7 +20,7 @@ const Header = ({ }) => {
         <div className={style.content}>
           <span className={style.pre}>{t.subtitle}</span>
           <h1 className={style.title}>KVAN<span className={style.color}>DO</span> Technologies</h1>
-          <p className={style.desc}>{t.desc.split('|').map(str => <p>{str}</p>)}
+          <p className={style.desc}>{t.desc.split('|').map((str, i) => <p key={`titleDesc=${i}`}>{str}</p>)}
           </p>
           <div className={style.controls}>
             <Button type='primary' size='large'>
