@@ -23,7 +23,9 @@ const Home: FC = () => {
           dataSource={t.list.data}
           renderItem={(item, i) => (
             <List.Item key={i}>{item.split(':')
-              .map((str: string, i: number) => i === 0 ? <b>{str}: </b> : str
+              .map((str: string, i: number) => <React.Fragment key={`${i}-item`}>
+                {i === 0 ? <b className={style.bold}>{str}: </b> : str}
+              </React.Fragment> 
             )}
             </List.Item>
           )}
