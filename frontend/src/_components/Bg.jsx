@@ -28,8 +28,6 @@ export default function Bg() {
       r2.current.style.transform = `translateX(${-center + 40}px)`;
       c2.current.style.transform = `translateX(${center - 10}px)`;
       c3.current.style.transform = `translateX(${-center + 20}px)`;
-      // console.log("y", e.screenY, h, e.screenY / h);
-      // console.log("y", document);
     };
     window.addEventListener("mousemove", moveHandler);
 

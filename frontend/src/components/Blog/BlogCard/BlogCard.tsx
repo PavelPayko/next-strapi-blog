@@ -12,8 +12,6 @@ const BlogCard: React.FC<{
 	article: any
 }> = ({ article }) => {
 
-	console.log('article', article);
-
 	if(!article) return null
 	
 

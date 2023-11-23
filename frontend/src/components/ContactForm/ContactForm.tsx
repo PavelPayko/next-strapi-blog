@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./ContactForm.module.scss";
 import Image from "next/image";
-import { Button, Checkbox, Col, Form, Grid, Input, Row, Upload, UploadProps, message } from 'antd';
+import { Button, Checkbox, Col, Form, Grid, Input, Row, Upload, UploadProps, message, notification } from 'antd';
 
 import Blot from '@/assets/images/blot.png'
 import PageTitle from '../PageTitle/PageTitle';
@@ -21,8 +21,19 @@ const ContactForm = ({ }) => {
   const router = useRouter();
   const { contactForm: t } = router.locale === 'ru' ? ru : en;
 
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
+  const onFinish = async (values: any) => {
+    const req = await fetch('/api/mail', {body: JSON.stringify(values), method: 'POST'}).then(req => req.json())
+
+    if(req?.success) {
+      notification.success({message: 'Обращение отправлено'})
+      form.resetFields()
+    } else if(req?.error){
+      notification.error({message: 'Почтовый сервис временно не доступен'})
+      console.error(req?.success)
+    } else {
+      console.error('Ошибка при отправке', req)
+    }
+
   };
 
   return (
@@ -37,15 +48,25 @@ const ContactForm = ({ }) => {
         >
           <span className={style.title}>{t.pageTitle}</span>
 
-          <Form.Item name="name">
+          <Form.Item name="name" 
+          rules={[
+            {required: true, message: 'Введите имя'},
+          ]}>
             <Input placeholder={t.name} size='large' />
           </Form.Item>
 
-          <Form.Item name="phone">
+          <Form.Item 
+            name="phone"  
+            rules={[
+              { pattern: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/, message: 'Некорректный номер телефона'},
+              {required: true, message: 'Введите номер телефона'},
+            ]}>
             <Input placeholder={t.tel} size='large' />
           </Form.Item>
 
-          <Form.Item name="message">
+          <Form.Item name="message" rules={[
+            {required: true, message: 'Введите сообщение'},
+          ]}>
             <Input.TextArea placeholder={t.message} size='large' autoSize={{ minRows: 4, maxRows: 4 }} />
           </Form.Item>
 

@@ -39,8 +39,6 @@ const Page: React.FC<{
 }> = ({ project }) => {
   // const imageUrl = getStrapiMedia(project.attributes.icon);
 
-  console.log(project);
-
   return (
     <Layout>
       <section className={style.projectContainer}>

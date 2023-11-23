@@ -45,7 +45,6 @@ const Footer: FC<{}> = ({ }) => {
   ];
 
   const localeChangeHandler: MenuProps['onClick'] = (e) => {
-    console.log('click ', e);
     setLocale(e.key);
   };
 

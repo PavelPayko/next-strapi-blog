@@ -30,6 +30,9 @@
   .form {
     max-width: 696px;
     margin: 0 auto;
+    backdrop-filter: brightness(0.5);
+    border-radius: 8px;
+    padding: 24px;
   }
 }
 .buttons {
@@ -55,15 +58,19 @@
 }
 
 .aggrementItem {
-    backdrop-filter: brightness(1.5);
+    background-color: #F9F9F9;
     border-radius: 12px;
     text-align: start;
+    position: relative;
 }
 
 @media screen and (max-width: 991px) {
     .container {
       .filter {
-        padding: 20px 0;
+        padding: 0;
+      }
+      .form {
+        border-radius: 0;
       }
   }
 
